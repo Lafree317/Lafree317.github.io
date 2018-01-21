@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -80,6 +80,7 @@
 
 
 <meta name="description" content="！ 前言在CocosPods浪费时间总计超过50小时…看了一眼笔记,感觉可以总结出一篇博客了….. 安装从ruby开始安装一直到pod ,适合新电脑第一次安装,下面指令直接复制在命令行里执行 1234567891011121314//安装ruburvm install 2.3.0rvm use 2.3.0 --defaultgem install bundler// 上面不用重复安装,下面的根据遇">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CocoaPods爬坑指南">
 <meta property="og:url" content="http://yoursite.com/2016/12/30/2016-12-30 - CocoaPods爬坑指南/index.html">
@@ -89,7 +90,7 @@
 <meta property="og:image" content="https://dn-mhke0kuv.qbox.me/284abc7c250fcc1d75b5.png">
 <meta property="og:image" content="https://dn-mhke0kuv.qbox.me/7f8a5970d4f71d8727fd.png">
 <meta property="og:image" content="https://dn-mhke0kuv.qbox.me/4f97d6c601024d0f8158.png">
-<meta property="og:updated_time" content="2018-01-21T05:17:02.801Z">
+<meta property="og:updated_time" content="2018-01-21T07:42:17.346Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CocoaPods爬坑指南">
 <meta name="twitter:description" content="！ 前言在CocosPods浪费时间总计超过50小时…看了一眼笔记,感觉可以总结出一篇博客了….. 安装从ruby开始安装一直到pod ,适合新电脑第一次安装,下面指令直接复制在命令行里执行 1234567891011121314//安装ruburvm install 2.3.0rvm use 2.3.0 --defaultgem install bundler// 上面不用重复安装,下面的根据遇">
@@ -190,6 +191,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
           </a>
         </li>
       
@@ -307,6 +318,7 @@
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在CocosPods浪费时间总计超过50小时…看了一眼笔记,感觉可以总结出一篇博客了…..</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>从ruby开始安装一直到pod ,适合新电脑第一次安装,下面指令直接复制在命令行里执行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//安装rubu</span><br><span class="line">rvm install 2.3.0</span><br><span class="line">rvm use 2.3.0 --default</span><br><span class="line">gem install bundler</span><br><span class="line">// 上面不用重复安装,下面的根据遇到的问题可能需要重新安装</span><br><span class="line">// 安装pod</span><br><span class="line">sudo gem install cocoapods</span><br><span class="line">// cocoaPods换源</span><br><span class="line">gem sources --remove http://ruby.taobao.org/</span><br><span class="line">gem sources -a https://ruby.taobao.org/</span><br><span class="line">// 查看源 出现ruby.taobao.org就对了</span><br><span class="line">gem sources -l</span><br><span class="line">// 更新pod</span><br><span class="line">pod setup</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 搜索库</span><br><span class="line">pod search 库的关键字</span><br><span class="line">// 为项目导入依赖</span><br><span class="line">pod install</span><br><span class="line">// 已经导入过一次相关的第三方,想快速导入,不再从网上下载</span><br><span class="line">pod install --verbose --no-repo-update</span><br><span class="line">// 为项目更新依赖</span><br><span class="line">pod update</span><br></pre></td></tr></table></figure>
 <h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>有时候pod抽风了..需要删除项目中的pod重新导入,或者删除pod重新安装pod</p>
 <h4 id="删除项目pod依赖"><a href="#删除项目pod依赖" class="headerlink" title="删除项目pod依赖"></a>删除项目pod依赖</h4><ul>
@@ -337,6 +349,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
+      
 
       
       
@@ -356,8 +374,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/18/2018-01-18 - Unity&C#有限状态机/" rel="prev" title="Unity&C#有限状态机">
-                Unity&C#有限状态机 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/20/2017-04-20 - 如何打造一个个性的个人微信机器人/" rel="prev" title="如何打造一个个性的个人微信机器人">
+                如何打造一个个性的个人微信机器人 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -439,7 +457,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -447,6 +465,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -471,13 +498,13 @@
                   <span class="links-of-author-item">
                     <a href="https://www.jianshu.com/u/0f12dd341179" target="_blank" title="Jianshu">
                       
-                        <i class="fa fa-fw fa-heartbeat"></i>Jianshu</a>
+                        <i class="fa fa-fw fa-globe"></i>Jianshu</a>
                   </span>
                 
                   <span class="links-of-author-item">
                     <a href="https://juejin.im/user/567bbee434f81a1d8790bd0c/shares" target="_blank" title="Juejin">
                       
-                        <i class="fa fa-fw fa-juejin"></i>Juejin</a>
+                        <i class="fa fa-fw fa-globe"></i>Juejin</a>
                   </span>
                 
             </div>

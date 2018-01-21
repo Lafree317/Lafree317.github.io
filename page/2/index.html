@@ -190,6 +190,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -232,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/12/05/2015-12-05 - Swift清理缓存/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/10/2016-04-10 - iOS-PageControl/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
@@ -251,7 +261,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/12/05/2015-12-05 - Swift清理缓存/" itemprop="url">Swift清理缓存</a></h1>
+                <a class="post-title-link" href="/2016/04/10/2016-04-10 - iOS-PageControl/" itemprop="url">iOS-PageControl</a></h1>
         
 
         <div class="post-meta">
@@ -263,8 +273,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-05T00:00:00+08:00">
-                2015-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-10T00:00:00+08:00">
+                2016-04-10
               </time>
             
 
@@ -302,15 +312,18 @@
 
       
         
-          
-            <p>#前言</p>
-<h2 id="swift现在网上资源比较乱-需要找的要找很久-于是自己开始整理自己遇到的功能开始swift化-如果效果不错的话以后就会一直发表swift的博客-所以请各位读者多给我的GitHub点几个Star吧"><a href="#swift现在网上资源比较乱-需要找的要找很久-于是自己开始整理自己遇到的功能开始swift化-如果效果不错的话以后就会一直发表swift的博客-所以请各位读者多给我的GitHub点几个Star吧" class="headerlink" title="####swift现在网上资源比较乱,需要找的要找很久,于是自己开始整理自己遇到的功能开始swift化,如果效果不错的话以后就会一直发表swift的博客,所以请各位读者多给我的GitHub点几个Star吧!"></a>####swift现在网上资源比较乱,需要找的要找很久,于是自己开始整理自己遇到的功能开始swift化,如果效果不错的话以后就会一直发表swift的博客,所以请各位读者多给我的GitHub点几个Star吧!</h2><p>#效果图<br><img src="http://upload-images.jianshu.io/upload_images/1298596-7db970253f64df9b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<p>#上代码</p>
-<p>####在storyBoard创建一个button关联点击事件,然后在ViewController里写上以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@IBAction func alertAction(sender: UIButton) &#123;</span><br><span class="line">    // 取出cache文件夹路径</span><br><span class="line">    let cachePath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).first</span><br><span class="line">    // 打印路径,需要测试的可以往这个路径下放东西</span><br><span class="line">    print(cachePath)</span><br><span class="line">    // 取出文件夹下所有文件数组</span><br><span class="line">    let files = NSFileManager.defaultManager().subpathsAtPath(cachePath!)</span><br><span class="line">    // 用于统计文件夹内所有文件大小</span><br><span class="line">    var big = Int();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 快速枚举取出所有文件名</span><br><span class="line">    for p in files!&#123;</span><br><span class="line">        // 把文件名拼接到路径中</span><br><span class="line">        let path = cachePath!.stringByAppendingFormat(&quot;/\(p)&quot;)</span><br><span class="line">        // 取出文件属性</span><br><span class="line">        let floder = try! NSFileManager.defaultManager().attributesOfItemAtPath(path)</span><br><span class="line">        // 用元组取出文件大小属性</span><br><span class="line">        for (abc,bcd) in floder &#123;</span><br><span class="line">            // 只去出文件大小进行拼接</span><br><span class="line">            if abc == NSFileSize&#123;</span><br><span class="line">                big += bcd.integerValue</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 提示框</span><br><span class="line">    let message = &quot;\(big/(1024*1024))M缓存&quot;</span><br><span class="line">    let alert = UIAlertController(title: &quot;清除缓存&quot;, message: message, preferredStyle: UIAlertControllerStyle.Alert)</span><br><span class="line"></span><br><span class="line">    let alertConfirm = UIAlertAction(title: &quot;确定&quot;, style: UIAlertActionStyle.Default) &#123; (alertConfirm) -&gt; Void in</span><br><span class="line">        // 点击确定时开始删除</span><br><span class="line">        for p in files!&#123;</span><br><span class="line">            // 拼接路径</span><br><span class="line">            let path = cachePath!.stringByAppendingFormat(&quot;/\(p)&quot;)</span><br><span class="line">            // 判断是否可以删除</span><br><span class="line">            if(NSFileManager.defaultManager().fileExistsAtPath(path))&#123;</span><br><span class="line">                // 删除</span><br><span class="line">                try! NSFileManager.defaultManager().removeItemAtPath(path)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    alert.addAction(alertConfirm)</span><br><span class="line">    let cancle = UIAlertAction(title: &quot;取消&quot;, style: UIAlertActionStyle.Cancel) &#123; (cancle) -&gt; Void in</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    alert.addAction(cancle)</span><br><span class="line">    // 提示框弹出</span><br><span class="line">    presentViewController(alert, animated: true) &#123; () -&gt; Void in</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>#效果展示<br><img src="http://upload-images.jianshu.io/upload_images/1298596-e0139930ffe1c543?imageMogr2/auto-orient/strip" alt="这里写图片描述"></p>
-<p>##GitHub:<a href="https://github.com/Lafree317/ClearCache-Swift" target="_blank" rel="noopener">https://github.com/Lafree317/ClearCache-Swift</a></p>
-
-          
+          <p>#第一版</p>
+<blockquote>
+<p>之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出<br>调用时只需要传入一个title数组就好了</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">override func viewDidLoad() &#123;</span><br><span class="line">    super.viewDidLoad()</span><br><span class="line">    let zeVC = ZEPageViewController()</span><br><span class="line">    zeVC.titlesArr = [&quot;动态&quot;,&quot;问题&quot;,&quot;讨论&quot;]</span><br><span class="line">    self.addChildViewController(zeVC)</span><br><span class="line">    self.view.addSubview(zeVC.view)</span><br><span class="line">    // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/10/2016-04-10 - iOS-PageControl/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -427,20 +440,141 @@
 
       
         
-          
-            <p>#前言<br>因为最近做项目有遇到音视频合成的需求,但是网上的教程某些地方总是写的很模糊,所以自己调研完成之后决定写一篇博客分享出来,供大家一起学习进步</p>
-<p>音视频主要是利用AVFoundation框架下的AVMutableComposition来合成音视频.</p>
-<h2 id="在AVMutableComposition中传入两个数据流-一个是音频一个是视频-之后调用合成方法就可以了"><a href="#在AVMutableComposition中传入两个数据流-一个是音频一个是视频-之后调用合成方法就可以了" class="headerlink" title="在AVMutableComposition中传入两个数据流,一个是音频一个是视频,之后调用合成方法就可以了"></a>在AVMutableComposition中传入两个数据流,一个是音频一个是视频,之后调用合成方法就可以了</h2><p>#上代码</p>
-<p>##storyBoard中拖入一个button,一个imageView<br><img src="http://upload-images.jianshu.io/upload_images/1298596-06106e4adf4f6758?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<p>##为了效果好可以将IamgeView的背景色调为黑色</p>
-<p>##然后在ViewController中添加以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;ViewController.h&quot;</span><br><span class="line">#import &lt;AVFoundation/AVFoundation.h&gt;</span><br><span class="line">#import &quot;MBProgressHUD+MJ.h&quot;</span><br><span class="line">@interface ViewController ()</span><br><span class="line">/** 用于播放 */</span><br><span class="line">@property (weak, nonatomic) IBOutlet UIImageView *imageView;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (IBAction)mergeAction:(UIButton *)sender &#123;</span><br><span class="line">    [self merge];</span><br><span class="line">&#125;</span><br><span class="line">// 混合音乐</span><br><span class="line">- (void)merge&#123;</span><br><span class="line">    // mbp提示框</span><br><span class="line">    [MBProgressHUD showMessage:@&quot;正在处理中&quot;];</span><br><span class="line">    // 路径</span><br><span class="line">    NSString *documents = [NSHomeDirectory() stringByAppendingPathComponent:@&quot;Documents&quot;];</span><br><span class="line">    // 声音来源</span><br><span class="line">    NSURL *audioInputUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@&quot;五环之歌&quot; ofType:@&quot;mp3&quot;]];</span><br><span class="line">    // 视频来源</span><br><span class="line">    NSURL *videoInputUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@&quot;myPlayer&quot; ofType:@&quot;mp4&quot;]];</span><br><span class="line"></span><br><span class="line">    // 最终合成输出路径</span><br><span class="line">    NSString *outPutFilePath = [documents stringByAppendingPathComponent:@&quot;merge.mp4&quot;];</span><br><span class="line">    // 添加合成路径</span><br><span class="line">    NSURL *outputFileUrl = [NSURL fileURLWithPath:outPutFilePath];</span><br><span class="line">    // 时间起点</span><br><span class="line">    CMTime nextClistartTime = kCMTimeZero;</span><br><span class="line">    // 创建可变的音视频组合</span><br><span class="line">    AVMutableComposition *comosition = [AVMutableComposition composition];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 视频采集</span><br><span class="line">    AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:videoInputUrl options:nil];</span><br><span class="line">    // 视频时间范围</span><br><span class="line">    CMTimeRange videoTimeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration);</span><br><span class="line">    // 视频通道 枚举 kCMPersistentTrackID_Invalid = 0</span><br><span class="line">    AVMutableCompositionTrack *videoTrack = [comosition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];</span><br><span class="line">    // 视频采集通道</span><br><span class="line">    AVAssetTrack *videoAssetTrack = [[videoAsset tracksWithMediaType:AVMediaTypeVideo] firstObject];</span><br><span class="line">    //  把采集轨道数据加入到可变轨道之中</span><br><span class="line">    [videoTrack insertTimeRange:videoTimeRange ofTrack:videoAssetTrack atTime:nextClistartTime error:nil];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 声音采集</span><br><span class="line">    AVURLAsset *audioAsset = [[AVURLAsset alloc] initWithURL:audioInputUrl options:nil];</span><br><span class="line">    // 因为视频短这里就直接用视频长度了,如果自动化需要自己写判断</span><br><span class="line">    CMTimeRange audioTimeRange = videoTimeRange;</span><br><span class="line">    // 音频通道</span><br><span class="line">    AVMutableCompositionTrack *audioTrack = [comosition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];</span><br><span class="line">    // 音频采集通道</span><br><span class="line">    AVAssetTrack *audioAssetTrack = [[audioAsset tracksWithMediaType:AVMediaTypeAudio] firstObject];</span><br><span class="line">    // 加入合成轨道之中</span><br><span class="line">    [audioTrack insertTimeRange:audioTimeRange ofTrack:audioAssetTrack atTime:nextClistartTime error:nil];</span><br><span class="line"></span><br><span class="line">    // 创建一个输出</span><br><span class="line">    AVAssetExportSession *assetExport = [[AVAssetExportSession alloc] initWithAsset:comosition presetName:AVAssetExportPresetMediumQuality];</span><br><span class="line">    // 输出类型</span><br><span class="line">    assetExport.outputFileType = AVFileTypeQuickTimeMovie;</span><br><span class="line">    // 输出地址</span><br><span class="line">    assetExport.outputURL = outputFileUrl;</span><br><span class="line">    // 优化</span><br><span class="line">    assetExport.shouldOptimizeForNetworkUse = YES;</span><br><span class="line">    // 合成完毕</span><br><span class="line">    [assetExport exportAsynchronouslyWithCompletionHandler:^&#123;</span><br><span class="line">        // 回到主线程</span><br><span class="line">        dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            // 调用播放方法</span><br><span class="line">            [self playWithUrl:outputFileUrl];</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** 播放方法 */</span><br><span class="line">- (void)playWithUrl:(NSURL *)url&#123;</span><br><span class="line">    // 传入地址</span><br><span class="line">    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:url];</span><br><span class="line">    // 播放器</span><br><span class="line">    AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];</span><br><span class="line">    // 播放器layer</span><br><span class="line">    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];</span><br><span class="line">    playerLayer.frame = self.imageView.frame;</span><br><span class="line">    // 视频填充模式</span><br><span class="line">    playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;</span><br><span class="line">    // 添加到imageview的layer上</span><br><span class="line">    [self.imageView.layer addSublayer:playerLayer];</span><br><span class="line">    // 隐藏提示框 开始播放</span><br><span class="line">    [MBProgressHUD hideHUD];</span><br><span class="line">    [MBProgressHUD showSuccess:@&quot;合成完成&quot;];</span><br><span class="line">    // 播放</span><br><span class="line">    [player play];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>##MBP是一个第三方提示类,如果不关心这个功能可以删除这三行代码和头文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// mbp提示框</span><br><span class="line">    [MBProgressHUD showMessage:@&quot;正在处理中&quot;];</span><br><span class="line">// 隐藏提示框 开始播放</span><br><span class="line">    [MBProgressHUD hideHUD];</span><br><span class="line">    [MBProgressHUD showSuccess:@&quot;合成完成&quot;];</span><br></pre></td></tr></table></figure></p>
-<p>#效果图</p>
-<p>###因为是gif..请自己yy出Uber视频配上五环之歌(我感觉还挺配的)</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1298596-e33e93f0878aa5cf?imageMogr2/auto-orient/strip" alt="这里写图片描述"></p>
-<p>##GitHub:<a href="https://github.com/Lafree317/MergeVideoAndMusic" target="_blank" rel="noopener">https://github.com/Lafree317/MergeVideoAndMusic</a></p>
+          <p>#前言<br>因为最近做项目有遇到音视频合成的需求,但是网上的教程某些地方总是写的很模糊,所以自己调研完成之后决定写一篇博客分享出来,供大家一起学习进步</p>
+<p>音视频主要是利用AVFoundation框架下的AVMutableComposition来合成音视频.<br>在AVMutableComposition中传入两个数据流,一个是音频一个是视频,之后调用合成方法就可以了</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/12/05/2015-12-05 - iOS 音视频合成/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/12/05/2015-12-05 - Swift清理缓存/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩辕小羽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lafree's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/12/05/2015-12-05 - Swift清理缓存/" itemprop="url">Swift清理缓存</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-05T00:00:00+08:00">
+                2015-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>#前言</p>
+<h2 id="swift现在网上资源比较乱-需要找的要找很久-于是自己开始整理自己遇到的功能开始swift化-如果效果不错的话以后就会一直发表swift的博客-所以请各位读者多给我的GitHub点几个Star吧"><a href="#swift现在网上资源比较乱-需要找的要找很久-于是自己开始整理自己遇到的功能开始swift化-如果效果不错的话以后就会一直发表swift的博客-所以请各位读者多给我的GitHub点几个Star吧" class="headerlink" title="####swift现在网上资源比较乱,需要找的要找很久,于是自己开始整理自己遇到的功能开始swift化,如果效果不错的话以后就会一直发表swift的博客,所以请各位读者多给我的GitHub点几个Star吧!"></a>####swift现在网上资源比较乱,需要找的要找很久,于是自己开始整理自己遇到的功能开始swift化,如果效果不错的话以后就会一直发表swift的博客,所以请各位读者多给我的GitHub点几个Star吧!</h2><p>#效果图<br><img src="http://upload-images.jianshu.io/upload_images/1298596-7db970253f64df9b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/12/05/2015-12-05 - Swift清理缓存/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -528,7 +662,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -536,6 +670,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -560,13 +703,13 @@
                   <span class="links-of-author-item">
                     <a href="https://www.jianshu.com/u/0f12dd341179" target="_blank" title="Jianshu">
                       
-                        <i class="fa fa-fw fa-heartbeat"></i>Jianshu</a>
+                        <i class="fa fa-fw fa-globe"></i>Jianshu</a>
                   </span>
                 
                   <span class="links-of-author-item">
                     <a href="https://juejin.im/user/567bbee434f81a1d8790bd0c/shares" target="_blank" title="Juejin">
                       
-                        <i class="fa fa-fw fa-juejin"></i>Juejin</a>
+                        <i class="fa fa-fw fa-globe"></i>Juejin</a>
                   </span>
                 
             </div>

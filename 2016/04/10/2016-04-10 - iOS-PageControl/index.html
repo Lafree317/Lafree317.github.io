@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -80,6 +80,7 @@
 
 
 <meta name="description" content="#第一版  之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出调用时只需要传入一个title数组就好了  12345678override func viewDidLoad() &amp;#123;    super.viewDidLoad()    let zeVC = ZEPageViewController()">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS-PageControl">
 <meta property="og:url" content="http://yoursite.com/2016/04/10/2016-04-10 - iOS-PageControl/index.html">
@@ -92,7 +93,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1298596-e0d2f6bdb88da632.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1298596-469d3925ed7abd67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1298596-9a486b32773b67f9.gif?imageMogr2/auto-orient/strip">
-<meta property="og:updated_time" content="2018-01-21T05:37:02.601Z">
+<meta property="og:updated_time" content="2018-01-21T07:42:09.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS-PageControl">
 <meta name="twitter:description" content="#第一版  之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出调用时只需要传入一个title数组就好了  12345678override func viewDidLoad() &amp;#123;    super.viewDidLoad()    let zeVC = ZEPageViewController()">
@@ -193,6 +194,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
           </a>
         </li>
       
@@ -311,6 +322,7 @@
 <p>之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出<br>调用时只需要传入一个title数组就好了</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">override func viewDidLoad() &#123;</span><br><span class="line">    super.viewDidLoad()</span><br><span class="line">    let zeVC = ZEPageViewController()</span><br><span class="line">    zeVC.titlesArr = [&quot;动态&quot;,&quot;问题&quot;,&quot;讨论&quot;]</span><br><span class="line">    self.addChildViewController(zeVC)</span><br><span class="line">    self.view.addSubview(zeVC.view)</span><br><span class="line">    // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>#原理</p>
 <blockquote>
 <p>这个项目的层级视图是这样的</p>
@@ -390,6 +402,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
+      
 
       
       
@@ -399,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/05/2015-12-05 - Swift清理缓存/" rel="next" title="Swift清理缓存">
-                <i class="fa fa-chevron-left"></i> Swift清理缓存
+              <a href="/2015/12/05/2015-12-05 - iOS 音视频合成/" rel="next" title="iOS 音视频合成">
+                <i class="fa fa-chevron-left"></i> iOS 音视频合成
               </a>
             
           </div>
@@ -483,7 +501,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -491,6 +509,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -515,13 +542,13 @@
                   <span class="links-of-author-item">
                     <a href="https://www.jianshu.com/u/0f12dd341179" target="_blank" title="Jianshu">
                       
-                        <i class="fa fa-fw fa-heartbeat"></i>Jianshu</a>
+                        <i class="fa fa-fw fa-globe"></i>Jianshu</a>
                   </span>
                 
                   <span class="links-of-author-item">
                     <a href="https://juejin.im/user/567bbee434f81a1d8790bd0c/shares" target="_blank" title="Juejin">
                       
-                        <i class="fa fa-fw fa-juejin"></i>Juejin</a>
+                        <i class="fa fa-fw fa-globe"></i>Juejin</a>
                   </span>
                 
             </div>

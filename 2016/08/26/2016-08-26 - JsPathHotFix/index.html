@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -79,12 +79,13 @@
 
 
 
-<meta name="description" content="前言掘金3.5.2上线后发现了一个bug,我司iOS小哥上线前不小心改动了一部分代码,导致脏数据被缓存,取缓存的时候会导致项目崩溃…(苹果的审核越来越不认真了….好吧,我不推锅了,让我跪着写完这篇博客).. 回归正题: 在iOS中有很多种热修复方案,在这里我就不一一介绍了 这里有一篇掘金里介绍热修复的文章:iOS中的HotFix方案总结详解  我选择的热修复方案是JSPatch我觉得JSPatc">
+<meta name="description" content="前言掘金3.5.2上线后发现了一个bug,我司iOS小哥上线前不小心改动了一部分代码,导致脏数据被缓存,取缓存的时候会导致项目崩溃…(苹果的审核越来越不认真了….好吧,我不推锅了,让我跪着写完这篇博客)..">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS 5分钟集成热修复(JSPatch)">
 <meta property="og:url" content="http://yoursite.com/2016/08/26/2016-08-26 - JsPathHotFix/index.html">
 <meta property="og:site_name" content="Lafree&#39;s Blog">
-<meta property="og:description" content="前言掘金3.5.2上线后发现了一个bug,我司iOS小哥上线前不小心改动了一部分代码,导致脏数据被缓存,取缓存的时候会导致项目崩溃…(苹果的审核越来越不认真了….好吧,我不推锅了,让我跪着写完这篇博客).. 回归正题: 在iOS中有很多种热修复方案,在这里我就不一一介绍了 这里有一篇掘金里介绍热修复的文章:iOS中的HotFix方案总结详解  我选择的热修复方案是JSPatch我觉得JSPatc">
+<meta property="og:description" content="前言掘金3.5.2上线后发现了一个bug,我司iOS小哥上线前不小心改动了一部分代码,导致脏数据被缓存,取缓存的时候会导致项目崩溃…(苹果的审核越来越不认真了….好吧,我不推锅了,让我跪着写完这篇博客)..">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://dn-mhke0kuv.qbox.me/7859b81efd944b3d7f73.png">
 <meta property="og:image" content="https://dn-mhke0kuv.qbox.me/160cd77a37114da51a05.png">
@@ -106,10 +107,10 @@
 <meta property="og:image" content="https://dn-mhke0kuv.qbox.me/c8a86faf7b3d23227762.png">
 <meta property="og:image" content="https://dn-mhke0kuv.qbox.me/f39d10f9dd87d08591a7.png">
 <meta property="og:image" content="https://dn-mhke0kuv.qbox.me/e4154e2ba7adaf1cdcb9.png">
-<meta property="og:updated_time" content="2018-01-21T05:12:42.600Z">
+<meta property="og:updated_time" content="2018-01-21T07:42:14.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 5分钟集成热修复(JSPatch)">
-<meta name="twitter:description" content="前言掘金3.5.2上线后发现了一个bug,我司iOS小哥上线前不小心改动了一部分代码,导致脏数据被缓存,取缓存的时候会导致项目崩溃…(苹果的审核越来越不认真了….好吧,我不推锅了,让我跪着写完这篇博客).. 回归正题: 在iOS中有很多种热修复方案,在这里我就不一一介绍了 这里有一篇掘金里介绍热修复的文章:iOS中的HotFix方案总结详解  我选择的热修复方案是JSPatch我觉得JSPatc">
+<meta name="twitter:description" content="前言掘金3.5.2上线后发现了一个bug,我司iOS小哥上线前不小心改动了一部分代码,导致脏数据被缓存,取缓存的时候会导致项目崩溃…(苹果的审核越来越不认真了….好吧,我不推锅了,让我跪着写完这篇博客)..">
 <meta name="twitter:image" content="https://dn-mhke0kuv.qbox.me/7859b81efd944b3d7f73.png">
 
 
@@ -207,6 +208,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
           </a>
         </li>
       
@@ -322,6 +333,7 @@
       
         <p><img src="https://dn-mhke0kuv.qbox.me/7859b81efd944b3d7f73.png" alt=""></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>掘金3.5.2上线后发现了一个bug,我司iOS小哥上线前不小心改动了一部分代码,导致脏数据被缓存,取缓存的时候会导致项目崩溃…(苹果的审核越来越不认真了….好吧,我不推锅了,让我跪着写完这篇博客)..</p>
+<a id="more"></a>
 <h4 id="回归正题"><a href="#回归正题" class="headerlink" title="回归正题:"></a>回归正题:</h4><blockquote>
 <p>在iOS中有很多种热修复方案,在这里我就不一一介绍了</p>
 <p>这里有一篇掘金里介绍热修复的文章:<br><a href="http://www.jianshu.com/p/66dad614b905?utm_campaign=hugo&amp;utm_medium=reader_share&amp;utm_content=note" target="_blank" rel="noopener">iOS中的HotFix方案总结详解</a></p>
@@ -414,6 +426,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
       
 
       
@@ -517,7 +535,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -525,6 +543,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -549,13 +576,13 @@
                   <span class="links-of-author-item">
                     <a href="https://www.jianshu.com/u/0f12dd341179" target="_blank" title="Jianshu">
                       
-                        <i class="fa fa-fw fa-heartbeat"></i>Jianshu</a>
+                        <i class="fa fa-fw fa-globe"></i>Jianshu</a>
                   </span>
                 
                   <span class="links-of-author-item">
                     <a href="https://juejin.im/user/567bbee434f81a1d8790bd0c/shares" target="_blank" title="Juejin">
                       
-                        <i class="fa fa-fw fa-juejin"></i>Juejin</a>
+                        <i class="fa fa-fw fa-globe"></i>Juejin</a>
                   </span>
                 
             </div>
