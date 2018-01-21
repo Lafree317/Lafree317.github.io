@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言网上Unity使用lua的文章本来就少..slua又是个偏小众的lua库..文章更少.. 已有的文章又有点坑…比如方法名关键字写错啦..真的是坑多= = 所以总结一片超简单教学= = 这篇文章面向刚开始学习lua 想在unity项目中使用sLua库的同学.. 正文导入sLua 1.直接下载最新版:sLua库下载地址 2.然后将解压后的Assets文件复制到你项目的Assets目录下,不要放到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity中使用sLua的 超丶简单基础教程">
+<meta property="og:url" content="http://yoursite.com/2018/01/20/2018-01-20 - Unity中使用sLua的 超丶简单基础教程/index.html">
+<meta property="og:site_name" content="装修中">
+<meta property="og:description" content="前言网上Unity使用lua的文章本来就少..slua又是个偏小众的lua库..文章更少.. 已有的文章又有点坑…比如方法名关键字写错啦..真的是坑多= = 所以总结一片超简单教学= = 这篇文章面向刚开始学习lua 想在unity项目中使用sLua库的同学.. 正文导入sLua 1.直接下载最新版:sLua库下载地址 2.然后将解压后的Assets文件复制到你项目的Assets目录下,不要放到">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/21/161171674273d40e">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/20/161138abbd015ee9?w=355&h=136&f=png&s=14264">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/20/161139671a4de279?w=425&h=944&f=png&s=58039">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/20/16113ac0db3b6dd5?w=605&h=476&f=png&s=56768">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/20/16113ac510abdc81?w=541&h=1072&f=png&s=97504">
+<meta property="og:updated_time" content="2018-01-21T05:17:18.121Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unity中使用sLua的 超丶简单基础教程">
+<meta name="twitter:description" content="前言网上Unity使用lua的文章本来就少..slua又是个偏小众的lua库..文章更少.. 已有的文章又有点坑…比如方法名关键字写错啦..真的是坑多= = 所以总结一片超简单教学= = 这篇文章面向刚开始学习lua 想在unity项目中使用sLua库的同学.. 正文导入sLua 1.直接下载最新版:sLua库下载地址 2.然后将解压后的Assets文件复制到你项目的Assets目录下,不要放到">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/1/21/161171674273d40e">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/20/2018-01-20 - Unity中使用sLua的 超丶简单基础教程/"/>
+
+
+
+
+
+  <title>Unity中使用sLua的 超丶简单基础教程 | 装修中</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">装修中</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/20/2018-01-20 - Unity中使用sLua的 超丶简单基础教程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩辕小羽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="装修中">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Unity中使用sLua的 超丶简单基础教程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T00:00:00+08:00">
+                2018-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://user-gold-cdn.xitu.io/2018/1/21/161171674273d40e" alt=""></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>网上Unity使用lua的文章本来就少..slua又是个偏小众的lua库..文章更少..</p>
+<p>已有的文章又有点坑…比如方法名关键字写错啦..真的是坑多= =</p>
+<p>所以总结一片超简单教学= =</p>
+<p>这篇文章面向刚开始学习lua 想在unity项目中使用sLua库的同学..</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="导入sLua"><a href="#导入sLua" class="headerlink" title="导入sLua"></a>导入sLua</h4><ul>
+<li>1.直接下载最新版:<a href="https://github.com/pangweiwei/slua/releases/" target="_blank" rel="noopener">sLua库下载地址</a></li>
+<li>2.然后将解压后的Assets文件复制到你项目的Assets目录下,不要放到其他地方.</li>
+<li>3.等待Unity编译完成,会出现SLua菜单如下图.然后选择Slua-All-Make命令 手动生成针对当前版本的Unity接口文件</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/20/161138abbd015ee9?w=355&amp;h=136&amp;f=png&amp;s=14264" alt="图1-1"></p>
+<p>做到这步你已经可以在Assets/Slua/example中查看sLua的官方例子了.每一个Scenes都展示了一种使用方法.</p>
+<h4 id="自己使用Lua脚本"><a href="#自己使用Lua脚本" class="headerlink" title="自己使用Lua脚本"></a>自己使用Lua脚本</h4><p>创建一个新的Scene然后创建一个CreateEmpty创建一个C#文件挂载上去.然后在C#文件中写如下代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using SLua;</span><br><span class="line"></span><br><span class="line">public class Test : MonoBehaviour&#123;</span><br><span class="line"></span><br><span class="line">    private static LuaState ls_state;</span><br><span class="line"></span><br><span class="line">    void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        ls_state = new LuaState();</span><br><span class="line">        ls_state.doString(&quot;print(\&quot;Hello Lua!\&quot;)&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>成功后的样子是这样:</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/20/161139671a4de279?w=425&amp;h=944&amp;f=png&amp;s=58039" alt=""></p>
+<p>注意有些教程中LuaState在声明成属性时就初始化了,但是会报错,一定要在Awake方法或Start或需要用到的时候再进行初始化…</p>
+<h4 id="读取lua文件"><a href="#读取lua文件" class="headerlink" title="读取lua文件"></a>读取lua文件</h4><p>C#代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line">using SLua;</span><br><span class="line">using System.IO;</span><br><span class="line"></span><br><span class="line">public class OpenLuaFile : MonoBehaviour&#123;</span><br><span class="line"></span><br><span class="line">    public LuaState state;// sLua脚本代理</span><br><span class="line"></span><br><span class="line">    void Start()</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        state = new LuaState();</span><br><span class="line"></span><br><span class="line">        state.loaderDelegate = ((string fn) =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            string file_Path = Directory.GetCurrentDirectory() + &quot;/Assets/Script/Lua/&quot; + fn;</span><br><span class="line">            Debug.Log(file_Path);</span><br><span class="line">            return File.ReadAllBytes(file_Path);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        //执行脚本</span><br><span class="line">        state.doFile(&quot;HelloLua.lua&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在上面设定的路径中创建lua文件</p>
+<p>代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;你好 我是文件里的Lua!&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>“/Assets/Script/Lua/“为放置ua文件的目录,这个根据自己需求随意改变.</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/20/16113ac0db3b6dd5?w=605&amp;h=476&amp;f=png&amp;s=56768" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/20/16113ac510abdc81?w=541&amp;h=1072&amp;f=png&amp;s=97504" alt=""></p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>本篇教程很基础,如果有精力会将之后学习到的知识都整理成博客分享给大家~</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/18/2018-01-18 - Unity&C#有限状态机/" rel="next" title="Unity&C#有限状态机">
+                <i class="fa fa-chevron-left"></i> Unity&C#有限状态机
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">轩辕小羽</p>
+              <p class="site-description motion-element" itemprop="description">之前的博客电脑坏了文章全没了..重新整理一下= =</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导入sLua"><span class="nav-number">2.1.</span> <span class="nav-text">导入sLua</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自己使用Lua脚本"><span class="nav-number">2.2.</span> <span class="nav-text">自己使用Lua脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读取lua文件"><span class="nav-number">2.3.</span> <span class="nav-text">读取lua文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">2.4.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">轩辕小羽</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

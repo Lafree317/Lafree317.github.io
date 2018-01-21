@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="#第一版  之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出调用时只需要传入一个title数组就好了  12345678override func viewDidLoad() &amp;#123;    super.viewDidLoad()    let zeVC = ZEPageViewController()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS-PageControl">
+<meta property="og:url" content="http://yoursite.com/2016/04/10/2016-04-10 - iOS-PageControl/index.html">
+<meta property="og:site_name" content="装修中">
+<meta property="og:description" content="#第一版  之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出调用时只需要传入一个title数组就好了  12345678override func viewDidLoad() &amp;#123;    super.viewDidLoad()    let zeVC = ZEPageViewController()">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1298596-1a75086cb4e4c3c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1298596-e8dfcf5b4300a039.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1298596-2a5bfcb8f55b88a7.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1298596-e0d2f6bdb88da632.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1298596-469d3925ed7abd67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1298596-9a486b32773b67f9.gif?imageMogr2/auto-orient/strip">
+<meta property="og:updated_time" content="2018-01-21T05:19:22.364Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS-PageControl">
+<meta name="twitter:description" content="#第一版  之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出调用时只需要传入一个title数组就好了  12345678override func viewDidLoad() &amp;#123;    super.viewDidLoad()    let zeVC = ZEPageViewController()">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1298596-1a75086cb4e4c3c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/04/10/2016-04-10 - iOS-PageControl/"/>
+
+
+
+
+
+  <title>iOS-PageControl | 装修中</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">装修中</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/10/2016-04-10 - iOS-PageControl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩辕小羽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="装修中">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">iOS-PageControl</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-10T00:00:00+08:00">
+                2016-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#第一版</p>
+<blockquote>
+<p>之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出<br>调用时只需要传入一个title数组就好了</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">override func viewDidLoad() &#123;</span><br><span class="line">    super.viewDidLoad()</span><br><span class="line">    let zeVC = ZEPageViewController()</span><br><span class="line">    zeVC.titlesArr = [&quot;动态&quot;,&quot;问题&quot;,&quot;讨论&quot;]</span><br><span class="line">    self.addChildViewController(zeVC)</span><br><span class="line">    self.view.addSubview(zeVC.view)</span><br><span class="line">    // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>#原理</p>
+<blockquote>
+<p>这个项目的层级视图是这样的</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1298596-1a75086cb4e4c3c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>先在底部创建一个和<code>viewController.view</code>一样大的<code>scrollView</code><br>然后将<code>tableviewController</code>添加上去<br>最后将<code>tableviewController.tableView.contentInset</code>的<code>top</code>设置为你想要的高度(headerView+menuView)<br>然后通过代理将<code>tableviewController</code>的偏移量代理到主控制器上,用于计算顶部<code>headerView</code>和<code>menuView</code>的移动<br>然后主控制器的<code>scrollview</code>代理方法被调用时计算<code>tableviewcontroller.contentOffset</code><br>难点主要在于计算三个<code>tableViewController</code>的<code>contentInset</code>和<code>contentOffset</code></p>
+</blockquote>
+<p>#代码</p>
+<p>####先看一眼全局属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/** 屏幕宽度高度 */</span><br><span class="line">let kZEScreenWidth = UIScreen.mainScreen().bounds.size.width</span><br><span class="line">let kZEScreenHight = UIScreen.mainScreen().bounds.size.height</span><br><span class="line"></span><br><span class="line">/** header和menu的高度 */</span><br><span class="line">let kZEHeaderHight:CGFloat = 135</span><br><span class="line">let kZEMenuHight:CGFloat = 50</span><br><span class="line">let kScrollHorizY = kZEMenuHight+kZEHeaderHight</span><br><span class="line"></span><br><span class="line">let kNavigationHight:CGFloat = 64</span><br><span class="line"></span><br><span class="line">/** 偏移方法操作枚举 */</span><br><span class="line">enum headerMenuShowType:UInt &#123;</span><br><span class="line">    case up = 1 // 固定在navigation上面</span><br><span class="line">    case buttom = 2 // 固定在navigation下面</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** button两种状态的颜色 可以无视 */</span><br><span class="line">let COLOR_BUTTON_DEFAULT = UIColor.init(red: 124/255.0, green: 129/255.0, blue: 138/255.0, alpha: 1)</span><br><span class="line">let COLOR_BUTTON_SELECT = UIColor.init(red: 0/255.0, green: 127/255.0, blue: 255/255.0, alpha: 1)</span><br></pre></td></tr></table></figure></p>
+<p>####ZEPageViewController</p>
+<blockquote>
+<p>创建scrollView</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">/** 创建底部scrollView,并将tableViewController添加到上面 */</span><br><span class="line">    func layoutBackgroundScrollView()&#123;</span><br><span class="line"></span><br><span class="line">        self.backgroundScrollView = UIScrollView(frame: self.view.frame)</span><br><span class="line">        self.backgroundScrollView?.pagingEnabled = true</span><br><span class="line">        self.backgroundScrollView?.bounces = false</span><br><span class="line">        self.backgroundScrollView?.delegate = self</span><br><span class="line">        let floatArrCount = CGFloat(titlesArr.count)</span><br><span class="line">        self.backgroundScrollView?.contentSize = CGSizeMake(floatArrCount*kZEScreenWidth,self.view.frame.size.height-64)</span><br><span class="line"></span><br><span class="line">        // 给scrollY赋初值避免一上来滑动就乱</span><br><span class="line">        scrollY = -kScrollHorizY // tableView自己持有的偏移量和赋值时给的偏移量符号是相反的</span><br><span class="line">        for  i in 0 ..&lt; titlesArr.count  &#123;</span><br><span class="line">            let floatI = CGFloat(i)</span><br><span class="line"></span><br><span class="line">            let tableViewVC = ZETableViewController(style: UITableViewStyle.Plain)</span><br><span class="line">            // tableView顶部流出HeaderView和MenuView的位置</span><br><span class="line">            tableViewVC.tableView.contentInset = UIEdgeInsetsMake(kScrollHorizY, 0, 0, 0 )</span><br><span class="line">            tableViewVC.delegate = self</span><br><span class="line">            tableViewVC.view.frame = CGRectMake(floatI * kZEScreenWidth,0, self.view.frame.size.width, self.view.frame.size.height-64)</span><br><span class="line">            tableViewVC.tags = titlesArr[i]</span><br><span class="line"></span><br><span class="line">            // 将tableViewVC添加进数组方便管理</span><br><span class="line">            tableViewArr.append(tableViewVC)</span><br><span class="line">            self.addChildViewController(tableViewVC)</span><br><span class="line">        &#125;</span><br><span class="line">        // 需要用到的时候再添加到view上,避免一上来就占用太多资源</span><br><span class="line">        backgroundScrollView?.addSubview(tableViewArr[0].view)</span><br><span class="line">        self.view.addSubview(backgroundScrollView!)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>创建HeaderView MenuView</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/** 创建HeaderView和MenuView */</span><br><span class="line">    func layoutHeaderMenuView()&#123;</span><br><span class="line">        // 通过Xib导入headerView</span><br><span class="line">        headerView = NSBundle.mainBundle().loadNibNamed(&quot;ZEHeaderView&quot;, owner: self, options: nil).first as! ZEHeaderView</span><br><span class="line">        headerView.frame = CGRectMake(0, 64, kZEScreenWidth, kZEHeaderHight)</span><br><span class="line">        self.view .addSubview(headerView)</span><br><span class="line"></span><br><span class="line">        // MenuView</span><br><span class="line">        menuView = ZEMenuView(frame:CGRectMake(0,CGRectGetMaxY(headerView.frame),kZEScreenWidth,kZEMenuHight))</span><br><span class="line">        menuView.delegate = self</span><br><span class="line">        menuView.setUIWithArr(titlesArr)</span><br><span class="line">        self.view .addSubview(self.menuView)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>然后在ViewDidLoad里面调用这两个方法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">override func viewDidLoad() &#123;</span><br><span class="line">    super.viewDidLoad()</span><br><span class="line">    self.automaticallyAdjustsScrollViewInsets = false</span><br><span class="line">    layoutBackgroundScrollView()</span><br><span class="line">    layoutHeaderMenuView()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1298596-e8dfcf5b4300a039.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="现在控件就创建完了"></p>
+<blockquote>
+<p>重点来了,首先在<code>ZETableViewController</code>里面设置代理方法 回调tableView滚动时的偏移量</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">override func scrollViewDidScroll(scrollView: UIScrollView) &#123;</span><br><span class="line">    self.delegate?.tableViewDidScrollPassY(scrollView.contentOffset.y)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>然后在ZEPageControl里进行操作</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">func tableViewDidScrollPassY(tableviewScrollY: CGFloat) &#123;</span><br><span class="line">        // 计算每次改变的值</span><br><span class="line">        let seleoffSetY = tableviewScrollY - scrollY</span><br><span class="line">        // 将scrollY的值同步</span><br><span class="line">        scrollY = tableviewScrollY</span><br><span class="line"></span><br><span class="line">        // 偏移量超出Navigation之上</span><br><span class="line">        if scrollY &gt;= -kZEMenuHight &#123;</span><br><span class="line">            headerMenuViewShowType(.up)</span><br><span class="line">        &#125;else if  scrollY &lt;= -kScrollHorizY &#123;</span><br><span class="line">            // 偏移量超出Navigation之下</span><br><span class="line">            headerMenuViewShowType(.buttom)</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            // 剩下的只有需要跟随的情况了</span><br><span class="line">            // 将headerView的y值按照偏移量更改</span><br><span class="line">            headerView.frame.origin.y -= seleoffSetY</span><br><span class="line">            menuView.frame.origin.y = CGRectGetMaxY(headerView.frame)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /** 因为频繁用到header和menu的固定,所以声明一个方法用于偷懒 */</span><br><span class="line">    func headerMenuViewShowType(showType:headerMenuShowType)&#123;</span><br><span class="line">        switch showType &#123;</span><br><span class="line">        case .up:</span><br><span class="line">            menuView.frame.origin.y = kNavigationHight</span><br><span class="line">            headerView.frame.origin.y = kNavigationHight-kZEHeaderHight</span><br><span class="line">            break</span><br><span class="line">        case .buttom:</span><br><span class="line">            headerView.frame.origin.y = kNavigationHight</span><br><span class="line">            menuView.frame.origin.y = CGRectGetMaxY(headerView.frame)</span><br><span class="line">            break</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这两个方法写完之后上下滑动就可以有效果了<br>//不要看代码少,之前那个版本计算这里超级乱…整理之后发现代码还挺少的…</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1298596-2a5bfcb8f55b88a7.gif?imageMogr2/auto-orient/strip" alt=""></p>
+<blockquote>
+<p>然后是左右滑动时的方法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">func scrollViewDidScroll(scrollView: UIScrollView) &#123;</span><br><span class="line">    // 判断是否有X变动,这里只处理横向滑动</span><br><span class="line">    if scrollX == scrollView.contentOffset.x&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    // 当tableview滑动到很靠上的时候,下一个tableview出现时只用在menuView之下</span><br><span class="line">    if scrollY &gt;= -kZEMenuHight &#123;</span><br><span class="line">        scrollY = -kZEMenuHight</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for tableViewVC in tableViewArr &#123;</span><br><span class="line">        tableViewVC.tableView.contentOffset = CGPointMake(0, scrollY)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 用于改变menuView的状态</span><br><span class="line">    let rate = (scrollView.contentOffset.x/kZEScreenWidth)</span><br><span class="line">    self.menuView.scrollToRate(rate)</span><br><span class="line"></span><br><span class="line">    // +0.7的意思是 当滑动到30%的时候加载下一个tableView</span><br><span class="line">    backgroundScrollView?.addSubview(tableViewArr[Int(rate+0.7)].view)</span><br><span class="line"></span><br><span class="line">    // 记录x</span><br><span class="line">    scrollX = scrollView.contentOffset.x</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>左右滑动还牵扯到MenuView的点击事件,所以把menuView里面选中代理回来</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">func menuViewSelectIndex(index: Int) &#123;</span><br><span class="line">    // 0.3秒的动画为了显得不太突兀</span><br><span class="line">    UIView.animateWithDuration(0.3) &#123;</span><br><span class="line">        self.backgroundScrollView?.contentOffset = CGPointMake(kZEScreenWidth*CGFloat(index),-kNavigationHight)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HeaderView和MenuView的具体代码在dem`里看就好了,因为这些都是根据不同需求自己定制的,如果想改造这个项目为己用的话,只需在具体View里改就好了,如果改变高度请在全局属性里更改</p>
+</blockquote>
+<p>#更新</p>
+<p>#4月12日更新效果:</p>
+<blockquote>
+<p>本次更新主要用alpha控制控制navigation的出现和隐藏,比直接给navigation赋值图片更安全一些,不容易乱.但是目前还有个一些小bug..明天在修复 比如现在的title赋不上值了..等等..<br>昨天更新的navigation直接hidden有毒,偏移量会乱,不建议用哪种方式直接隐藏navigation<br>这次的难点在于Y值改变时几个数字的计算:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 基准线 用于当做计算0-1的..被除数..分母...</span><br><span class="line">let datumLine = -kZEMenuHight-kNavigationHight + kScrollHorizY</span><br><span class="line">// 计算当前的值..除数...分子..</span><br><span class="line">let nowY = scrollY + kZEMenuHight+kNavigationHight</span><br><span class="line">// 一个0-1的值</span><br><span class="line">let nowAlpa = 1+nowY/datumLine</span><br><span class="line">// 以0.5为基础 改变字体和状态栏的颜色</span><br><span class="line">if nowAlpa &gt; 0.5 &#123;</span><br><span class="line">    hiddenNav(false)</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    hiddenNav(true)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">self.navigationController?.navigationBar.alpha = nowAlpa</span><br></pre></td></tr></table></figure>
+<p>#4月11日更新效果:<br><img src="http://upload-images.jianshu.io/upload_images/1298596-e0d2f6bdb88da632.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="navigation消失"><br><img src="http://upload-images.jianshu.io/upload_images/1298596-469d3925ed7abd67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="navigation出现"></p>
+<blockquote>
+<p>更改了navigation之上的效果,主要牵扯到一些基数的计算,弄懂这几个数字就可以随意更改这个项目了.<br>还有隐藏Navigation和恢复Navigation的时候有很多坑,下一次更新讲解<br>之前那版比较像简书主页,这个更像掘金主页</p>
+</blockquote>
+<p>#4月14日更新</p>
+<blockquote>
+<p>现在navigation隐藏的时候会有一个白色的title在顶部,navigation的隐藏和恢复显得更自然了<br>这个版本是一个比较稳定的版本,下次更新可能会会放出OC版…</p>
+</blockquote>
+<p>#效果图<br><img src="http://upload-images.jianshu.io/upload_images/1298596-9a486b32773b67f9.gif?imageMogr2/auto-orient/strip" alt=""></p>
+<p>#源码</p>
+<p>#####github:<a href="https://github.com/Lafree317/ZEPageControl" target="_blank" rel="noopener">https://github.com/Lafree317/ZEPageControl</a><br>喜欢的话请点个star 嘿嘿<br>顺便宣传一下我们公司的项目 掘金<a href="http://gold.xitu.io/" target="_blank" rel="noopener">http://gold.xitu.io/</a><br>在这里能找到网络上最优质的文章,对于正在学习的你们很有帮助噢!</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/05/2015-12-05 - Swift清理缓存/" rel="next" title="Swift清理缓存">
+                <i class="fa fa-chevron-left"></i> Swift清理缓存
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/10/2016-05-10 - UITableView计算cell高度的几种方法/" rel="prev" title="UITableView计算cell高度的几种方法">
+                UITableView计算cell高度的几种方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">轩辕小羽</p>
+              <p class="site-description motion-element" itemprop="description">之前的博客电脑坏了文章全没了..重新整理一下= =</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">轩辕小羽</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

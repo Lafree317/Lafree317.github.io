@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言这里引用应用描述里的一句话: 本项目代码全部开源,只删除了LeanCloud相关的id和key,如果我以后不小心把key和id push上去了各位小伙伴一定要提醒我哈… 这个项目是业余时间瞎敲出来的…很多代码都是自己一边尝试一边敲出来的…所以大家可以挑重点看 我准备把WaterMark 和以后其他的开源项目写成一个系列的博客,每次更新版本都会把遇到的难点和坑点总结出来..喜欢的话大家可以收藏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开源项目-WaterMark">
+<meta property="og:url" content="http://yoursite.com/2016/08/27/2016-08-27 - WaterMark/index.html">
+<meta property="og:site_name" content="装修中">
+<meta property="og:description" content="前言这里引用应用描述里的一句话: 本项目代码全部开源,只删除了LeanCloud相关的id和key,如果我以后不小心把key和id push上去了各位小伙伴一定要提醒我哈… 这个项目是业余时间瞎敲出来的…很多代码都是自己一边尝试一边敲出来的…所以大家可以挑重点看 我准备把WaterMark 和以后其他的开源项目写成一个系列的博客,每次更新版本都会把遇到的难点和坑点总结出来..喜欢的话大家可以收藏">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://dn-mhke0kuv.qbox.me/a6a74bdc5439dd259b8a.png">
+<meta property="og:image" content="https://dn-mhke0kuv.qbox.me/3f3f60517e6cfd4ab0cb.png">
+<meta property="og:image" content="https://dn-mhke0kuv.qbox.me/49b223b6793cc44f5326.png">
+<meta property="og:image" content="https://dn-mhke0kuv.qbox.me/60c433c186ac132e740d.png">
+<meta property="og:image" content="https://dn-mhke0kuv.qbox.me/b79d9b4499cdd2f0682a.gif">
+<meta property="og:updated_time" content="2018-01-21T05:12:41.947Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开源项目-WaterMark">
+<meta name="twitter:description" content="前言这里引用应用描述里的一句话: 本项目代码全部开源,只删除了LeanCloud相关的id和key,如果我以后不小心把key和id push上去了各位小伙伴一定要提醒我哈… 这个项目是业余时间瞎敲出来的…很多代码都是自己一边尝试一边敲出来的…所以大家可以挑重点看 我准备把WaterMark 和以后其他的开源项目写成一个系列的博客,每次更新版本都会把遇到的难点和坑点总结出来..喜欢的话大家可以收藏">
+<meta name="twitter:image" content="https://dn-mhke0kuv.qbox.me/a6a74bdc5439dd259b8a.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/27/2016-08-27 - WaterMark/"/>
+
+
+
+
+
+  <title>开源项目-WaterMark | 装修中</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">装修中</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/27/2016-08-27 - WaterMark/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩辕小羽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="装修中">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">开源项目-WaterMark</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-27T00:00:00+08:00">
+                2016-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://dn-mhke0kuv.qbox.me/a6a74bdc5439dd259b8a.png" alt=""></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这里引用应用描述里的一句话:</p>
+<p>本项目代码全部开源,只删除了LeanCloud相关的id和key,如果我以后不小心把key和id push上去了各位小伙伴一定要提醒我哈…</p>
+<p>这个项目是业余时间瞎敲出来的…很多代码都是自己一边尝试一边敲出来的…所以大家可以挑重点看</p>
+<p>我准备把WaterMark 和以后其他的开源项目写成一个系列的博客,每次更新版本都会把遇到的难点和坑点总结出来..喜欢的话大家可以收藏,关注支持一下</p>
+<p>希望本篇博客能帮助菜鸟了解iOS项目开发中的常识</p>
+<p>欢迎大家一起讨论正确的开发姿势</p>
+<p>跪求大神带我飞!</p>
+<p>(在下英文渣,请各位老爷观看时利用脑内runtime 把不对的单词替换成对的单词…哈哈哈,我会好好背单词的!)</p>
+<p>项目地址:<a href="https://github.com/Lafree317/WaterLabel" target="_blank" rel="noopener">https://github.com/Lafree317/WaterLabel</a></p>
+<p>AppStroe:<a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1148289486&amp;mt=8" target="_blank" rel="noopener">https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1148289486&amp;mt=8</a></p>
+<h1 id="回归正题"><a href="#回归正题" class="headerlink" title="回归正题"></a>回归正题</h1><blockquote>
+<p>目前功能:</p>
+<ul>
+<li>原尺寸/缩略图 添加水印</li>
+<li>水印缓存</li>
+<li>水印编辑</li>
+</ul>
+</blockquote>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><h3 id="项目文件结构"><a href="#项目文件结构" class="headerlink" title="项目文件结构"></a>项目文件结构</h3><p><img src="https://dn-mhke0kuv.qbox.me/3f3f60517e6cfd4ab0cb.png" alt=""></p>
+<h3 id="项目中现在集成的第三方开源库有"><a href="#项目中现在集成的第三方开源库有" class="headerlink" title="项目中现在集成的第三方开源库有:"></a>项目中现在集成的第三方开源库有:</h3><ul>
+<li>Pod<ul>
+<li>LeanCloud Swift-alpha版(坑): 用于反馈数据的云存储</li>
+<li>MBProgressHUD 1.0 :提示控件 每个项目必备</li>
+<li>RxSwift和RxCocoa: 现在代码中还没有用到,到时候写登陆的时候准备这个写响应式</li>
+<li>SnapKit: Swift版的Messary 炒鸡好用</li>
+</ul>
+</li>
+<li>Vendors<ul>
+<li>ShowString 我司小哥改装的一个提示框,优点在于提示的时候还可以对页面进行UI交互</li>
+<li>TZImagePickerController 一个1000+star图片选择库,这个开发者很热心发issues很快就会回复你并解决问题</li>
+<li>IGLDropDownMenu 一个下拉抽屉式动画,使用起来非常方便</li>
+<li>ZEViewKit 我自己封装的一些小控件,准备再赞一些一起上传到Pod中</li>
+<li>Scenes里有一个ZEVC是准备以后所有开源项目中公用的反馈和登陆界面</li>
+</ul>
+</li>
+</ul>
+<h3 id="项目架构采用最基本的MVC"><a href="#项目架构采用最基本的MVC" class="headerlink" title="项目架构采用最基本的MVC"></a>项目架构采用最基本的MVC</h3><p>因为不是公司项目喜欢自己瞎搞一些东西所以一些被我改畸形了<br>这里详细说一下:</p>
+<p>我发现Swfit的Extension太过强大于是将Model层和View层都用extension来代替了,如feedBackController的代码就被我改成:</p>
+<ul>
+<li><p>Controller</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ZEFeedBackContoller</span>: <span class="title">UIViewController</span>,<span class="title">UITextFieldDelegate</span>,<span class="title">UIScrollViewDelegate</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 各种属性</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        setUI()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Model</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ZEFeedBackContoller</span> </span>&#123;</span><br><span class="line">    <span class="comment">// model方法</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sendFeedBack</span><span class="params">()</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>View</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ZEFeedBackContoller</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 添加UI</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setUI</span><span class="params">()</span></span>&#123;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>首先强调一点…这是我自己胡乱尝试敲出来的…没有看过类似代码..所以不推荐在正常项目中使用,只是讲一下自己的思路希望能帮助到你</p>
+<p>这样做的好处我觉得有几点</p>
+<ul>
+<li>代码都为C的代码,不存在跨类调用方法和取值(高内聚?)</li>
+<li>上下两个控制器传值调用的时候也更方便一些(低耦合?)</li>
+<li>C代码很少,只把主要的方法C中,如果想扩展相应功能或修改bug可以直接找到位置去进行操作</li>
+</ul>
+<p>我觉得不好的地方</p>
+<ul>
+<li>代码较为混乱,不适合多人开发?</li>
+<li>具体功能重用性差,不利于其他项目使用</li>
+</ul>
+<p>我一直自己摸索学习Swift,还没有找到它正确的开发姿势,希望大家能教我正确的开发姿势</p>
+<h3 id="项目中还有一小部分面向协议"><a href="#项目中还有一小部分面向协议" class="headerlink" title="项目中还有一小部分面向协议"></a>项目中还有一小部分面向协议</h3><p>如给UIView添加一个滑动手势,这里应该如果优化一下应该 extenion到具体类 而不是直接给UIView添加..<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">ViewGestureRecognizer</span></span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIView</span>:<span class="title">ViewGestureRecognizer</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">addPan</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">self</span>.userInteractionEnabled = <span class="literal">true</span></span><br><span class="line">        <span class="keyword">let</span> pan = <span class="type">UIPanGestureRecognizer</span>(target: <span class="keyword">self</span>, action: #selector(pan(<span class="number">_</span>:)))</span><br><span class="line">        <span class="keyword">self</span>.addGestureRecognizer(pan)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">pan</span><span class="params">(pan:UIPanGestureRecognizer)</span></span>&#123;</span><br><span class="line">        <span class="keyword">let</span> point = pan.translationInView(<span class="keyword">self</span>)</span><br><span class="line">        <span class="keyword">self</span>.transform = <span class="type">CGAffineTransformTranslate</span>(<span class="keyword">self</span>.transform, point.x, point.y)</span><br><span class="line">        pan.setTranslation(.zero, inView: <span class="keyword">self</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="一些细节"><a href="#一些细节" class="headerlink" title="一些细节"></a>一些细节</h2><p>水印的绘制是由EditModel这个类实现的</p>
+<p>原理就是利用UIGraphics 的 UIImage context 先按照图片尺寸绘制出背景图片,然后把label一个一个的绘制到图片上 最后导出一张绘制好的图片保存到相册中<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 添加水印</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">save</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> image = imageView.image <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">weak</span> <span class="keyword">var</span> weakSelf = <span class="keyword">self</span></span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> wself = weakSelf <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">ZEHud</span>.sharedInstance.showHud()</span><br><span class="line">    dispatch_async(dispatch_queue_create(<span class="string">"addLabel"</span>,<span class="literal">nil</span>)) &#123;</span><br><span class="line">        <span class="type">UIGraphicsBeginImageContext</span>(image.size)<span class="comment">// 开始绘制</span></span><br><span class="line">        image.drawInRect(<span class="type">CGRect</span>(origin: <span class="type">CGPoint</span>.zero, size: image.size))</span><br><span class="line">        <span class="keyword">for</span> label <span class="keyword">in</span> wself.labelArr &#123; <span class="comment">// 添加多个水印</span></span><br><span class="line">            <span class="keyword">let</span> rect = wself.imageView.convertRect(label.frame, fromView: <span class="literal">nil</span>)</span><br><span class="line">            <span class="keyword">let</span> reScale = <span class="number">1</span>/wself.imageView.scale</span><br><span class="line">            <span class="keyword">let</span> labelRect = <span class="type">CGRectMake</span>((rect.origin.x)*reScale, (rect.origin.y*reScale), rect.size.width*reScale, rect.height*reScale)</span><br><span class="line">            label.model.text.drawInRect(labelRect, withAttributes:label.model.getAttributes(<span class="number">1</span>/wself.imageView.scale))</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> imageA = <span class="type">UIGraphicsGetImageFromCurrentImageContext</span>()<span class="comment">// 获取图片</span></span><br><span class="line">        <span class="type">UIGraphicsEndImageContext</span>()<span class="comment">// 结束绘制</span></span><br><span class="line">        <span class="type">UIImageWriteToSavedPhotosAlbum</span>(imageA, <span class="keyword">self</span>, <span class="literal">nil</span>, <span class="literal">nil</span>)<span class="comment">// 保存</span></span><br><span class="line">        dispatch_async(dispatch_get_main_queue(), &#123;</span><br><span class="line">            <span class="type">ZEHud</span>.sharedInstance.hideHud()</span><br><span class="line">            <span class="type">ShowString</span>.sharedManager().showStringView(<span class="string">"保存成功"</span>)</span><br><span class="line">            wself.imageView.image = imageA</span><br><span class="line">            wself.assets.removeAtIndex(wself.index)</span><br><span class="line">            wself.changeImage(wself.index)</span><br><span class="line">            <span class="keyword">if</span> weakSelf!.assets.<span class="built_in">count</span> == <span class="number">0</span> &#123;</span><br><span class="line">                weakSelf?.performSelector(#selector(weakSelf?.nodataPop), withObject: <span class="literal">nil</span>, afterDelay: <span class="number">0.75</span>)</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>项目中水印是由WaterMark这个类来实现的,因为偷懒所以直接继承自UILabel(获取尺寸的时候回方便一些),然后在Label下面添加了一个TextField,来进行文字编辑.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过传入的bool进行label的文字变换</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">changeEidtType</span><span class="params">(type:Bool)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> type == <span class="literal">true</span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.textField.font = <span class="keyword">self</span>.font</span><br><span class="line">        <span class="keyword">self</span>.textField.text = <span class="keyword">self</span>.text</span><br><span class="line">        <span class="keyword">self</span>.textField.becomeFirstResponder()</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        textField.endEditing(<span class="literal">true</span>)</span><br><span class="line">        <span class="keyword">let</span> dic = model.getAttributes(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">let</span> att = <span class="type">NSAttributedString</span>(string: <span class="keyword">self</span>.textField.text!, attributes: dic)</span><br><span class="line">        <span class="keyword">self</span>.attributedText = att</span><br><span class="line">    &#125;</span><br><span class="line">    textField.hidden = !type</span><br><span class="line">    viewChange()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>每次编辑水印的步骤我设计成 长按Label -&gt; 弹出EditView -&gt; 每一次操作都做相应的处理(缓存,改变Label的状态)</p>
+</blockquote>
+<p>label的样式是由NSMutableAttributedString这个类来实现的,这个类可以直接用在绘制里</p>
+<h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h2><h3 id="Label和ImageView的比例计算"><a href="#Label和ImageView的比例计算" class="headerlink" title="Label和ImageView的比例计算"></a>Label和ImageView的比例计算</h3><p>我给ImageView的class声明了一个scale属性,调用这个属性就会计算出比例的变量</p>
+<p>绘制Label的时候就按照1/scale的比例逆推回原大小进行绘制</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EditImageView</span>: <span class="title">UIImageView</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scale:<span class="type">CGFloat</span> &#123;</span><br><span class="line">        <span class="keyword">get</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> frame.width / image!.size.width</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">init</span>(frame: <span class="type">CGRect</span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(frame: frame)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setNewImage</span><span class="params">(newImage:UIImage)</span></span>&#123;</span><br><span class="line">        image = newImage</span><br><span class="line">        <span class="keyword">self</span>.frame.size.width = screenWidth</span><br><span class="line">        frame = <span class="type">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, screenWidth, newImage.size.height * scale)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">required</span> <span class="keyword">init</span>?(coder aDecoder: <span class="type">NSCoder</span>) &#123;</span><br><span class="line">        <span class="built_in">fatalError</span>(<span class="string">"init(coder:) has not been implemented"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="水印的本地缓存"><a href="#水印的本地缓存" class="headerlink" title="水印的本地缓存"></a>水印的本地缓存</h3><p>缓存格式:</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/49b223b6793cc44f5326.png" alt=""></p>
+<p>颜色缓存是一个坑…如果用系统自带的颜色直接缓存的话会有问题,因为width black gary 和其他颜色的属性是不一样的,这三类颜色只有黑色和透明度而其他颜色都是RGB 不能进行统一处理</p>
+<p>于是我就自己归档了一个颜色数组(查系统的色值还挺麻烦的..)</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> titleColorArr:<span class="type">Array</span>&lt;[<span class="type">String</span>:[<span class="type">String</span>:<span class="type">CGFloat</span>]]&gt; = [</span><br><span class="line">    [<span class="string">"黑色"</span>:[<span class="string">"red"</span>:<span class="number">0</span>,<span class="string">"green"</span>:<span class="number">0</span>,<span class="string">"blue"</span>:<span class="number">0</span>,<span class="string">"alpha"</span>:<span class="number">1</span>]],</span><br><span class="line">    [<span class="string">"灰色"</span>:[<span class="string">"red"</span>:<span class="number">102</span>,<span class="string">"green"</span>:<span class="number">102</span>,<span class="string">"blue"</span>:<span class="number">102</span>,<span class="string">"alpha"</span>:<span class="number">1</span>]],</span><br><span class="line">    [<span class="string">"白色"</span>:[<span class="string">"red"</span>:<span class="number">255</span>,<span class="string">"green"</span>:<span class="number">255</span>,<span class="string">"blue"</span>:<span class="number">255</span>,<span class="string">"alpha"</span>:<span class="number">1</span>]],</span><br><span class="line">    [<span class="string">"透明"</span>:[<span class="string">"red"</span>:<span class="number">255</span>,<span class="string">"green"</span>:<span class="number">255</span>,<span class="string">"blue"</span>:<span class="number">255</span>,<span class="string">"alpha"</span>:<span class="number">0</span>]],</span><br><span class="line">    ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>然后声明了两个方法,一个是字典转颜色,一个是颜色转字典</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorFile</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">colorToDic</span><span class="params">(color:UIColor)</span></span> -&gt; [<span class="type">String</span>:<span class="type">CGFloat</span>] &#123;</span><br><span class="line">        <span class="keyword">let</span> components = <span class="type">CGColorGetComponents</span>(color.<span class="type">CGColor</span>)</span><br><span class="line">        <span class="keyword">let</span> r = components[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">let</span> g = components[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">let</span> b = components[<span class="number">2</span>]</span><br><span class="line">        <span class="keyword">let</span> a = components[<span class="number">3</span>]</span><br><span class="line">        <span class="keyword">return</span> [<span class="string">"red"</span>:r,<span class="string">"green"</span>:g,<span class="string">"blue"</span>:b,<span class="string">"alpha"</span>:a]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">dicToColor</span><span class="params">(dic:[String:CGFloat])</span></span> -&gt; <span class="type">UIColor</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> r = dic[<span class="string">"red"</span>]!</span><br><span class="line">        <span class="keyword">let</span> g = dic[<span class="string">"green"</span>]!</span><br><span class="line">        <span class="keyword">let</span> b = dic[<span class="string">"blue"</span>]!</span><br><span class="line">        <span class="keyword">let</span> a = dic[<span class="string">"alpha"</span>]!</span><br><span class="line">        <span class="keyword">return</span> <span class="type">UIColor</span>(red: r, green: g, blue: b, alpha:a)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写入缓存的时机是LabelModel每一个属性改变的时候<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> italic:<span class="type">Bool</span> = <span class="literal">false</span>&#123;</span><br><span class="line">    <span class="keyword">willSet</span>&#123;</span><br><span class="line">        <span class="keyword">self</span>.italic = newValue</span><br><span class="line">        setUD(<span class="keyword">self</span>.italic, key:italicUDK)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> underLine:<span class="type">Bool</span> = <span class="literal">false</span>&#123;</span><br><span class="line">    <span class="keyword">willSet</span>&#123;</span><br><span class="line">        <span class="keyword">self</span>.underLine = newValue</span><br><span class="line">        setUD(<span class="keyword">self</span>.underLine, key:underLineUDK)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">setUD</span><span class="params">(value:AnyObject?,key:String)</span></span>&#123;</span><br><span class="line">    <span class="type">NSUserDefaults</span>.standardUserDefaults().setObject(value, forKey: key)</span><br><span class="line">    <span class="type">NSUserDefaults</span>.standardUserDefaults().synchronize()<span class="comment">// 同步数据</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getUD</span><span class="params">(key:String)</span></span> -&gt; <span class="type">AnyObject</span>? &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">NSUserDefaults</span>.standardUserDefaults().objectForKey(key)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>labelModel初始化的时候就会取缓存,如果没取到就会给一个默认值<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">init</span>()&#123;</span><br><span class="line">        <span class="keyword">if</span>  <span class="keyword">let</span> text =  getUD(textUDK) <span class="keyword">as</span>? <span class="type">String</span> &#123;</span><br><span class="line">            <span class="keyword">self</span>.text = text</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            text = <span class="string">"这是第一个水印"</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="当ImageView被拖拽放大时-相对-Label的笔记变化"><a href="#当ImageView被拖拽放大时-相对-Label的笔记变化" class="headerlink" title="当ImageView被拖拽放大时 相对 Label的笔记变化"></a>当ImageView被拖拽放大时 相对 Label的笔记变化</h3><p>这个还未解决,在上线前已经禁止掉了ImageView的手势</p>
+<p>每次imageView大小变化的时候用Label按照scale逆推回去就会发现比例不对,不能按照原比例绘制,求大神帮忙..</p>
+<h2 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h2><p>欢迎来到吐槽时间…</p>
+<p>LeanCloud-Swift-SDK就是一个坑啊…代码难懂不说居然只支持iOS9.1以上版本…相信这一条就让99%的项目不准备引用了吧…</p>
+<p>然后他们居然还在info.plist里面的short boundle version里面写英文!握草我头一次遇见打包时候这个Error类型,为此我还特意记了一条笔记….</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/60c433c186ac132e740d.png" alt=""></p>
+<h2 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h2><p>推荐一个AppIcon快速生成插件,可以用Package Manager直接下载或者直接去git-&gt;<a href="https://github.com/kaphacius/IconMaker" target="_blank" rel="noopener">https://github.com/kaphacius/IconMaker</a></p>
+<p>使用方法:打开Assets-&gt;右键选中AppIcon-&gt;选中Make An App Icon -&gt; 选择图片 -&gt; 成功!</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/b79d9b4499cdd2f0682a.gif" alt=""></p>
+<p>现在审核时各个型号的手机可以共用一套简介图片了(可能不是最近才改的,一直是另外一个小哥负责打包的 @辛勤的另外一个小哥)</p>
+<h1 id="结尾语"><a href="#结尾语" class="headerlink" title="结尾语"></a>结尾语</h1><p>现在项目刚刚提交了审核,审核通过了再把appstore链接贴上…</p>
+<p>我都是想起哪里说哪里…可能有些难懂,如果有不懂的地方可以在评论里和我说我会及时修改文章的</p>
+<p>睡觉明早起来再改错别字…</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/26/2016-08-26 - JsPathHotFix/" rel="next" title="iOS 5分钟集成热修复(JSPatch)">
+                <i class="fa fa-chevron-left"></i> iOS 5分钟集成热修复(JSPatch)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/28/2016-06-28 - iOSIPv6/" rel="prev" title="iOS 5分钟集成热修复(JSPatch)">
+                iOS 5分钟集成热修复(JSPatch) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">轩辕小羽</p>
+              <p class="site-description motion-element" itemprop="description">之前的博客电脑坏了文章全没了..重新整理一下= =</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回归正题"><span class="nav-number">2.</span> <span class="nav-text">回归正题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构"><span class="nav-number">2.1.</span> <span class="nav-text">架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目文件结构"><span class="nav-number">2.1.1.</span> <span class="nav-text">项目文件结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目中现在集成的第三方开源库有"><span class="nav-number">2.1.2.</span> <span class="nav-text">项目中现在集成的第三方开源库有:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目架构采用最基本的MVC"><span class="nav-number">2.1.3.</span> <span class="nav-text">项目架构采用最基本的MVC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目中还有一小部分面向协议"><span class="nav-number">2.1.4.</span> <span class="nav-text">项目中还有一小部分面向协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些细节"><span class="nav-number">2.2.</span> <span class="nav-text">一些细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#难点"><span class="nav-number">2.3.</span> <span class="nav-text">难点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Label和ImageView的比例计算"><span class="nav-number">2.3.1.</span> <span class="nav-text">Label和ImageView的比例计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水印的本地缓存"><span class="nav-number">2.3.2.</span> <span class="nav-text">水印的本地缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当ImageView被拖拽放大时-相对-Label的笔记变化"><span class="nav-number">2.3.3.</span> <span class="nav-text">当ImageView被拖拽放大时 相对 Label的笔记变化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坑"><span class="nav-number">2.4.</span> <span class="nav-text">坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐"><span class="nav-number">2.5.</span> <span class="nav-text">推荐</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结尾语"><span class="nav-number">3.</span> <span class="nav-text">结尾语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">轩辕小羽</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

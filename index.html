@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/20/hello-world2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/20/2018-01-20 - Unity中使用sLua的 超丶简单基础教程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
@@ -251,7 +251,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/20/hello-world2/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2018/01/20/2018-01-20 - Unity中使用sLua的 超丶简单基础教程/" itemprop="url">Unity中使用sLua的 超丶简单基础教程</a></h1>
         
 
         <div class="post-meta">
@@ -263,7 +263,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T23:02:39+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T00:00:00+08:00">
                 2018-01-20
               </time>
             
@@ -303,15 +303,29 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <p><img src="https://user-gold-cdn.xitu.io/2018/1/21/161171674273d40e" alt=""></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>网上Unity使用lua的文章本来就少..slua又是个偏小众的lua库..文章更少..</p>
+<p>已有的文章又有点坑…比如方法名关键字写错啦..真的是坑多= =</p>
+<p>所以总结一片超简单教学= =</p>
+<p>这篇文章面向刚开始学习lua 想在unity项目中使用sLua库的同学..</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="导入sLua"><a href="#导入sLua" class="headerlink" title="导入sLua"></a>导入sLua</h4><ul>
+<li>1.直接下载最新版:<a href="https://github.com/pangweiwei/slua/releases/" target="_blank" rel="noopener">sLua库下载地址</a></li>
+<li>2.然后将解压后的Assets文件复制到你项目的Assets目录下,不要放到其他地方.</li>
+<li>3.等待Unity编译完成,会出现SLua菜单如下图.然后选择Slua-All-Make命令 手动生成针对当前版本的Unity接口文件</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/20/161138abbd015ee9?w=355&amp;h=136&amp;f=png&amp;s=14264" alt="图1-1"></p>
+<p>做到这步你已经可以在Assets/Slua/example中查看sLua的官方例子了.每一个Scenes都展示了一种使用方法.</p>
+<h4 id="自己使用Lua脚本"><a href="#自己使用Lua脚本" class="headerlink" title="自己使用Lua脚本"></a>自己使用Lua脚本</h4><p>创建一个新的Scene然后创建一个CreateEmpty创建一个C#文件挂载上去.然后在C#文件中写如下代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using SLua;</span><br><span class="line"></span><br><span class="line">public class Test : MonoBehaviour&#123;</span><br><span class="line"></span><br><span class="line">    private static LuaState ls_state;</span><br><span class="line"></span><br><span class="line">    void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        ls_state = new LuaState();</span><br><span class="line">        ls_state.doString(&quot;print(\&quot;Hello Lua!\&quot;)&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>成功后的样子是这样:</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/20/161139671a4de279?w=425&amp;h=944&amp;f=png&amp;s=58039" alt=""></p>
+<p>注意有些教程中LuaState在声明成属性时就初始化了,但是会报错,一定要在Awake方法或Start或需要用到的时候再进行初始化…</p>
+<h4 id="读取lua文件"><a href="#读取lua文件" class="headerlink" title="读取lua文件"></a>读取lua文件</h4><p>C#代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line">using SLua;</span><br><span class="line">using System.IO;</span><br><span class="line"></span><br><span class="line">public class OpenLuaFile : MonoBehaviour&#123;</span><br><span class="line"></span><br><span class="line">    public LuaState state;// sLua脚本代理</span><br><span class="line"></span><br><span class="line">    void Start()</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        state = new LuaState();</span><br><span class="line"></span><br><span class="line">        state.loaderDelegate = ((string fn) =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            string file_Path = Directory.GetCurrentDirectory() + &quot;/Assets/Script/Lua/&quot; + fn;</span><br><span class="line">            Debug.Log(file_Path);</span><br><span class="line">            return File.ReadAllBytes(file_Path);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        //执行脚本</span><br><span class="line">        state.doFile(&quot;HelloLua.lua&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在上面设定的路径中创建lua文件</p>
+<p>代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;你好 我是文件里的Lua!&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>“/Assets/Script/Lua/“为放置ua文件的目录,这个根据自己需求随意改变.</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/20/16113ac0db3b6dd5?w=605&amp;h=476&amp;f=png&amp;s=56768" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/20/16113ac510abdc81?w=541&amp;h=1072&amp;f=png&amp;s=97504" alt=""></p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>本篇教程很基础,如果有精力会将之后学习到的知识都整理成博客分享给大家~</p>
 
           
         
@@ -360,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/20/hello-world3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/18/2018-01-18 - Unity&C#有限状态机/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
@@ -379,7 +393,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/20/hello-world3/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2018/01/18/2018-01-18 - Unity&C#有限状态机/" itemprop="url">Unity&C#有限状态机</a></h1>
         
 
         <div class="post-meta">
@@ -391,8 +405,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T23:02:38+08:00">
-                2018-01-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T00:00:00+08:00">
+                2018-01-18
               </time>
             
 
@@ -431,15 +445,21 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <p><img src="https://user-gold-cdn.xitu.io/2018/1/21/1611714302fc7ba8" alt=""></p>
+<p>游戏中角色控制有很多状态,如果靠传统的全局属性然后通过swich和if来判断的话,扩展性差,重复代码多.</p>
+<p>通过编写一个状态管理库来解决状态变化的优点有</p>
+<ul>
+<li>代码整洁</li>
+<li>可复用</li>
+<li>易管理</li>
+</ul>
+<h3 id="什么是有限状态机"><a href="#什么是有限状态机" class="headerlink" title="什么是有限状态机?"></a>什么是有限状态机?</h3><p>有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。[1]<br><img src="https://user-gold-cdn.xitu.io/2018/1/18/16108511a0de733a?w=1024&amp;h=814&amp;f=png&amp;s=152490" alt=""><br>如图所示: 主角从跑状态切换到跳状态,从跳状态切换到二段跳状态,这里的切换就是指状态的转移。状态的转移是有条件的,比如主角从跑状态不可以直接切换到二段跳状态。但是可以从二段跳状态切换到跑状态。</p>
+<p>另外,一个基本的状态有:进入状态、退出状态、接收输入、转移状态等动作。但是仅仅作为跑酷的角色的状态管理来说,只需要转移状态就足够了。有兴趣的同学可以自行扩展。</p>
+<h3 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h3><p>代码注释很多,所以直接看代码配合注释理解的更快</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> *</span><br><span class="line"> *      Title:</span><br><span class="line"> *          状态机/状态管理库</span><br><span class="line"> *         </span><br><span class="line"> *      Description:</span><br><span class="line"> *          多种状态切换,比传统的 全局参数+if/switch来切换状态 更整洁和易扩展</span><br><span class="line"> *          1.简易状态控制:通过添加状态名称,回调方法. 调用改变状态方法来回调函数和参数.</span><br><span class="line"> *          2.状态机控制,通过添加几种转换的模式,再通过转换行为来找到转换后的状态并执行方法.</span><br><span class="line"> *      Date:</span><br><span class="line"> *          2018年1月18日 12:48:13</span><br><span class="line"> *        </span><br><span class="line"> *      Modify Recoder:</span><br><span class="line"> *          1.0</span><br><span class="line"> *        </span><br><span class="line"> */</span><br><span class="line">namespace XYFramework</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    using System.Collections.Generic;</span><br><span class="line"></span><br><span class="line">    public class XYState</span><br><span class="line">    &#123;</span><br><span class="line">        #region 参数</span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 回调函数</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;param&quot;&gt;&lt;/param&gt;</span><br><span class="line">        public delegate void XYCallbackFunc(params object[] param);</span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 状态名称</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        public string State &#123; get; private set; &#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 存储状态回调参数的字典</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        private readonly Dictionary&lt;string, XYSimpleStateModel&gt; _simpleStateDict = new Dictionary&lt;string, XYSimpleStateModel&gt;();</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 存储状态机转换StateModel用字典</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        private readonly Dictionary&lt;string, XYTranslationStateModel&gt; _translateStateDict = new Dictionary&lt;string, XYTranslationStateModel&gt;();</span><br><span class="line"></span><br><span class="line">        #endregion</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        #region Model</span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 记录状态名称,和转换XYTranslation对象</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        class XYTranslationStateModel</span><br><span class="line">        &#123;</span><br><span class="line">            private string _name;</span><br><span class="line"></span><br><span class="line">            public XYTranslationStateModel(string name)</span><br><span class="line">            &#123;</span><br><span class="line">                _name = name;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            /// &lt;summary&gt;</span><br><span class="line">            /// 记录状态名和转换状态对象的字典</span><br><span class="line">            /// &lt;/summary&gt;</span><br><span class="line">            public readonly Dictionary&lt;string, XYTranslateModel&gt; TranslationDict = new Dictionary&lt;string, XYTranslateModel&gt;();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 简易回调数据模型</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        public class XYSimpleStateModel</span><br><span class="line">        &#123;</span><br><span class="line">            public string State;</span><br><span class="line">            public XYCallbackFunc CallbackFunc;</span><br><span class="line">            public XYSimpleStateModel(string state, XYCallbackFunc callBackFunc)</span><br><span class="line">            &#123;</span><br><span class="line">                State = state;</span><br><span class="line">                CallbackFunc = callBackFunc;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 状态转换数据模型</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        public class XYTranslateModel</span><br><span class="line">        &#123;</span><br><span class="line">            public string FromState;</span><br><span class="line">            public string Name;</span><br><span class="line">            public string ToState;</span><br><span class="line">            public XYCallbackFunc OnTranslationCallback;// 回调函数</span><br><span class="line"></span><br><span class="line">            public XYTranslateModel(string fromState,string name,string toState,XYCallbackFunc onTranslationCallback)</span><br><span class="line">            &#123;</span><br><span class="line">                FromState = fromState;</span><br><span class="line">                Name = name;</span><br><span class="line">                ToState = toState;</span><br><span class="line">                OnTranslationCallback = onTranslationCallback;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        #endregion</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        #region 状态控制方法</span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 添加一个新状态</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;name&quot;&gt;状态名称&lt;/param&gt;</span><br><span class="line">        public void AddState(string name)</span><br><span class="line">        &#123;</span><br><span class="line">            _translateStateDict[name] = new XYTranslationStateModel(name);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 设定最开始的状态</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;name&quot;&gt;&lt;/param&gt;</span><br><span class="line">        public void StartState(string name)</span><br><span class="line">        &#123;</span><br><span class="line">            State = name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 添加一种状态,和回调方法</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;state&quot;&gt;状态名称&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;callbackFunc&quot;&gt;回调方法&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;param&quot;&gt;回调参数&lt;/param&gt;</span><br><span class="line">        public void AddSimpleState(string state, XYCallbackFunc callbackFunc)</span><br><span class="line">        &#123;</span><br><span class="line">            _simpleStateDict[state] = new XYSimpleStateModel(state, callbackFunc);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 添加一种转换状态监听</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;fromState&quot;&gt;原来是那种状态&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;name&quot;&gt;转换行为名称&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;toState&quot;&gt;转换为那种状态&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;callbackFunc&quot;&gt;回调方法&lt;/param&gt;</span><br><span class="line">        public void AddTranslateState(string fromState,string name,string toState, XYCallbackFunc callbackFunc)</span><br><span class="line">        &#123;</span><br><span class="line">            _translateStateDict[fromState].TranslationDict[name] = new XYTranslateModel(fromState, name, toState, callbackFunc);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 改变状态</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;state&quot;&gt;状态名&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;param&quot;&gt;参数&lt;/param&gt;</span><br><span class="line">        public void ChangeState(string state,params object[] param)</span><br><span class="line">        &#123;</span><br><span class="line">            if (_simpleStateDict.ContainsKey(state) == false)</span><br><span class="line">            &#123;</span><br><span class="line">                XYLog.LogError(&quot;未找到这个状态&quot;);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            XYSimpleStateModel simple = _simpleStateDict[state];</span><br><span class="line">            simple.CallbackFunc(param);</span><br><span class="line">            State = state;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 通过传入事件名,自动转换状态</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;name&quot;&gt;转换事件名称&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;param&quot;&gt;参数&lt;/param&gt;</span><br><span class="line">        public void TranslateState(string name,params object[] param)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            if (State != null)</span><br><span class="line">            &#123;</span><br><span class="line">                XYLog.LogError(&quot;未赋值初始状态&quot;);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            if (_translateStateDict[State].TranslationDict.ContainsKey(name))</span><br><span class="line">            &#123;</span><br><span class="line">                XYLog.LogError(&quot;未找到这个转换状态&quot;);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            XYTranslateModel tempTranslation = _translateStateDict[State].TranslationDict[name];</span><br><span class="line">            tempTranslation.OnTranslationCallback(param);</span><br><span class="line">            State = tempTranslation.ToState;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        #endregion</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 清理这个实例的存储</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        public void Clear()</span><br><span class="line">        &#123;</span><br><span class="line">            _translateStateDict.Clear();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;//class_end</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><img src="https://user-gold-cdn.xitu.io/2018/1/18/161085a9c92e1439?w=1419&amp;h=681&amp;f=png&amp;s=417269" alt=""></p>
+<p>中间还搭配使用了一个Log库,感兴趣的可以一起看一下</p>
+<p>仓库地址:<a href="https://github.com/Lafree317/XYFrameWork" target="_blank" rel="noopener">https://github.com/Lafree317/XYFrameWork</a></p>
 
           
         
@@ -488,7 +508,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/20/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/30/2016-12-30 - CocoaPods爬坑指南/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
@@ -507,7 +527,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/20/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2016/12/30/2016-12-30 - CocoaPods爬坑指南/" itemprop="url">CocoaPods爬坑指南</a></h1>
         
 
         <div class="post-meta">
@@ -519,8 +539,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T21:20:26+08:00">
-                2018-01-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-30T00:00:00+08:00">
+                2016-12-30
               </time>
             
 
@@ -559,15 +579,1233 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <p>！<a href="https://dn-mhke0kuv.qbox.me/aa885aad29712f1ab44e.jpg" target="_blank" rel="noopener"></a></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在CocosPods浪费时间总计超过50小时…看了一眼笔记,感觉可以总结出一篇博客了…..</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>从ruby开始安装一直到pod ,适合新电脑第一次安装,下面指令直接复制在命令行里执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//安装rubu</span><br><span class="line">rvm install 2.3.0</span><br><span class="line">rvm use 2.3.0 --default</span><br><span class="line">gem install bundler</span><br><span class="line">// 上面不用重复安装,下面的根据遇到的问题可能需要重新安装</span><br><span class="line">// 安装pod</span><br><span class="line">sudo gem install cocoapods</span><br><span class="line">// cocoaPods换源</span><br><span class="line">gem sources --remove http://ruby.taobao.org/</span><br><span class="line">gem sources -a https://ruby.taobao.org/</span><br><span class="line">// 查看源 出现ruby.taobao.org就对了</span><br><span class="line">gem sources -l</span><br><span class="line">// 更新pod</span><br><span class="line">pod setup</span><br></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 搜索库</span><br><span class="line">pod search 库的关键字</span><br><span class="line">// 为项目导入依赖</span><br><span class="line">pod install</span><br><span class="line">// 已经导入过一次相关的第三方,想快速导入,不再从网上下载</span><br><span class="line">pod install --verbose --no-repo-update</span><br><span class="line">// 为项目更新依赖</span><br><span class="line">pod update</span><br></pre></td></tr></table></figure>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>有时候pod抽风了..需要删除项目中的pod重新导入,或者删除pod重新安装pod</p>
+<h4 id="删除项目pod依赖"><a href="#删除项目pod依赖" class="headerlink" title="删除项目pod依赖"></a>删除项目pod依赖</h4><ul>
+<li>删除项目中根目录下带pod的文件<br><img src="https://dn-mhke0kuv.qbox.me/284abc7c250fcc1d75b5.png" alt=""></li>
+</ul>
+<ul>
+<li>删除所有target下 Build Phases 下带pod的条目<br><img src="https://dn-mhke0kuv.qbox.me/7f8a5970d4f71d8727fd.png" alt=""></li>
+</ul>
+<ul>
+<li>删除文件目录下的workspace和Pods文件夹<br><img src="https://dn-mhke0kuv.qbox.me/4f97d6c601024d0f8158.png" alt=""></li>
+</ul>
+<p>如果删除成功再次编译应该会报错找不到头文件的错误,不会报找不到pod那种恶心的错误了</p>
+<h4 id="删除pod"><a href="#删除pod" class="headerlink" title="删除pod"></a>删除pod</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 普通删除</span><br><span class="line">sudo gem uninstall cocoapods</span><br><span class="line"></span><br><span class="line">// 如果这么删重装还不好用</span><br><span class="line">// 比如install 后没有workspace 或者提示 Generating Pods project Abort trap: 6</span><br><span class="line">// 试试下面的删除</span><br><span class="line">sudo gem uninstall cocoapods</span><br><span class="line">sudo gem uninstall cocoapods-core</span><br><span class="line">sudo gem uninstall cocoapods-deintegrate</span><br><span class="line">sudo gem uninstall cocoapods-downloader</span><br><span class="line">sudo gem uninstall cocoapods-plugins</span><br><span class="line">sudo gem uninstall cocoapods-search</span><br><span class="line">sudo gem uninstall cocoapods-stats</span><br><span class="line">sudo gem uninstall cocoapods-try</span><br><span class="line">sudo gem uninstall cocoapods-trunk</span><br><span class="line"></span><br><span class="line">// 然后可以去下载最新版了,然后正常使用了</span><br><span class="line">sudo gem install cocoapods</span><br><span class="line">pod setup</span><br></pre></td></tr></table></figure>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章:"></a>相关文章:</h2><p>使用CocoaPods时遇到pod setup失败的解决办法:<br><a href="http://www.cocoachina.com/bbs/read.php?tid=193398&amp;page=1" target="_blank" rel="noopener">http://www.cocoachina.com/bbs/read.php?tid=193398&amp;page=1</a><br>如何删除工程的pod:<br><a href="http://www.jianshu.com/p/552f21a989ba" target="_blank" rel="noopener">http://www.jianshu.com/p/552f21a989ba</a></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>掘金技术征文：<a href="https://gold.xitu.io/post/58522dca128fe1006b54da92" target="_blank" rel="noopener">https://gold.xitu.io/post/58522dca128fe1006b54da92</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/30/2016-09-30 - Xcode8Swift3入坑笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩辕小羽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="装修中">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/30/2016-09-30 - Xcode8Swift3入坑笔记/" itemprop="url">iOS 5分钟集成热修复(JSPatch)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-30T00:00:00+08:00">
+                2016-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://dn-mhke0kuv.qbox.me/f0c605bded5ff5ee33d9.png?imageView2/1/w/1080/h/320/q/85/format/webp/interlace/1" alt=""></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天把公司项目的swift代码升级到Swift3,遇到了不少坑</p>
+<p>现在总算能跑起来了..还有很多坑要踩…<br>这是改之前的惨状:<br><img src="https://dn-mhke0kuv.qbox.me/3555548a269b56e7740b.jpeg" alt=""></p>
+<p>发现一条写一条,不定时更新</p>
+<h2 id="正题"><a href="#正题" class="headerlink" title="正题"></a>正题</h2><ul>
+<li><p>选了Later之后还想调用系统的自动升级[Edit &gt; Convert &gt; To Current Swift Syntax…]<br><img src="https://dn-mhke0kuv.qbox.me/d2ca67d395bcedf2f9b4.png" alt=""></p>
+</li>
+<li><p>之前一个控件layoutIfNeed 会带动它所约束的控件一起layout,现在只会单独计算,想达到之前的效果只能整个父级控件调用layoutIfNeed方法了</p>
+</li>
+<li><p>swift取oc得NSDate回自动变成Data类型,一些操作NSDate的第三方库(如:DateTools)会崩溃</p>
+</li>
+<li><p>block的形参要加 “ _ “ 方法的第一个参数前也要加形参名</p>
+</li>
+<li><p>flatmap和map会返回一个非数组的类型,需要重新用一个返回[T]的方法重写一遍..语法都没有变,改了就好了</p>
+</li>
+<li><p>控制台会输出一大堆网络日志,需要再Run里加一个OS_ACTIVITY_MODE = disable stackoverflow:<a href="http://stackoverflow.com/questions/37800790/hide-strange-unwanted-xcode-8-logs/39461256#39461256" target="_blank" rel="noopener">http://stackoverflow.com/questions/37800790/hide-strange-unwanted-xcode-8-logs/39461256#39461256</a><br><img src="https://dn-mhke0kuv.qbox.me/59553211b6cd8c0c00fa.png" alt=""></p>
+</li>
+<li><p>Swift调用OC对象属性都自带Optional了,使用的时候要拆包</p>
+</li>
+<li><p>升级Xcode之后想支持以前的插件可以在<code>~/Library/Application Support/Developer/Shared/Xcode/Plug-ins</code>路径下添加你现在的Xcode的UUID,查看你Xcode的UUID<code>/Applications/Xcode.app/Contents</code></p>
+</li>
+<li>上面方法还不行的看这个<a href="http://vongloo.me/2016/09/10/Make-Your-Xcode8-Great-Again/?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="noopener">http://vongloo.me/2016/09/10/Make-Your-Xcode8-Great-Again/?utm_source=tuicool&amp;utm_medium=referral</a></li>
+<li>Xcode8打包的时候需要在Plist里为应用添加相应的权限配置(使用Xcode8上传成功后，商店里构建版本却没 <a href="http://gold.xitu.io/entry/57e117cca22b9d00612661bd/detail" target="_blank" rel="noopener">http://gold.xitu.io/entry/57e117cca22b9d00612661bd/detail</a>)</li>
+</ul>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li>如何向 Swift 3.0 进行数据迁移:<a href="http://gold.xitu.io/entry/57a3044e2e958a0066850a48" target="_blank" rel="noopener">http://gold.xitu.io/entry/57a3044e2e958a0066850a48</a></li>
+<li>兼容iOS 10 资料整理笔记:<a href="http://www.jianshu.com/p/0cc7aad638d9" target="_blank" rel="noopener">http://www.jianshu.com/p/0cc7aad638d9</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/28/2016-06-28 - iOSIPv6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩辕小羽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="装修中">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/28/2016-06-28 - iOSIPv6/" itemprop="url">iOS 5分钟集成热修复(JSPatch)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-28T00:00:00+08:00">
+                2016-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://dn-mhke0kuv.qbox.me/efab6b507c9fe25c26f7.jpg" alt=""></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>从6月1日开始苹果要求之后审核的项目必须支持iPv6,如果不支持将被拒绝<br>掘金最近一次审核被就被拒绝了….理由为下:<br>Apps are reviewed on an IPv6 network. Please ensure that your app supports IPv6 networks, as IPv6 compatibility is required.</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/500a6acea88995ad0589.png" alt=""></p>
+<p>原因是LeanCloud更新了一个版本才支持IPv6,更新之后找了几篇搭建IPv6网络的文章都不太满意,于是在自己解决之后整理一篇博客把经验借鉴给大家</p>
+<h1 id="正题"><a href="#正题" class="headerlink" title="正题"></a>正题</h1><p>材料:</p>
+<p>首先需要准备Mac一台</p>
+<p>iphone2部(其中一部用于测试你的项目,请装上你的应用)</p>
+<p>连接线一根</p>
+<h3 id="第一步-通过数据线连接iphone和mac"><a href="#第一步-通过数据线连接iphone和mac" class="headerlink" title="第一步:通过数据线连接iphone和mac"></a>第一步:通过数据线连接iphone和mac</h3><h3 id="第二步-打开iphone的个人热点并选择仅USB"><a href="#第二步-打开iphone的个人热点并选择仅USB" class="headerlink" title="第二步:打开iphone的个人热点并选择仅USB"></a>第二步:打开iphone的个人热点并选择仅USB</h3><p>如果没有选项,请关闭手机连接的Wi-Fi,用手机自己的移动网络</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/37e953494b40808b78e6.png" alt=""></p>
+<h3 id="第三步-打开网络偏好设置-确保你的Mac的Wi-Fi是打开的-并且没有连接任何网络"><a href="#第三步-打开网络偏好设置-确保你的Mac的Wi-Fi是打开的-并且没有连接任何网络" class="headerlink" title="第三步:打开网络偏好设置,确保你的Mac的Wi-Fi是打开的,并且没有连接任何网络"></a>第三步:打开网络偏好设置,确保你的Mac的Wi-Fi是打开的,并且没有连接任何网络</h3><p>如果已有连接wifi可以在高级里删除之前的联网缓存</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/5dc136b6583046631a90.png" alt=""></p>
+<h3 id="第四步-打开系统偏好设置-按住option-alt-键点击共享"><a href="#第四步-打开系统偏好设置-按住option-alt-键点击共享" class="headerlink" title="第四步:打开系统偏好设置,按住option(alt)键点击共享"></a>第四步:打开系统偏好设置,按住option(alt)键点击共享</h3><p>如果不按住option键将不会出现IPv6选项</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/e70806338f69bec19c52.png" alt=""></p>
+<h3 id="第五步-选择iPhone-USB-gt-Wi-Fi-gt-创建NAT64"><a href="#第五步-选择iPhone-USB-gt-Wi-Fi-gt-创建NAT64" class="headerlink" title="第五步:选择iPhone USB -&gt; Wi-Fi -&gt; 创建NAT64"></a>第五步:选择iPhone USB -&gt; Wi-Fi -&gt; 创建NAT64</h3><p>如果没有出现创建NAT64网络请重复第四步</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/fba5e72ffa06531a7048.png" alt=""></p>
+<h3 id="第六步-选择右下角的Wi-Fi选项-可以设置密码也可以不设置"><a href="#第六步-选择右下角的Wi-Fi选项-可以设置密码也可以不设置" class="headerlink" title="第六步:选择右下角的Wi-Fi选项,可以设置密码也可以不设置"></a>第六步:选择右下角的Wi-Fi选项,可以设置密码也可以不设置</h3><p><img src="https://dn-mhke0kuv.qbox.me/3a2532a924105cb44a41.png" alt=""></p>
+<p>最后别忘了勾选左侧的选项,不然不会打开共享,显示互联网共享:打开代表操作成功</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/c099032a6875dcac04ac.png" alt=""></p>
+<h3 id="用你另一台iPhone链接你Mac所创建的IPv6测试网络"><a href="#用你另一台iPhone链接你Mac所创建的IPv6测试网络" class="headerlink" title="用你另一台iPhone链接你Mac所创建的IPv6测试网络"></a>用你另一台iPhone链接你Mac所创建的IPv6测试网络</h3><p><img src="https://dn-mhke0kuv.qbox.me/8dbd04d094897fd8262b.PNG" alt=""></p>
+<p>如果你的DNS如上图所示的格式一样的话就代表你的IPv6测试环境已经搭建好了,可以开始测试你的项目了</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料:"></a>参考资料:</h3><p>iOS应用支持IPV6，就那点事儿:<a href="http://www.jianshu.com/p/a6bab07c4062" target="_blank" rel="noopener">http://www.jianshu.com/p/a6bab07c4062</a></p>
+<p>针对苹果最新审核要求为应用兼容IPv6:<a href="http://www.jianshu.com/p/69ed4489762c" target="_blank" rel="noopener">http://www.jianshu.com/p/69ed4489762c</a></p>
+<p>如果还有关于IPv6的问题可以在留言里问我,我会和你们一起解决的</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>这样做比连接有线网络更便捷,但是缺点就是很耗费流量..感谢我司同事贡献的流量和技术…</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/27/2016-08-27 - WaterMark/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩辕小羽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="装修中">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/27/2016-08-27 - WaterMark/" itemprop="url">开源项目-WaterMark</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-27T00:00:00+08:00">
+                2016-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://dn-mhke0kuv.qbox.me/a6a74bdc5439dd259b8a.png" alt=""></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这里引用应用描述里的一句话:</p>
+<p>本项目代码全部开源,只删除了LeanCloud相关的id和key,如果我以后不小心把key和id push上去了各位小伙伴一定要提醒我哈…</p>
+<p>这个项目是业余时间瞎敲出来的…很多代码都是自己一边尝试一边敲出来的…所以大家可以挑重点看</p>
+<p>我准备把WaterMark 和以后其他的开源项目写成一个系列的博客,每次更新版本都会把遇到的难点和坑点总结出来..喜欢的话大家可以收藏,关注支持一下</p>
+<p>希望本篇博客能帮助菜鸟了解iOS项目开发中的常识</p>
+<p>欢迎大家一起讨论正确的开发姿势</p>
+<p>跪求大神带我飞!</p>
+<p>(在下英文渣,请各位老爷观看时利用脑内runtime 把不对的单词替换成对的单词…哈哈哈,我会好好背单词的!)</p>
+<p>项目地址:<a href="https://github.com/Lafree317/WaterLabel" target="_blank" rel="noopener">https://github.com/Lafree317/WaterLabel</a></p>
+<p>AppStroe:<a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1148289486&amp;mt=8" target="_blank" rel="noopener">https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1148289486&amp;mt=8</a></p>
+<h1 id="回归正题"><a href="#回归正题" class="headerlink" title="回归正题"></a>回归正题</h1><blockquote>
+<p>目前功能:</p>
+<ul>
+<li>原尺寸/缩略图 添加水印</li>
+<li>水印缓存</li>
+<li>水印编辑</li>
+</ul>
+</blockquote>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><h3 id="项目文件结构"><a href="#项目文件结构" class="headerlink" title="项目文件结构"></a>项目文件结构</h3><p><img src="https://dn-mhke0kuv.qbox.me/3f3f60517e6cfd4ab0cb.png" alt=""></p>
+<h3 id="项目中现在集成的第三方开源库有"><a href="#项目中现在集成的第三方开源库有" class="headerlink" title="项目中现在集成的第三方开源库有:"></a>项目中现在集成的第三方开源库有:</h3><ul>
+<li>Pod<ul>
+<li>LeanCloud Swift-alpha版(坑): 用于反馈数据的云存储</li>
+<li>MBProgressHUD 1.0 :提示控件 每个项目必备</li>
+<li>RxSwift和RxCocoa: 现在代码中还没有用到,到时候写登陆的时候准备这个写响应式</li>
+<li>SnapKit: Swift版的Messary 炒鸡好用</li>
+</ul>
+</li>
+<li>Vendors<ul>
+<li>ShowString 我司小哥改装的一个提示框,优点在于提示的时候还可以对页面进行UI交互</li>
+<li>TZImagePickerController 一个1000+star图片选择库,这个开发者很热心发issues很快就会回复你并解决问题</li>
+<li>IGLDropDownMenu 一个下拉抽屉式动画,使用起来非常方便</li>
+<li>ZEViewKit 我自己封装的一些小控件,准备再赞一些一起上传到Pod中</li>
+<li>Scenes里有一个ZEVC是准备以后所有开源项目中公用的反馈和登陆界面</li>
+</ul>
+</li>
+</ul>
+<h3 id="项目架构采用最基本的MVC"><a href="#项目架构采用最基本的MVC" class="headerlink" title="项目架构采用最基本的MVC"></a>项目架构采用最基本的MVC</h3><p>因为不是公司项目喜欢自己瞎搞一些东西所以一些被我改畸形了<br>这里详细说一下:</p>
+<p>我发现Swfit的Extension太过强大于是将Model层和View层都用extension来代替了,如feedBackController的代码就被我改成:</p>
+<ul>
+<li><p>Controller</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ZEFeedBackContoller</span>: <span class="title">UIViewController</span>,<span class="title">UITextFieldDelegate</span>,<span class="title">UIScrollViewDelegate</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 各种属性</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        setUI()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Model</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ZEFeedBackContoller</span> </span>&#123;</span><br><span class="line">    <span class="comment">// model方法</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sendFeedBack</span><span class="params">()</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>View</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ZEFeedBackContoller</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 添加UI</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setUI</span><span class="params">()</span></span>&#123;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>首先强调一点…这是我自己胡乱尝试敲出来的…没有看过类似代码..所以不推荐在正常项目中使用,只是讲一下自己的思路希望能帮助到你</p>
+<p>这样做的好处我觉得有几点</p>
+<ul>
+<li>代码都为C的代码,不存在跨类调用方法和取值(高内聚?)</li>
+<li>上下两个控制器传值调用的时候也更方便一些(低耦合?)</li>
+<li>C代码很少,只把主要的方法C中,如果想扩展相应功能或修改bug可以直接找到位置去进行操作</li>
+</ul>
+<p>我觉得不好的地方</p>
+<ul>
+<li>代码较为混乱,不适合多人开发?</li>
+<li>具体功能重用性差,不利于其他项目使用</li>
+</ul>
+<p>我一直自己摸索学习Swift,还没有找到它正确的开发姿势,希望大家能教我正确的开发姿势</p>
+<h3 id="项目中还有一小部分面向协议"><a href="#项目中还有一小部分面向协议" class="headerlink" title="项目中还有一小部分面向协议"></a>项目中还有一小部分面向协议</h3><p>如给UIView添加一个滑动手势,这里应该如果优化一下应该 extenion到具体类 而不是直接给UIView添加..<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">ViewGestureRecognizer</span></span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIView</span>:<span class="title">ViewGestureRecognizer</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">addPan</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">self</span>.userInteractionEnabled = <span class="literal">true</span></span><br><span class="line">        <span class="keyword">let</span> pan = <span class="type">UIPanGestureRecognizer</span>(target: <span class="keyword">self</span>, action: #selector(pan(<span class="number">_</span>:)))</span><br><span class="line">        <span class="keyword">self</span>.addGestureRecognizer(pan)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">pan</span><span class="params">(pan:UIPanGestureRecognizer)</span></span>&#123;</span><br><span class="line">        <span class="keyword">let</span> point = pan.translationInView(<span class="keyword">self</span>)</span><br><span class="line">        <span class="keyword">self</span>.transform = <span class="type">CGAffineTransformTranslate</span>(<span class="keyword">self</span>.transform, point.x, point.y)</span><br><span class="line">        pan.setTranslation(.zero, inView: <span class="keyword">self</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="一些细节"><a href="#一些细节" class="headerlink" title="一些细节"></a>一些细节</h2><p>水印的绘制是由EditModel这个类实现的</p>
+<p>原理就是利用UIGraphics 的 UIImage context 先按照图片尺寸绘制出背景图片,然后把label一个一个的绘制到图片上 最后导出一张绘制好的图片保存到相册中<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 添加水印</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">save</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> image = imageView.image <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">weak</span> <span class="keyword">var</span> weakSelf = <span class="keyword">self</span></span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> wself = weakSelf <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">ZEHud</span>.sharedInstance.showHud()</span><br><span class="line">    dispatch_async(dispatch_queue_create(<span class="string">"addLabel"</span>,<span class="literal">nil</span>)) &#123;</span><br><span class="line">        <span class="type">UIGraphicsBeginImageContext</span>(image.size)<span class="comment">// 开始绘制</span></span><br><span class="line">        image.drawInRect(<span class="type">CGRect</span>(origin: <span class="type">CGPoint</span>.zero, size: image.size))</span><br><span class="line">        <span class="keyword">for</span> label <span class="keyword">in</span> wself.labelArr &#123; <span class="comment">// 添加多个水印</span></span><br><span class="line">            <span class="keyword">let</span> rect = wself.imageView.convertRect(label.frame, fromView: <span class="literal">nil</span>)</span><br><span class="line">            <span class="keyword">let</span> reScale = <span class="number">1</span>/wself.imageView.scale</span><br><span class="line">            <span class="keyword">let</span> labelRect = <span class="type">CGRectMake</span>((rect.origin.x)*reScale, (rect.origin.y*reScale), rect.size.width*reScale, rect.height*reScale)</span><br><span class="line">            label.model.text.drawInRect(labelRect, withAttributes:label.model.getAttributes(<span class="number">1</span>/wself.imageView.scale))</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> imageA = <span class="type">UIGraphicsGetImageFromCurrentImageContext</span>()<span class="comment">// 获取图片</span></span><br><span class="line">        <span class="type">UIGraphicsEndImageContext</span>()<span class="comment">// 结束绘制</span></span><br><span class="line">        <span class="type">UIImageWriteToSavedPhotosAlbum</span>(imageA, <span class="keyword">self</span>, <span class="literal">nil</span>, <span class="literal">nil</span>)<span class="comment">// 保存</span></span><br><span class="line">        dispatch_async(dispatch_get_main_queue(), &#123;</span><br><span class="line">            <span class="type">ZEHud</span>.sharedInstance.hideHud()</span><br><span class="line">            <span class="type">ShowString</span>.sharedManager().showStringView(<span class="string">"保存成功"</span>)</span><br><span class="line">            wself.imageView.image = imageA</span><br><span class="line">            wself.assets.removeAtIndex(wself.index)</span><br><span class="line">            wself.changeImage(wself.index)</span><br><span class="line">            <span class="keyword">if</span> weakSelf!.assets.<span class="built_in">count</span> == <span class="number">0</span> &#123;</span><br><span class="line">                weakSelf?.performSelector(#selector(weakSelf?.nodataPop), withObject: <span class="literal">nil</span>, afterDelay: <span class="number">0.75</span>)</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>项目中水印是由WaterMark这个类来实现的,因为偷懒所以直接继承自UILabel(获取尺寸的时候回方便一些),然后在Label下面添加了一个TextField,来进行文字编辑.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过传入的bool进行label的文字变换</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">changeEidtType</span><span class="params">(type:Bool)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> type == <span class="literal">true</span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.textField.font = <span class="keyword">self</span>.font</span><br><span class="line">        <span class="keyword">self</span>.textField.text = <span class="keyword">self</span>.text</span><br><span class="line">        <span class="keyword">self</span>.textField.becomeFirstResponder()</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        textField.endEditing(<span class="literal">true</span>)</span><br><span class="line">        <span class="keyword">let</span> dic = model.getAttributes(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">let</span> att = <span class="type">NSAttributedString</span>(string: <span class="keyword">self</span>.textField.text!, attributes: dic)</span><br><span class="line">        <span class="keyword">self</span>.attributedText = att</span><br><span class="line">    &#125;</span><br><span class="line">    textField.hidden = !type</span><br><span class="line">    viewChange()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>每次编辑水印的步骤我设计成 长按Label -&gt; 弹出EditView -&gt; 每一次操作都做相应的处理(缓存,改变Label的状态)</p>
+</blockquote>
+<p>label的样式是由NSMutableAttributedString这个类来实现的,这个类可以直接用在绘制里</p>
+<h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h2><h3 id="Label和ImageView的比例计算"><a href="#Label和ImageView的比例计算" class="headerlink" title="Label和ImageView的比例计算"></a>Label和ImageView的比例计算</h3><p>我给ImageView的class声明了一个scale属性,调用这个属性就会计算出比例的变量</p>
+<p>绘制Label的时候就按照1/scale的比例逆推回原大小进行绘制</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EditImageView</span>: <span class="title">UIImageView</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scale:<span class="type">CGFloat</span> &#123;</span><br><span class="line">        <span class="keyword">get</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> frame.width / image!.size.width</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">init</span>(frame: <span class="type">CGRect</span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(frame: frame)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setNewImage</span><span class="params">(newImage:UIImage)</span></span>&#123;</span><br><span class="line">        image = newImage</span><br><span class="line">        <span class="keyword">self</span>.frame.size.width = screenWidth</span><br><span class="line">        frame = <span class="type">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, screenWidth, newImage.size.height * scale)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">required</span> <span class="keyword">init</span>?(coder aDecoder: <span class="type">NSCoder</span>) &#123;</span><br><span class="line">        <span class="built_in">fatalError</span>(<span class="string">"init(coder:) has not been implemented"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="水印的本地缓存"><a href="#水印的本地缓存" class="headerlink" title="水印的本地缓存"></a>水印的本地缓存</h3><p>缓存格式:</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/49b223b6793cc44f5326.png" alt=""></p>
+<p>颜色缓存是一个坑…如果用系统自带的颜色直接缓存的话会有问题,因为width black gary 和其他颜色的属性是不一样的,这三类颜色只有黑色和透明度而其他颜色都是RGB 不能进行统一处理</p>
+<p>于是我就自己归档了一个颜色数组(查系统的色值还挺麻烦的..)</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> titleColorArr:<span class="type">Array</span>&lt;[<span class="type">String</span>:[<span class="type">String</span>:<span class="type">CGFloat</span>]]&gt; = [</span><br><span class="line">    [<span class="string">"黑色"</span>:[<span class="string">"red"</span>:<span class="number">0</span>,<span class="string">"green"</span>:<span class="number">0</span>,<span class="string">"blue"</span>:<span class="number">0</span>,<span class="string">"alpha"</span>:<span class="number">1</span>]],</span><br><span class="line">    [<span class="string">"灰色"</span>:[<span class="string">"red"</span>:<span class="number">102</span>,<span class="string">"green"</span>:<span class="number">102</span>,<span class="string">"blue"</span>:<span class="number">102</span>,<span class="string">"alpha"</span>:<span class="number">1</span>]],</span><br><span class="line">    [<span class="string">"白色"</span>:[<span class="string">"red"</span>:<span class="number">255</span>,<span class="string">"green"</span>:<span class="number">255</span>,<span class="string">"blue"</span>:<span class="number">255</span>,<span class="string">"alpha"</span>:<span class="number">1</span>]],</span><br><span class="line">    [<span class="string">"透明"</span>:[<span class="string">"red"</span>:<span class="number">255</span>,<span class="string">"green"</span>:<span class="number">255</span>,<span class="string">"blue"</span>:<span class="number">255</span>,<span class="string">"alpha"</span>:<span class="number">0</span>]],</span><br><span class="line">    ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>然后声明了两个方法,一个是字典转颜色,一个是颜色转字典</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorFile</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">colorToDic</span><span class="params">(color:UIColor)</span></span> -&gt; [<span class="type">String</span>:<span class="type">CGFloat</span>] &#123;</span><br><span class="line">        <span class="keyword">let</span> components = <span class="type">CGColorGetComponents</span>(color.<span class="type">CGColor</span>)</span><br><span class="line">        <span class="keyword">let</span> r = components[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">let</span> g = components[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">let</span> b = components[<span class="number">2</span>]</span><br><span class="line">        <span class="keyword">let</span> a = components[<span class="number">3</span>]</span><br><span class="line">        <span class="keyword">return</span> [<span class="string">"red"</span>:r,<span class="string">"green"</span>:g,<span class="string">"blue"</span>:b,<span class="string">"alpha"</span>:a]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">dicToColor</span><span class="params">(dic:[String:CGFloat])</span></span> -&gt; <span class="type">UIColor</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> r = dic[<span class="string">"red"</span>]!</span><br><span class="line">        <span class="keyword">let</span> g = dic[<span class="string">"green"</span>]!</span><br><span class="line">        <span class="keyword">let</span> b = dic[<span class="string">"blue"</span>]!</span><br><span class="line">        <span class="keyword">let</span> a = dic[<span class="string">"alpha"</span>]!</span><br><span class="line">        <span class="keyword">return</span> <span class="type">UIColor</span>(red: r, green: g, blue: b, alpha:a)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写入缓存的时机是LabelModel每一个属性改变的时候<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> italic:<span class="type">Bool</span> = <span class="literal">false</span>&#123;</span><br><span class="line">    <span class="keyword">willSet</span>&#123;</span><br><span class="line">        <span class="keyword">self</span>.italic = newValue</span><br><span class="line">        setUD(<span class="keyword">self</span>.italic, key:italicUDK)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> underLine:<span class="type">Bool</span> = <span class="literal">false</span>&#123;</span><br><span class="line">    <span class="keyword">willSet</span>&#123;</span><br><span class="line">        <span class="keyword">self</span>.underLine = newValue</span><br><span class="line">        setUD(<span class="keyword">self</span>.underLine, key:underLineUDK)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">setUD</span><span class="params">(value:AnyObject?,key:String)</span></span>&#123;</span><br><span class="line">    <span class="type">NSUserDefaults</span>.standardUserDefaults().setObject(value, forKey: key)</span><br><span class="line">    <span class="type">NSUserDefaults</span>.standardUserDefaults().synchronize()<span class="comment">// 同步数据</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getUD</span><span class="params">(key:String)</span></span> -&gt; <span class="type">AnyObject</span>? &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">NSUserDefaults</span>.standardUserDefaults().objectForKey(key)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>labelModel初始化的时候就会取缓存,如果没取到就会给一个默认值<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">init</span>()&#123;</span><br><span class="line">        <span class="keyword">if</span>  <span class="keyword">let</span> text =  getUD(textUDK) <span class="keyword">as</span>? <span class="type">String</span> &#123;</span><br><span class="line">            <span class="keyword">self</span>.text = text</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            text = <span class="string">"这是第一个水印"</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="当ImageView被拖拽放大时-相对-Label的笔记变化"><a href="#当ImageView被拖拽放大时-相对-Label的笔记变化" class="headerlink" title="当ImageView被拖拽放大时 相对 Label的笔记变化"></a>当ImageView被拖拽放大时 相对 Label的笔记变化</h3><p>这个还未解决,在上线前已经禁止掉了ImageView的手势</p>
+<p>每次imageView大小变化的时候用Label按照scale逆推回去就会发现比例不对,不能按照原比例绘制,求大神帮忙..</p>
+<h2 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h2><p>欢迎来到吐槽时间…</p>
+<p>LeanCloud-Swift-SDK就是一个坑啊…代码难懂不说居然只支持iOS9.1以上版本…相信这一条就让99%的项目不准备引用了吧…</p>
+<p>然后他们居然还在info.plist里面的short boundle version里面写英文!握草我头一次遇见打包时候这个Error类型,为此我还特意记了一条笔记….</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/60c433c186ac132e740d.png" alt=""></p>
+<h2 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h2><p>推荐一个AppIcon快速生成插件,可以用Package Manager直接下载或者直接去git-&gt;<a href="https://github.com/kaphacius/IconMaker" target="_blank" rel="noopener">https://github.com/kaphacius/IconMaker</a></p>
+<p>使用方法:打开Assets-&gt;右键选中AppIcon-&gt;选中Make An App Icon -&gt; 选择图片 -&gt; 成功!</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/b79d9b4499cdd2f0682a.gif" alt=""></p>
+<p>现在审核时各个型号的手机可以共用一套简介图片了(可能不是最近才改的,一直是另外一个小哥负责打包的 @辛勤的另外一个小哥)</p>
+<h1 id="结尾语"><a href="#结尾语" class="headerlink" title="结尾语"></a>结尾语</h1><p>现在项目刚刚提交了审核,审核通过了再把appstore链接贴上…</p>
+<p>我都是想起哪里说哪里…可能有些难懂,如果有不懂的地方可以在评论里和我说我会及时修改文章的</p>
+<p>睡觉明早起来再改错别字…</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/26/2016-08-26 - JsPathHotFix/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩辕小羽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="装修中">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/26/2016-08-26 - JsPathHotFix/" itemprop="url">iOS 5分钟集成热修复(JSPatch)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-26T00:00:00+08:00">
+                2016-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://dn-mhke0kuv.qbox.me/7859b81efd944b3d7f73.png" alt=""></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>掘金3.5.2上线后发现了一个bug,我司iOS小哥上线前不小心改动了一部分代码,导致脏数据被缓存,取缓存的时候会导致项目崩溃…(苹果的审核越来越不认真了….好吧,我不推锅了,让我跪着写完这篇博客)..</p>
+<h4 id="回归正题"><a href="#回归正题" class="headerlink" title="回归正题:"></a>回归正题:</h4><blockquote>
+<p>在iOS中有很多种热修复方案,在这里我就不一一介绍了</p>
+<p>这里有一篇掘金里介绍热修复的文章:<br><a href="http://www.jianshu.com/p/66dad614b905?utm_campaign=hugo&amp;utm_medium=reader_share&amp;utm_content=note" target="_blank" rel="noopener">iOS中的HotFix方案总结详解</a></p>
+</blockquote>
+<p>我选择的热修复方案是JSPatch<br>我觉得JSPatch的优点有:</p>
+<ul>
+<li>非侵入式</li>
+<li>上手快</li>
+<li>相关服务成熟</li>
+</ul>
+<h2 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h2><p>大神可以看重点,如果是和我一样的菜鸡就可以按照博客一步一步做,最后一定会成功让JSPatch跑起来的</p>
+<h3 id="第一步-创建Demo-在ViewController里添加一个Label-声明一个test方法来给Label-text赋值"><a href="#第一步-创建Demo-在ViewController里添加一个Label-声明一个test方法来给Label-text赋值" class="headerlink" title="第一步:创建Demo,在ViewController里添加一个Label,声明一个test方法来给Label.text赋值"></a>第一步:创建Demo,在ViewController里添加一个Label,声明一个test方法来给Label.text赋值</h3><p>OC:</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/160cd77a37114da51a05.png" alt=""></p>
+<p>Swift:</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/1491ce025dba0e910e58.png" alt=""></p>
+<p>为了方便label就直接在StoryBoard里拖进来了(不喜欢拖控件的小伙伴可以用代码创建)</p>
+<p>Swift中为每个变量和方法添加dynamic是保证Swift方法都可以被动态替换,这里涉及到Swift Runtime的知识就不详细讲述了按例贴一篇文章:</p>
+<p><a href="http://gold.xitu.io/entry/57c01afd2e958a0069650818/detail" target="_blank" rel="noopener">Swift Runtime分析：还像OC Runtime一样吗？</a></p>
+<hr>
+<h3 id="第二步-打开JSPatch网站下载SDK-http-jspatch-com-Index-sdk"><a href="#第二步-打开JSPatch网站下载SDK-http-jspatch-com-Index-sdk" class="headerlink" title="第二步:打开JSPatch网站下载SDK:http://jspatch.com/Index/sdk"></a>第二步:打开JSPatch网站下载SDK:<a href="http://jspatch.com/Index/sdk" target="_blank" rel="noopener">http://jspatch.com/Index/sdk</a></h3><p><img src="https://dn-mhke0kuv.qbox.me/41f689eeeac78d6be0ec.png" alt=""></p>
+<hr>
+<h3 id="第三步-项目配置-这步稍微会有些复杂"><a href="#第三步-项目配置-这步稍微会有些复杂" class="headerlink" title="第三步:项目配置(这步稍微会有些复杂)"></a>第三步:项目配置(这步稍微会有些复杂)</h3><h4 id="将解压后的SDK直接拖入工程中-然后在TARGETS-gt-Build-Phases-gt-Link-Binary-With-Libraries-gt-添加-libz-dylib-或libz-tbd-和-JavaScriptCore-framework。"><a href="#将解压后的SDK直接拖入工程中-然后在TARGETS-gt-Build-Phases-gt-Link-Binary-With-Libraries-gt-添加-libz-dylib-或libz-tbd-和-JavaScriptCore-framework。" class="headerlink" title="将解压后的SDK直接拖入工程中,然后在TARGETS -&gt; Build Phases -&gt; Link Binary With Libraries -&gt; + 添加 libz.dylib(或libz.tbd) 和 JavaScriptCore.framework。"></a>将解压后的SDK直接拖入工程中,然后在TARGETS -&gt; Build Phases -&gt; Link Binary With Libraries -&gt; + 添加 libz.dylib(或libz.tbd) 和 JavaScriptCore.framework。</h4><p><img src="https://dn-mhke0kuv.qbox.me/98c03ed7454b7bbc8640.png" alt=""></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/9c3caae370a7e0952e43.png" alt=""></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/f277eaebd20ec6a0e7f0.png" alt=""></p>
+<h4 id="在AppDelegate里写以下代码"><a href="#在AppDelegate里写以下代码" class="headerlink" title="在AppDelegate里写以下代码:"></a>在AppDelegate里写以下代码:</h4><ul>
+<li><p>OC</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &#123;</span><br><span class="line">    // Override point for customization after application launch.</span><br><span class="line">    [JSPatch startWithAppKey:@&quot;你的AppKey&quot;];</span><br><span class="line"></span><br><span class="line">    //用来检测回调的状态，是更新或者是执行脚本之类的，相关信息，会打印在你的控制台</span><br><span class="line">    [JSPatch setupCallback:^(JPCallbackType type, NSDictionary *data, NSError *error) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;];</span><br><span class="line">    [JSPatch setupDevelopment];</span><br><span class="line"></span><br><span class="line">    [JSPatch sync];</span><br><span class="line"></span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Swift</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -&gt; Bool &#123;</span><br><span class="line">    // Override point for customization after application launch.</span><br><span class="line">    JSPatch.startWithAppKey(&quot;你的Appkey&quot;)</span><br><span class="line">    JSPatch.setupCallback &#123; (type, data, error) in</span><br><span class="line">        print(type)</span><br><span class="line">        print(data)</span><br><span class="line">    &#125;</span><br><span class="line">    JSPatch.setupDevelopment()</span><br><span class="line">    JSPatch.sync()</span><br><span class="line">    return true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="到这一步项目配置就完成了-下一步开始发补丁到项目中"><a href="#到这一步项目配置就完成了-下一步开始发补丁到项目中" class="headerlink" title="到这一步项目配置就完成了,下一步开始发补丁到项目中"></a>到这一步项目配置就完成了,下一步开始发补丁到项目中</h4><hr>
+<h3 id="第四步-打开JSPatch官网点击左上角注册-gt-http-www-jspatch-com"><a href="#第四步-打开JSPatch官网点击左上角注册-gt-http-www-jspatch-com" class="headerlink" title="第四步:打开JSPatch官网点击左上角注册 -&gt; http://www.jspatch.com/"></a>第四步:打开JSPatch官网点击左上角注册 -&gt; <a href="http://www.jspatch.com/" target="_blank" rel="noopener">http://www.jspatch.com/</a></h3><p><img src="https://dn-mhke0kuv.qbox.me/c6a8acadb5c3f5dadc0e.png" alt="注册或登录"></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/300ace6306b5b3936b1e.png" alt="注册"></p>
+<hr>
+<h3 id="第五步-创建你的App-名字可以随便写-AppID也可以不填"><a href="#第五步-创建你的App-名字可以随便写-AppID也可以不填" class="headerlink" title="第五步:创建你的App,名字可以随便写,AppID也可以不填"></a>第五步:创建你的App,名字可以随便写,AppID也可以不填</h3><p><img src="https://dn-mhke0kuv.qbox.me/47adc6e322fc03141f6c.png" alt=""></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/303c532184c79a6eb285.png" alt=""></p>
+<hr>
+<h3 id="第六步-点击添加APP版本-创建一个App版本"><a href="#第六步-点击添加APP版本-创建一个App版本" class="headerlink" title="第六步:点击添加APP版本,创建一个App版本"></a>第六步:点击添加APP版本,创建一个App版本</h3><p><img src="https://dn-mhke0kuv.qbox.me/bd19b3fa3defc29ab3f2.png" alt=""></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/a8ec7f900e969364067b.png" alt=""></p>
+<h4 id="介绍一下创建之后的APP"><a href="#介绍一下创建之后的APP" class="headerlink" title="介绍一下创建之后的APP:"></a>介绍一下创建之后的APP:</h4><ul>
+<li>appKey是之后在你项目中激活JSPatch要用到的</li>
+<li>添加App版本 是按照你App的Version来创建的(如果version没写对会下载不到补丁)<br><img src="https://dn-mhke0kuv.qbox.me/79c435af371e388c45ae.png" alt=""></li>
+</ul>
+<hr>
+<h3 id="第七步-创建一个main-js文件并在里面写上以下代码"><a href="#第七步-创建一个main-js文件并在里面写上以下代码" class="headerlink" title="第七步:创建一个main.js文件并在里面写上以下代码:"></a>第七步:创建一个main.js文件并在里面写上以下代码:</h3><ul>
+<li><p>OC</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">defineClass(&apos;ViewController&apos;, &#123;</span><br><span class="line">            test : function() &#123;</span><br><span class="line">            self.label().setText(&quot;label的text被改掉了&quot;);</span><br><span class="line">            &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Swift</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">defineClass(&apos;HotFixDemo.ViewController&apos;, &#123;</span><br><span class="line">            test : function() &#123;</span><br><span class="line">            self.label().setText(&quot;label的text被改掉了&quot;);</span><br><span class="line">            &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Swift覆盖方法和类的时候要加上项目名-所以规范应该是-项目名-类名-方法名-注册类的时候也要加上项目名"><a href="#Swift覆盖方法和类的时候要加上项目名-所以规范应该是-项目名-类名-方法名-注册类的时候也要加上项目名" class="headerlink" title="Swift覆盖方法和类的时候要加上项目名,所以规范应该是 项目名.类名(方法名) 注册类的时候也要加上项目名"></a>Swift覆盖方法和类的时候要加上项目名,所以规范应该是 项目名.类名(方法名) 注册类的时候也要加上项目名</h4><h3 id="第八步-点击刚刚创建的1-0-将保存好的JS上传到JSPatch服务器上"><a href="#第八步-点击刚刚创建的1-0-将保存好的JS上传到JSPatch服务器上" class="headerlink" title="第八步:点击刚刚创建的1.0,将保存好的JS上传到JSPatch服务器上,"></a>第八步:点击刚刚创建的1.0,将保存好的JS上传到JSPatch服务器上,</h3><p><img src="https://dn-mhke0kuv.qbox.me/b46ce009d1fd08ce46c3.png" alt=""></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/85c98060670d7dfb5450.png" alt=""></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/9b3d0038f90ea9767fff.png" alt=""></p>
+<h4 id="选择文件选择刚刚创建的main-js-上传补丁的时候最少要有一个main-js-如果需要上传多个文件点击右侧加号就可以了"><a href="#选择文件选择刚刚创建的main-js-上传补丁的时候最少要有一个main-js-如果需要上传多个文件点击右侧加号就可以了" class="headerlink" title="选择文件选择刚刚创建的main.js (上传补丁的时候最少要有一个main.js 如果需要上传多个文件点击右侧加号就可以了)"></a>选择文件选择刚刚创建的main.js (上传补丁的时候最少要有一个main.js 如果需要上传多个文件点击右侧加号就可以了)</h4><h4 id="一定先勾选开发预览-这样才能保证测试成功"><a href="#一定先勾选开发预览-这样才能保证测试成功" class="headerlink" title="一定先勾选开发预览,这样才能保证测试成功"></a>一定先勾选开发预览,这样才能保证测试成功</h4><h4 id="一切都操作完之后选择提交"><a href="#一切都操作完之后选择提交" class="headerlink" title="一切都操作完之后选择提交"></a>一切都操作完之后选择提交</h4><h4 id="运行你的项目-如果命令行中显示以下内容就代表你的你的项目已经更新补丁了"><a href="#运行你的项目-如果命令行中显示以下内容就代表你的你的项目已经更新补丁了" class="headerlink" title="运行你的项目,如果命令行中显示以下内容就代表你的你的项目已经更新补丁了"></a>运行你的项目,如果命令行中显示以下内容就代表你的你的项目已经更新补丁了</h4><p><img src="https://dn-mhke0kuv.qbox.me/c8a86faf7b3d23227762.png" alt=""></p>
+<h4 id="因为补丁是先下载再生效的-所以下一次运行你才能看到效果"><a href="#因为补丁是先下载再生效的-所以下一次运行你才能看到效果" class="headerlink" title="因为补丁是先下载再生效的,所以下一次运行你才能看到效果"></a>因为补丁是先下载再生效的,所以下一次运行你才能看到效果</h4><h4 id="可以看到我的代码给label赋值为aaaa-通过JSPatch将label-text替换掉了"><a href="#可以看到我的代码给label赋值为aaaa-通过JSPatch将label-text替换掉了" class="headerlink" title="可以看到我的代码给label赋值为aaaa,通过JSPatch将label.text替换掉了"></a>可以看到我的代码给label赋值为aaaa,通过JSPatch将label.text替换掉了</h4><p><img src="https://dn-mhke0kuv.qbox.me/f39d10f9dd87d08591a7.png" alt=""></p>
+<h4 id="如果遇到什么问题可以留言给我-我会及时回复并更新博客内写的不足的地方"><a href="#如果遇到什么问题可以留言给我-我会及时回复并更新博客内写的不足的地方" class="headerlink" title="如果遇到什么问题可以留言给我,我会及时回复并更新博客内写的不足的地方"></a>如果遇到什么问题可以留言给我,我会及时回复并更新博客内写的不足的地方</h4><h4 id="一些其他的资料"><a href="#一些其他的资料" class="headerlink" title="一些其他的资料:"></a>一些其他的资料:</h4><p><a href="http://jspatch.com/Docs/intro" target="_blank" rel="noopener">JSPatch文档</a></p>
+<p><a href="http://www.jianshu.com/p/f2c06e7f84fd" target="_blank" rel="noopener">iOS黑科技之不发版线上干掉bug(JSPatch)</a></p>
+<p><a href="http://bang590.github.io/JSPatchConvertor/" target="_blank" rel="noopener">Objective-C代码转换成JavaScript</a></p>
+<h4 id="可能遇到的坑"><a href="#可能遇到的坑" class="headerlink" title="可能遇到的坑"></a>可能遇到的坑</h4><ul>
+<li>JSPatch网站上的版本要一定要和工程里的一样</li>
+<li>label的名字别写错了..我顺手就给写成别的名字了</li>
+<li>Swift一定要在方法和属性前加dynamic,如果不是继承自NSObject的Swift类不能被动态替换</li>
+<li>Swift替换类和方法要比OC在类/方法名之前添加工程名</li>
+<li>如果项目跑起来控制台输出没有找到文档就是网站上配置错了</li>
+<li>js上传的时候一定要加密,一定要加密,一定要加密</li>
+</ul>
+<h4 id="基本使用姿势"><a href="#基本使用姿势" class="headerlink" title="基本使用姿势"></a>基本使用姿势</h4><p>发现bug-&gt;在项目里修复bug-&gt;将修改后的有问题的类和方法翻译成js并上传网站-&gt;发布补丁</p>
+<blockquote>
+<p>这一次的Bug实在是对不起各位用户老爷,让我跪着等到加急审核完毕,并利用这次学会的热修复技术来保证以后都不会让各位老爷遇到今天情况了…</p>
+</blockquote>
+<h4 id="8月27日补充"><a href="#8月27日补充" class="headerlink" title="8月27日补充"></a>8月27日补充</h4><p>JS一定要加密,下面是方法截图和文档:</p>
+<p>加密方法:</p>
+<p><img src="https://dn-mhke0kuv.qbox.me/e4154e2ba7adaf1cdcb9.png" alt=""></p>
+<p>文档:<a href="http://jspatch.com/Docs/rsa" target="_blank" rel="noopener">http://jspatch.com/Docs/rsa</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/20/2016-05-20 - MVVM在TableView中的应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩辕小羽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="装修中">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/05/20/2016-05-20 - MVVM在TableView中的应用/" itemprop="url">MVVM在TableView中的应用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-20T00:00:00+08:00">
+                2016-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://upload-images.jianshu.io/upload_images/1298596-07355f41897c5b47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>#前言</p>
+<blockquote>
+<p>在OC中成熟的框架已经有很多了,但是Swift一直找不到..可能是我检索能力不强,希望大家能推荐给我,我只在viewModel中抽象了几个常用的方法,如果需要可以自己在里面扩展<br>文章里还讲了一点AutoLayout计算cell高度的方法</p>
+</blockquote>
+<p>#上代码</p>
+<p>####ViewModel</p>
+<blockquote>
+<p>主要是把tableView的Delegate和DataSource拆分出来,利用Block让ViewController可以生成cell,和处理点击事件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">typealias ZECellRenderBlock = (indexPath:NSIndexPath,tablleView:UITableView) -&gt; UITableViewCell!</span><br><span class="line">typealias ZECellSelectBlock = (indexPath:NSIndexPath,tablleView:UITableView) -&gt; Void</span><br><span class="line"></span><br><span class="line">class ZETableViewModel: NSObject,UITableViewDelegate,UITableViewDataSource &#123;</span><br><span class="line">    </span><br><span class="line">    var cellRender:ZECellRenderBlock! // 创建cell的block</span><br><span class="line">    var cellSlect:ZECellSelectBlock? // 选中cell的block</span><br><span class="line">    var cellHeight:CGFloat = UITableViewAutomaticDimension</span><br><span class="line">    var estimatedHeight:CGFloat = 50// 预估高度</span><br><span class="line">    var sectionCount:Int = 0// 区数</span><br><span class="line">    var rawCount:Int = 0// 行数</span><br><span class="line">    </span><br><span class="line">    /** 区数 */</span><br><span class="line">    func numberOfSectionsInTableView(tableView: UITableView) -&gt; Int &#123;</span><br><span class="line">        // #warning Incomplete implementation, return the number of sections</span><br><span class="line">        return sectionCount</span><br><span class="line">    &#125;</span><br><span class="line">    /** 行数 */</span><br><span class="line">    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int &#123;</span><br><span class="line">        // #warning Incomplete implementation, return the number of rows</span><br><span class="line">        return rawCount</span><br><span class="line">    &#125;</span><br><span class="line">    /** 行高 */</span><br><span class="line">    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -&gt; CGFloat &#123;</span><br><span class="line">        return cellHeight</span><br><span class="line">    &#125;</span><br><span class="line">    /** cell */</span><br><span class="line">    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell &#123;</span><br><span class="line">        let cell = cellRender(indexPath: indexPath,tablleView: tableView)</span><br><span class="line">        return cell</span><br><span class="line">    &#125;</span><br><span class="line">    /** 预估高度 */</span><br><span class="line">    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -&gt; CGFloat &#123;</span><br><span class="line">        return estimatedHeight</span><br><span class="line">    &#125;</span><br><span class="line">    /** 点击事件 */</span><br><span class="line">    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) &#123;</span><br><span class="line">        guard let selectBlock = cellSlect else&#123;</span><br><span class="line">            print(&quot;cell的选中block没有实例&quot;)</span><br><span class="line">            return</span><br><span class="line">        &#125;</span><br><span class="line">        selectBlock(indexPath:indexPath,tablleView:tableView)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>####Model</p>
+<blockquote>
+<p>我一般喜欢把model当做controller的垃圾桶,把所有非View方法都封装到model中,这里写了一个模拟网络请求的方法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import UIKit</span><br><span class="line">typealias ModelBlock = (success:Bool,status:String) -&gt; Void</span><br><span class="line">class ZEVCModel: NSObject &#123;</span><br><span class="line">    </span><br><span class="line">    var dataArr:Array&lt;ZESomeData&gt; = []</span><br><span class="line"></span><br><span class="line">    func getData(block:ModelBlock)&#123;</span><br><span class="line">        for dic in self.someData&#123;</span><br><span class="line">            </span><br><span class="line">            let title = dic[&quot;bigTitle&quot;]</span><br><span class="line">            let context = dic[&quot;context&quot;]</span><br><span class="line">            let model = ZESomeData(bigTitle:title, context: context)</span><br><span class="line">            dataArr.append(model)</span><br><span class="line">        &#125;</span><br><span class="line">        block(success: true, status: &quot;获取数据成功&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    var someData = [</span><br><span class="line">        [</span><br><span class="line">            &quot;bigTitle&quot;:&quot;我是大标题&quot;,</span><br><span class="line">            &quot;context&quot;:&quot;我是一个超长超长超长超长超长超长超长超长超长超长超长超长超长超长的内容&quot;</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>####View<br><img src="http://upload-images.jianshu.io/upload_images/1298596-9566a33fee6a1c19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>这里仅用一个Cell来表示View,可以讲一下通过AutoLayout自动计算cell高度的方法,就是所有控件都给好高度,需要变换高度的给一个带优先级的高度约束,然后在tableview中这样设置(已demo为例),一定要有预估高度和UITableViewAutomaticDimension</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    var cellHeight:CGFloat = UITableViewAutomaticDimension // cell高</span><br><span class="line">    var estimatedHeight:CGFloat = 50// 预估高度</span><br><span class="line">/** 行高 */</span><br><span class="line">    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -&gt; CGFloat &#123;</span><br><span class="line">        return cellHeight</span><br><span class="line">    &#125;</span><br><span class="line">/** 预估高度 */</span><br><span class="line">    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -&gt; CGFloat &#123;</span><br><span class="line">        return estimatedHeight</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>贴一下约束图,如果两个label都会变换高度的话 可以改优先级,点Height Equals的Edit就可以设置优先级了</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1298596-ccbfe17c6f10a1f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="大标题的高度固定为25"><br><img src="http://upload-images.jianshu.io/upload_images/1298596-9290a73c783fdc1a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="详情Label的高度&gt;=20,优先级为1000"></p>
+<p>####Controller</p>
+<blockquote>
+<p>controller中只用关注model什么时候获取数据,创建什么样的cell，什么时候刷新界面,点击时怎么处理就好了</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    @IBOutlet weak var tableView: UITableView!</span><br><span class="line">    let viewModel = ZETableViewModel()</span><br><span class="line">    let model = ZEVCModel()</span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        self.automaticallyAdjustsScrollViewInsets = false</span><br><span class="line">        layoutSomething()</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     加载ViewModel,Model 刷新数据</span><br><span class="line">     */</span><br><span class="line">    func layoutSomething()&#123;</span><br><span class="line">        tableView.delegate = viewModel</span><br><span class="line">        tableView.dataSource = viewModel</span><br><span class="line">        viewModel.sectionCount = 1</span><br><span class="line">        viewModel.cellHeight = UITableViewAutomaticDimension</span><br><span class="line">        tableView.registerNib(UINib.init(nibName: &quot;ZECell&quot;, bundle: nil), forCellReuseIdentifier: &quot;ZECell&quot;)</span><br><span class="line">        weak var weakSelf = self</span><br><span class="line">        // 创建cell</span><br><span class="line">        viewModel.cellRender = &#123; indexPath,tablleView in</span><br><span class="line">            let cell = tablleView.dequeueReusableCellWithIdentifier(&quot;ZECell&quot;, forIndexPath: indexPath) as! ZECell</span><br><span class="line">            cell.bigTitleLabel.text = weakSelf?.model.dataArr[indexPath.row].bigTitle</span><br><span class="line">            cell.contextLabel.text = weakSelf?.model.dataArr[indexPath.row].context</span><br><span class="line">            return cell</span><br><span class="line">        &#125;</span><br><span class="line">        // cell点击事件</span><br><span class="line">        viewModel.cellSlect = &#123; indexPath,tablleView in</span><br><span class="line">            print(weakSelf!.model.dataArr[indexPath.row].context)</span><br><span class="line">        &#125;</span><br><span class="line">        // 模拟网络请求</span><br><span class="line">        model.getData &#123; (success, status) in</span><br><span class="line">            weakSelf!.viewModel.rawCount = weakSelf!.model.dataArr.count</span><br><span class="line">            weakSelf!.tableView.reloadData()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    override func didReceiveMemoryWarning() &#123;</span><br><span class="line">        super.didReceiveMemoryWarning()</span><br><span class="line">        // Dispose of any resources that can be recreated.</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这样做的优点就是在Controller中很容易处理一些真正核心的步骤,不用写大量的重复代码.而且如果把ViewModel抽象好的话,整个工程的TableView都可以用这一个ViewModel，非常方便<br>最终形态可以做成这样</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1298596-fcba2e3c6157ed1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="掘金新版的设置界面"></p>
+<p>##DEMO地址</p>
+<p>&gt;<br>本项目demo:<a href="https://github.com/Lafree317/ZEMVVM" target="_blank" rel="noopener">https://github.com/Lafree317/ZEMVVM</a><br>OC版是一个比较完善的开源库,大家可以去看一下,我这个是oc版的阉割版<br>OC版地址:<a href="https://github.com/youzan/SigmaTableViewModel" target="_blank" rel="noopener">https://github.com/youzan/SigmaTableViewModel</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/10/2016-05-10 - UITableView计算cell高度的几种方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩辕小羽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="装修中">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/05/10/2016-05-10 - UITableView计算cell高度的几种方法/" itemprop="url">UITableView计算cell高度的几种方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-10T00:00:00+08:00">
+                2016-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://upload-images.jianshu.io/upload_images/1298596-8d54d23ca10f55a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>#前言</p>
+<blockquote>
+<p>在iOS开发中UITableView有很多需要注意的坑,这篇文章主要总结一下计算cell高度的几种方式,并且分析一下每种方式的优缺点..请结合demo一起看<br>demo地址:<a href="https://github.com/Lafree317/ZECellHightDemo" target="_blank" rel="noopener">https://github.com/Lafree317/ZECellHightDemo</a></p>
+</blockquote>
+<p>#上代码</p>
+<blockquote>
+<p>因为网络层和Model层是通用的所以提前看一眼<br>网络层:通用的网络接口,抓取自知乎日报首页..</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">import UIKit</span><br><span class="line">import SwiftyJSON</span><br><span class="line">import AFNetworking</span><br><span class="line"></span><br><span class="line">typealias HomeModelBlock = (homeModel:HomeModel) -&gt; Void</span><br><span class="line"></span><br><span class="line">class Helper: NSObject &#123;</span><br><span class="line">    /**</span><br><span class="line">     抓取知乎日报首页</span><br><span class="line">     </span><br><span class="line">     - parameter callBack: 回调一个HomeModel</span><br><span class="line">     */</span><br><span class="line">    internal func getData(callBack:HomeModelBlock)&#123;</span><br><span class="line">        // AFNetWorking请求数据</span><br><span class="line">        let url =  &quot;http://news-at.zhihu.com/api/4/news/latest&quot;</span><br><span class="line">        let manager = AFHTTPSessionManager()</span><br><span class="line">        manager.GET(url, parameters: nil, progress: nil, success: &#123; (dataTask, anyobject) in</span><br><span class="line">            </span><br><span class="line">            let json = JSON(anyobject!)</span><br><span class="line">            let top_stories = self.jsonToNewsArr(json[&quot;top_stories&quot;].arrayValue)</span><br><span class="line">            let date = json[&quot;date&quot;].stringValue</span><br><span class="line">            let stories = self.jsonToNewsArr(json[&quot;stories&quot;].arrayValue)</span><br><span class="line">            let homeModel = HomeModel(top_stories: top_stories, date: date, stories: stories)</span><br><span class="line">            </span><br><span class="line">            callBack(homeModel: homeModel)</span><br><span class="line">        &#125;) &#123; (dataTask, error) in</span><br><span class="line">            // 暂不处理错误</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     传入解析一个json数组,返回一个model数组</span><br><span class="line">     </span><br><span class="line">     - parameter jsonArr: SwiftyJSON解析出来的json数组</span><br><span class="line">     </span><br><span class="line">     - returns: NewsModel数组</span><br><span class="line">     */</span><br><span class="line">    func jsonToNewsArr(jsonArr:[JSON]) -&gt; Array&lt;NewsModel&gt; &#123;</span><br><span class="line">        var newsArr:Array&lt;NewsModel&gt; = []</span><br><span class="line">        for i in 0 ..&lt; jsonArr.count &#123;</span><br><span class="line">            let id = jsonArr[i][&quot;id&quot;].intValue</span><br><span class="line">            let title = jsonArr[i][&quot;title&quot;].stringValue</span><br><span class="line">            var image = jsonArr[i][&quot;image&quot;].stringValue</span><br><span class="line">            // 有的图片是数组,暂时不处理,只取出一张</span><br><span class="line">            if image == &quot;&quot; &#123;</span><br><span class="line">                image = jsonArr[i][&quot;images&quot;].arrayValue[0].stringValue</span><br><span class="line">            &#125;</span><br><span class="line">            let type =  jsonArr[i][&quot;type&quot;].intValue</span><br><span class="line">            let ga_prefix = jsonArr[i][&quot;ga_prefix&quot;].stringValue</span><br><span class="line">            let newModel = NewsModel(id: id, title: title, image: image, type: type, ga_prefix: ga_prefix)</span><br><span class="line">            newsArr.append(newModel)</span><br><span class="line">        &#125;</span><br><span class="line">        return newsArr</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Model层:按照请求返回的json格式创建一个struct</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// 知乎日报首页model</span><br><span class="line">struct HomeModel &#123;</span><br><span class="line">    let top_stories:Array&lt;NewsModel&gt; // 置顶内容</span><br><span class="line">    let date:String // 日期</span><br><span class="line">    let stories:Array&lt;NewsModel&gt; // 今日内容</span><br><span class="line">    </span><br><span class="line">    // 返回一整个数组</span><br><span class="line">    func getDataArr() -&gt; Array&lt;NewsModel&gt; &#123;</span><br><span class="line">        return top_stories + stories</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">struct NewsModel &#123;</span><br><span class="line">    let id:Int</span><br><span class="line">    let title:String // 标题</span><br><span class="line">    let image:String // 图片地址</span><br><span class="line">    let type:Int</span><br><span class="line">    let ga_prefix:String</span><br><span class="line">    </span><br><span class="line">    // 获取cell的高度</span><br><span class="line">    func getCellHeight() -&gt; CGFloat &#123;</span><br><span class="line">        var cellHeight:CGFloat = 0</span><br><span class="line">        let imageHeight:CGFloat = 200</span><br><span class="line">        let margin:CGFloat = 8 // label距离上下左右各为8</span><br><span class="line">        </span><br><span class="line">        // 计算title高度方法</span><br><span class="line">        let size = CGSizeMake(UIScreen.mainScreen().bounds.width - margin*2 ,0)</span><br><span class="line">        let titleHeight = title.boundingRectWithSize(size, options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName:UIFont.systemFontOfSize(20)], context: nil).height</span><br><span class="line">        </span><br><span class="line">        cellHeight = imageHeight + titleHeight + margin*2 + 1 //+1才换行...可能是cell分割线吧....</span><br><span class="line">        </span><br><span class="line">        return cellHeight</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##开始正题</p>
+<h3 id="通过model计算高度"><a href="#通过model计算高度" class="headerlink" title="通过model计算高度"></a>通过model计算高度</h3><blockquote>
+<p>Model内生成一个计算方法,通过model内的属性计算高度.这种方式应该是最稳妥的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    // 获取cell的高度</span><br><span class="line">    func getCellHeight() -&gt; CGFloat &#123;</span><br><span class="line">        var cellHeight:CGFloat = 0</span><br><span class="line">        let imageHeight:CGFloat = 200</span><br><span class="line">        let margin:CGFloat = 8 // label距离上下左右各为8</span><br><span class="line">        </span><br><span class="line">        // 计算title高度方法</span><br><span class="line">        let size = CGSizeMake(UIScreen.mainScreen().bounds.width - margin*2 ,0)</span><br><span class="line">        let titleHeight = title.boundingRectWithSize(size, options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName:UIFont.systemFontOfSize(20)], context: nil).height</span><br><span class="line">        </span><br><span class="line">        cellHeight = imageHeight + titleHeight + margin*2 + 1 //+1才换行...可能是cell分割线吧....</span><br><span class="line">        </span><br><span class="line">        return cellHeight</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>缺点:如果计算量太大代码会很难读懂,不好改</p>
+</blockquote>
+<h3 id="通过持有Cell计算高度"><a href="#通过持有Cell计算高度" class="headerlink" title="通过持有Cell计算高度"></a>通过持有Cell计算高度</h3><blockquote>
+<p>给cell赋值的时候直接改变cell的contentView.frame,通过controller里再多持有一个cell,每次需要计算高度的时候给自己持有的也赋值一次然后直接返回cell的高</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 现在controller里创建一个cell属性并且初始化</span><br><span class="line">cell = NSBundle.mainBundle().loadNibNamed(&quot;RetainCell&quot;, owner: self, options: nil).first as! RetainCell</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 最好新写一个方法,如果都走赋值方法的话会容易引发问题</span><br><span class="line">func getCellHeight(model:NewsModel) -&gt; CGFloat&#123;</span><br><span class="line">    self.buttomLabel.text = model.title</span><br><span class="line">    // 下面两个方法都是必要的</span><br><span class="line">    self.buttomLabel.layoutIfNeeded()</span><br><span class="line">    self.buttomLabel.sizeToFit() // 让label自适应</span><br><span class="line">    // 更改 contentView.frame</span><br><span class="line">    var rect = self.contentView.frame</span><br><span class="line">    rect.size.height = CGRectGetMaxY(buttomLabel.frame) + 8</span><br><span class="line">    self.contentView.frame = rect</span><br><span class="line">    return self.contentView.frame.height</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 在tableView返回cell高度时</span><br><span class="line">override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -&gt; CGFloat &#123;</span><br><span class="line">    return cell.getCellHeight(dataArr[indexPath.row])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>缺点:每次计算高度时都要给cell赋值两次,性能太低,在某些情况下会对屏幕适配上出问题…网上流传这种方法真是坑人…也许是本菜鸡不会用..希望大家指正</p>
+</blockquote>
+<h3 id="通过可视化计算cell高度"><a href="#通过可视化计算cell高度" class="headerlink" title="通过可视化计算cell高度"></a>通过可视化计算cell高度</h3><blockquote>
+<p>通过AutoLayout的约束给每个控件定义优先级,如果需要再某些地方再次更改高度可以在代码中更改约束的内容然后layoutIfNeed<br>先给label的高度设置为&gt;=32</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1298596-813121576d0a2f88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 然后设置tableView.rowHeight</span><br><span class="line">self.tableView.rowHeight = UITableViewAutomaticDimension</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 只用设置一个预估高度</span><br><span class="line">override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -&gt; CGFloat &#123;</span><br><span class="line">    return 258//预估高度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>缺点:这种方式在我自己敲demo的时候一直在用,还没有碰到缺点…不过按照惯例一定有坑,只是我还没踩到而已..(可能需求太变态的时候不好做)</p>
+<h3 id="库计算"><a href="#库计算" class="headerlink" title="库计算"></a>库计算</h3><p>SDAutoLayout等库会自动计算Cell高度</p>
+<h3 id="固定高度"><a href="#固定高度" class="headerlink" title="固定高度"></a>固定高度</h3></blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/10/2016-04-10 - iOS-PageControl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩辕小羽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="装修中">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/10/2016-04-10 - iOS-PageControl/" itemprop="url">iOS-PageControl</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-10T00:00:00+08:00">
+                2016-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#第一版</p>
+<blockquote>
+<p>之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出<br>调用时只需要传入一个title数组就好了</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">override func viewDidLoad() &#123;</span><br><span class="line">    super.viewDidLoad()</span><br><span class="line">    let zeVC = ZEPageViewController()</span><br><span class="line">    zeVC.titlesArr = [&quot;动态&quot;,&quot;问题&quot;,&quot;讨论&quot;]</span><br><span class="line">    self.addChildViewController(zeVC)</span><br><span class="line">    self.view.addSubview(zeVC.view)</span><br><span class="line">    // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>#原理</p>
+<blockquote>
+<p>这个项目的层级视图是这样的</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1298596-1a75086cb4e4c3c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>先在底部创建一个和<code>viewController.view</code>一样大的<code>scrollView</code><br>然后将<code>tableviewController</code>添加上去<br>最后将<code>tableviewController.tableView.contentInset</code>的<code>top</code>设置为你想要的高度(headerView+menuView)<br>然后通过代理将<code>tableviewController</code>的偏移量代理到主控制器上,用于计算顶部<code>headerView</code>和<code>menuView</code>的移动<br>然后主控制器的<code>scrollview</code>代理方法被调用时计算<code>tableviewcontroller.contentOffset</code><br>难点主要在于计算三个<code>tableViewController</code>的<code>contentInset</code>和<code>contentOffset</code></p>
+</blockquote>
+<p>#代码</p>
+<p>####先看一眼全局属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/** 屏幕宽度高度 */</span><br><span class="line">let kZEScreenWidth = UIScreen.mainScreen().bounds.size.width</span><br><span class="line">let kZEScreenHight = UIScreen.mainScreen().bounds.size.height</span><br><span class="line"></span><br><span class="line">/** header和menu的高度 */</span><br><span class="line">let kZEHeaderHight:CGFloat = 135</span><br><span class="line">let kZEMenuHight:CGFloat = 50</span><br><span class="line">let kScrollHorizY = kZEMenuHight+kZEHeaderHight</span><br><span class="line"></span><br><span class="line">let kNavigationHight:CGFloat = 64</span><br><span class="line"></span><br><span class="line">/** 偏移方法操作枚举 */</span><br><span class="line">enum headerMenuShowType:UInt &#123;</span><br><span class="line">    case up = 1 // 固定在navigation上面</span><br><span class="line">    case buttom = 2 // 固定在navigation下面</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** button两种状态的颜色 可以无视 */</span><br><span class="line">let COLOR_BUTTON_DEFAULT = UIColor.init(red: 124/255.0, green: 129/255.0, blue: 138/255.0, alpha: 1)</span><br><span class="line">let COLOR_BUTTON_SELECT = UIColor.init(red: 0/255.0, green: 127/255.0, blue: 255/255.0, alpha: 1)</span><br></pre></td></tr></table></figure></p>
+<p>####ZEPageViewController</p>
+<blockquote>
+<p>创建scrollView</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">/** 创建底部scrollView,并将tableViewController添加到上面 */</span><br><span class="line">    func layoutBackgroundScrollView()&#123;</span><br><span class="line"></span><br><span class="line">        self.backgroundScrollView = UIScrollView(frame: self.view.frame)</span><br><span class="line">        self.backgroundScrollView?.pagingEnabled = true</span><br><span class="line">        self.backgroundScrollView?.bounces = false</span><br><span class="line">        self.backgroundScrollView?.delegate = self</span><br><span class="line">        let floatArrCount = CGFloat(titlesArr.count)</span><br><span class="line">        self.backgroundScrollView?.contentSize = CGSizeMake(floatArrCount*kZEScreenWidth,self.view.frame.size.height-64)</span><br><span class="line"></span><br><span class="line">        // 给scrollY赋初值避免一上来滑动就乱</span><br><span class="line">        scrollY = -kScrollHorizY // tableView自己持有的偏移量和赋值时给的偏移量符号是相反的</span><br><span class="line">        for  i in 0 ..&lt; titlesArr.count  &#123;</span><br><span class="line">            let floatI = CGFloat(i)</span><br><span class="line"></span><br><span class="line">            let tableViewVC = ZETableViewController(style: UITableViewStyle.Plain)</span><br><span class="line">            // tableView顶部流出HeaderView和MenuView的位置</span><br><span class="line">            tableViewVC.tableView.contentInset = UIEdgeInsetsMake(kScrollHorizY, 0, 0, 0 )</span><br><span class="line">            tableViewVC.delegate = self</span><br><span class="line">            tableViewVC.view.frame = CGRectMake(floatI * kZEScreenWidth,0, self.view.frame.size.width, self.view.frame.size.height-64)</span><br><span class="line">            tableViewVC.tags = titlesArr[i]</span><br><span class="line"></span><br><span class="line">            // 将tableViewVC添加进数组方便管理</span><br><span class="line">            tableViewArr.append(tableViewVC)</span><br><span class="line">            self.addChildViewController(tableViewVC)</span><br><span class="line">        &#125;</span><br><span class="line">        // 需要用到的时候再添加到view上,避免一上来就占用太多资源</span><br><span class="line">        backgroundScrollView?.addSubview(tableViewArr[0].view)</span><br><span class="line">        self.view.addSubview(backgroundScrollView!)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>创建HeaderView MenuView</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/** 创建HeaderView和MenuView */</span><br><span class="line">    func layoutHeaderMenuView()&#123;</span><br><span class="line">        // 通过Xib导入headerView</span><br><span class="line">        headerView = NSBundle.mainBundle().loadNibNamed(&quot;ZEHeaderView&quot;, owner: self, options: nil).first as! ZEHeaderView</span><br><span class="line">        headerView.frame = CGRectMake(0, 64, kZEScreenWidth, kZEHeaderHight)</span><br><span class="line">        self.view .addSubview(headerView)</span><br><span class="line"></span><br><span class="line">        // MenuView</span><br><span class="line">        menuView = ZEMenuView(frame:CGRectMake(0,CGRectGetMaxY(headerView.frame),kZEScreenWidth,kZEMenuHight))</span><br><span class="line">        menuView.delegate = self</span><br><span class="line">        menuView.setUIWithArr(titlesArr)</span><br><span class="line">        self.view .addSubview(self.menuView)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>然后在ViewDidLoad里面调用这两个方法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">override func viewDidLoad() &#123;</span><br><span class="line">    super.viewDidLoad()</span><br><span class="line">    self.automaticallyAdjustsScrollViewInsets = false</span><br><span class="line">    layoutBackgroundScrollView()</span><br><span class="line">    layoutHeaderMenuView()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1298596-e8dfcf5b4300a039.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="现在控件就创建完了"></p>
+<blockquote>
+<p>重点来了,首先在<code>ZETableViewController</code>里面设置代理方法 回调tableView滚动时的偏移量</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">override func scrollViewDidScroll(scrollView: UIScrollView) &#123;</span><br><span class="line">    self.delegate?.tableViewDidScrollPassY(scrollView.contentOffset.y)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>然后在ZEPageControl里进行操作</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">func tableViewDidScrollPassY(tableviewScrollY: CGFloat) &#123;</span><br><span class="line">        // 计算每次改变的值</span><br><span class="line">        let seleoffSetY = tableviewScrollY - scrollY</span><br><span class="line">        // 将scrollY的值同步</span><br><span class="line">        scrollY = tableviewScrollY</span><br><span class="line"></span><br><span class="line">        // 偏移量超出Navigation之上</span><br><span class="line">        if scrollY &gt;= -kZEMenuHight &#123;</span><br><span class="line">            headerMenuViewShowType(.up)</span><br><span class="line">        &#125;else if  scrollY &lt;= -kScrollHorizY &#123;</span><br><span class="line">            // 偏移量超出Navigation之下</span><br><span class="line">            headerMenuViewShowType(.buttom)</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            // 剩下的只有需要跟随的情况了</span><br><span class="line">            // 将headerView的y值按照偏移量更改</span><br><span class="line">            headerView.frame.origin.y -= seleoffSetY</span><br><span class="line">            menuView.frame.origin.y = CGRectGetMaxY(headerView.frame)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /** 因为频繁用到header和menu的固定,所以声明一个方法用于偷懒 */</span><br><span class="line">    func headerMenuViewShowType(showType:headerMenuShowType)&#123;</span><br><span class="line">        switch showType &#123;</span><br><span class="line">        case .up:</span><br><span class="line">            menuView.frame.origin.y = kNavigationHight</span><br><span class="line">            headerView.frame.origin.y = kNavigationHight-kZEHeaderHight</span><br><span class="line">            break</span><br><span class="line">        case .buttom:</span><br><span class="line">            headerView.frame.origin.y = kNavigationHight</span><br><span class="line">            menuView.frame.origin.y = CGRectGetMaxY(headerView.frame)</span><br><span class="line">            break</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这两个方法写完之后上下滑动就可以有效果了<br>//不要看代码少,之前那个版本计算这里超级乱…整理之后发现代码还挺少的…</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1298596-2a5bfcb8f55b88a7.gif?imageMogr2/auto-orient/strip" alt=""></p>
+<blockquote>
+<p>然后是左右滑动时的方法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">func scrollViewDidScroll(scrollView: UIScrollView) &#123;</span><br><span class="line">    // 判断是否有X变动,这里只处理横向滑动</span><br><span class="line">    if scrollX == scrollView.contentOffset.x&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    // 当tableview滑动到很靠上的时候,下一个tableview出现时只用在menuView之下</span><br><span class="line">    if scrollY &gt;= -kZEMenuHight &#123;</span><br><span class="line">        scrollY = -kZEMenuHight</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for tableViewVC in tableViewArr &#123;</span><br><span class="line">        tableViewVC.tableView.contentOffset = CGPointMake(0, scrollY)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 用于改变menuView的状态</span><br><span class="line">    let rate = (scrollView.contentOffset.x/kZEScreenWidth)</span><br><span class="line">    self.menuView.scrollToRate(rate)</span><br><span class="line"></span><br><span class="line">    // +0.7的意思是 当滑动到30%的时候加载下一个tableView</span><br><span class="line">    backgroundScrollView?.addSubview(tableViewArr[Int(rate+0.7)].view)</span><br><span class="line"></span><br><span class="line">    // 记录x</span><br><span class="line">    scrollX = scrollView.contentOffset.x</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>左右滑动还牵扯到MenuView的点击事件,所以把menuView里面选中代理回来</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">func menuViewSelectIndex(index: Int) &#123;</span><br><span class="line">    // 0.3秒的动画为了显得不太突兀</span><br><span class="line">    UIView.animateWithDuration(0.3) &#123;</span><br><span class="line">        self.backgroundScrollView?.contentOffset = CGPointMake(kZEScreenWidth*CGFloat(index),-kNavigationHight)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HeaderView和MenuView的具体代码在dem`里看就好了,因为这些都是根据不同需求自己定制的,如果想改造这个项目为己用的话,只需在具体View里改就好了,如果改变高度请在全局属性里更改</p>
+</blockquote>
+<p>#更新</p>
+<p>#4月12日更新效果:</p>
+<blockquote>
+<p>本次更新主要用alpha控制控制navigation的出现和隐藏,比直接给navigation赋值图片更安全一些,不容易乱.但是目前还有个一些小bug..明天在修复 比如现在的title赋不上值了..等等..<br>昨天更新的navigation直接hidden有毒,偏移量会乱,不建议用哪种方式直接隐藏navigation<br>这次的难点在于Y值改变时几个数字的计算:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 基准线 用于当做计算0-1的..被除数..分母...</span><br><span class="line">let datumLine = -kZEMenuHight-kNavigationHight + kScrollHorizY</span><br><span class="line">// 计算当前的值..除数...分子..</span><br><span class="line">let nowY = scrollY + kZEMenuHight+kNavigationHight</span><br><span class="line">// 一个0-1的值</span><br><span class="line">let nowAlpa = 1+nowY/datumLine</span><br><span class="line">// 以0.5为基础 改变字体和状态栏的颜色</span><br><span class="line">if nowAlpa &gt; 0.5 &#123;</span><br><span class="line">    hiddenNav(false)</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    hiddenNav(true)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">self.navigationController?.navigationBar.alpha = nowAlpa</span><br></pre></td></tr></table></figure>
+<p>#4月11日更新效果:<br><img src="http://upload-images.jianshu.io/upload_images/1298596-e0d2f6bdb88da632.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="navigation消失"><br><img src="http://upload-images.jianshu.io/upload_images/1298596-469d3925ed7abd67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="navigation出现"></p>
+<blockquote>
+<p>更改了navigation之上的效果,主要牵扯到一些基数的计算,弄懂这几个数字就可以随意更改这个项目了.<br>还有隐藏Navigation和恢复Navigation的时候有很多坑,下一次更新讲解<br>之前那版比较像简书主页,这个更像掘金主页</p>
+</blockquote>
+<p>#4月14日更新</p>
+<blockquote>
+<p>现在navigation隐藏的时候会有一个白色的title在顶部,navigation的隐藏和恢复显得更自然了<br>这个版本是一个比较稳定的版本,下次更新可能会会放出OC版…</p>
+</blockquote>
+<p>#效果图<br><img src="http://upload-images.jianshu.io/upload_images/1298596-9a486b32773b67f9.gif?imageMogr2/auto-orient/strip" alt=""></p>
+<p>#源码</p>
+<p>#####github:<a href="https://github.com/Lafree317/ZEPageControl" target="_blank" rel="noopener">https://github.com/Lafree317/ZEPageControl</a><br>喜欢的话请点个star 嘿嘿<br>顺便宣传一下我们公司的项目 掘金<a href="http://gold.xitu.io/" target="_blank" rel="noopener">http://gold.xitu.io/</a><br>在这里能找到网络上最优质的文章,对于正在学习的你们很有帮助噢!</p>
 
           
         
@@ -606,6 +1844,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -649,7 +1891,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
