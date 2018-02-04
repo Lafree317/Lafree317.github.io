@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/21/1611714302fc7ba8">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/18/16108511a0de733a?w=1024&h=814&f=png&s=152490">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/18/161085a9c92e1439?w=1419&h=681&f=png&s=417269">
-<meta property="og:updated_time" content="2018-02-03T11:01:44.606Z">
+<meta property="og:updated_time" content="2018-02-03T11:40:43.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity&amp;C#有限状态机">
 <meta name="twitter:description" content="游戏中角色控制有很多状态,如果靠传统的全局属性然后通过swich和if来判断的话,扩展性差,重复代码多. 通过编写一个状态管理库来解决状态变化的优点有  代码整洁 可复用 易管理  什么是有限状态机?有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。[1]如图所示: 主角从跑状">
@@ -332,7 +332,7 @@
 <li>可复用</li>
 <li>易管理</li>
 </ul>
-<h3 id="什么是有限状态机"><a href="#什么是有限状态机" class="headerlink" title="什么是有限状态机?"></a>什么是有限状态机?</h3><p>有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。[1]<br><img src="https://user-gold-cdn.xitu.io/2018/1/18/16108511a0de733a?w=1024&amp;h=814&amp;f=png&amp;s=152490" alt=""><br>如图所示: 主角从跑状态切换到跳状态,从跳状态切换到二段跳状态,这里的切换就是指状态的转移。状态的转移是有条件的,比如主角从跑状态不可以直接切换到二段跳状态。但是可以从二段跳状态切换到跑状态。</p>
+<h3 id="什么是有限状态机"><a href="#什么是有限状态机" class="headerlink" title="什么是有限状态机?"></a>什么是有限状态机?</h3><p>有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。[1]<br><img src="https://user-gold-cdn.xitu.io/2018/1/18/16108511a0de733a?w=1024&amp;h=814&amp;f=png&amp;s=152490" alt=""><br>如图所示: 主角从跑状态切换到跳状态,从跳状态切换到二段跳状态,这里的切换就是指状态的转移。状态的转移是有条件的,比如主角从跑状态不可以直接切换到二段跳状态。但是 可以从二段跳状态切换到跑状态。</p>
 <p>另外,一个基本的状态有:进入状态、退出状态、接收输入、转移状态等动作。但是仅仅作为跑酷的角色的状态管理来说,只需要转移状态就足够了。有兴趣的同学可以自行扩展。</p>
 <a id="more"></a>
 <h3 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h3><p>代码注释很多,所以直接看代码配合注释理解的更快</p>
@@ -468,7 +468,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
