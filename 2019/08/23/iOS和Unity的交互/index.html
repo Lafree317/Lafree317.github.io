@@ -54,28 +54,28 @@
   };
 </script>
 
-  <meta name="description" content="前言今天听说了一个很有意思的需求,把Unity游戏打成一个包,嵌入到原生APP中  正好两种技术栈我都有过相关经验,所以手痒实现一下! 版本 Unity 2019.2.0f1 Xcode 9.3.1">
+  <meta name="description" content="前言 今天听说了一个很有意思的需求,把Unity游戏打成一个包,嵌入到原生APP中正好两种技术栈我都有过相关经验,所以手痒实现一下!  版本Unity 2019.2.0f1Xcode9.3.1">
 <meta name="keywords" content="iOS,Unity">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS与Unity的交互">
 <meta property="og:url" content="http://yoursite.com/2019/08/23/iOS和Unity的交互/index.html">
 <meta property="og:site_name" content="Lafree&#39;s Blog">
-<meta property="og:description" content="前言今天听说了一个很有意思的需求,把Unity游戏打成一个包,嵌入到原生APP中  正好两种技术栈我都有过相关经验,所以手痒实现一下! 版本 Unity 2019.2.0f1 Xcode 9.3.1">
+<meta property="og:description" content="前言 今天听说了一个很有意思的需求,把Unity游戏打成一个包,嵌入到原生APP中正好两种技术栈我都有过相关经验,所以手痒实现一下!  版本Unity 2019.2.0f1Xcode9.3.1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/8/23/16cbe13323e7a302?w=3304&h=1724&f=png&s=594431">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/8/23/16cbe13b10cf0a31?w=788&h=82&f=png&s=16861">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/8/23/16cbe142503d56ff?w=780&h=196&f=png&s=16174">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/8/23/16cbe14701174d51?w=1314&h=1228&f=png&s=153305">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/8/23/16cbe155a4cb0b53?w=311&h=599&f=gif&s=4657473">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/8/23/16cbe188e53d6f38?w=311&h=599&f=gif&s=123614">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/8/23/16cbe31870dc1211?w=1166&h=486&f=png&s=62160">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/8/23/16cbe31c43189b72?w=311&h=600&f=gif&s=2548449">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/8/23/16cbe1b72f976cfa?w=311&h=599&f=gif&s=362455">
-<meta property="og:updated_time" content="2019-08-23T11:46:33.381Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/images/iOS原生应用调用Unity/屏幕快照%202019-08-23%20下午4.38.33.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/images/iOS原生应用调用Unity/屏幕快照%202019-08-23%20下午4.43.51.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/images/iOS原生应用调用Unity/屏幕快照%202019-08-23%20下午4.43.57.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/images/iOS原生应用调用Unity/屏幕快照%202019-08-23%20下午4.43.26.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/images/iOS原生应用调用Unity/QQ20190823-172433-HD.gif">
+<meta property="og:image" content="http://yoursite.com/2019/08/images/iOS原生应用调用Unity/QQ20190823-181556-HD.gif">
+<meta property="og:image" content="http://yoursite.com/2019/08/images/iOS原生应用调用Unity/36892C39-B557-4CE6-A298-A2252AD0A15F.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/images/iOS原生应用调用Unity/QQ20190823-190811-HD.gif">
+<meta property="og:image" content="http://yoursite.com/2019/08/images/iOS原生应用调用Unity/QQ20190823-183235-HD.gif">
+<meta property="og:updated_time" content="2019-08-26T07:15:16.458Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS与Unity的交互">
-<meta name="twitter:description" content="前言今天听说了一个很有意思的需求,把Unity游戏打成一个包,嵌入到原生APP中  正好两种技术栈我都有过相关经验,所以手痒实现一下! 版本 Unity 2019.2.0f1 Xcode 9.3.1">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/8/23/16cbe13323e7a302?w=3304&h=1724&f=png&s=594431">
+<meta name="twitter:description" content="前言 今天听说了一个很有意思的需求,把Unity游戏打成一个包,嵌入到原生APP中正好两种技术栈我都有过相关经验,所以手痒实现一下!  版本Unity 2019.2.0f1Xcode9.3.1">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/images/iOS原生应用调用Unity/屏幕快照%202019-08-23%20下午4.38.33.png">
   <link rel="canonical" href="http://yoursite.com/2019/08/23/iOS和Unity的交互/">
 
 
@@ -236,11 +236,19 @@
                 
               
 
-              <time title="Created: 2019-08-23 00:00:00 / Modified: 19:46:33" itemprop="dateCreated datePublished" datetime="2019-08-23T00:00:00+08:00">2019-08-23</time>
+              <time title="Created: 2019-08-23 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-23T00:00:00+08:00">2019-08-23</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-26 15:15:16" itemprop="dateModified" datetime="2019-08-26T15:15:16+08:00">2019-08-26</time>
+              </span>
             
           
 
@@ -255,53 +263,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天听说了一个很有意思的需求,把Unity游戏打成一个包,嵌入到原生APP中 </p>
-<p>正好两种技术栈我都有过相关经验,所以手痒实现一下!</p>
-<p>版本</p>
-<p>Unity 2019.2.0f1</p>
-<p>Xcode 9.3.1</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>今天听说了一个很有意思的需求,把Unity游戏打成一个包,嵌入到原生APP中<br>正好两种技术栈我都有过相关经验,所以手痒实现一下!</p>
+</blockquote>
+<p>版本<br>Unity 2019.2.0f1<br>Xcode9.3.1</p>
 <a id="more"></a>
-<h2 id="Show-Me-The-Code"><a href="#Show-Me-The-Code" class="headerlink" title="Show Me The Code"></a>Show Me The Code</h2><p>创建一个Unity工程 </p>
-<p>拖入一个Cube和Text控件</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/8/23/16cbe13323e7a302?w=3304&amp;h=1724&amp;f=png&amp;s=594431" alt></p>
+<h2 id="Show-Me-The-Code"><a href="#Show-Me-The-Code" class="headerlink" title="Show Me The Code"></a>Show Me The Code</h2><p>创建一个Unity工程<br>拖入一个Cube和Text控件</p>
+<p><img src="../../images/iOS原生应用调用Unity/屏幕快照 2019-08-23 下午4.38.33.png" alt="3cb688c16796f3e06fe83ba2d9bd09aa"></p>
 <p>然后BuildSetting中切换到iOS</p>
 <blockquote>
-<p>注意如果需要用模拟器调试 需要在<code>Player Settings</code>中把<code>Other Settings</code>中的<code>Target SDK</code>切换为<code>Simulator SDK</code><br><img src="https://user-gold-cdn.xitu.io/2019/8/23/16cbe13b10cf0a31?w=788&amp;h=82&amp;f=png&amp;s=16861" alt></p>
-<p>Unity2019.2.0f中勾选<code>Auto Graphics API</code>并不会添加依赖<br>需要手动取消<code>Auto Graphics API</code>并在<code>Graphics APIs</code>中添加<code>OpenGLES3</code><br><img src="https://user-gold-cdn.xitu.io/2019/8/23/16cbe142503d56ff?w=780&amp;h=196&amp;f=png&amp;s=16174" alt></p>
-<p>然后点击Build<br><img src="https://user-gold-cdn.xitu.io/2019/8/23/16cbe14701174d51?w=1314&amp;h=1228&amp;f=png&amp;s=153305" alt></p>
+<p>注意如果需要用模拟器调试 需要在<code>Player Settings</code>中把<code>Other Settings</code>中的<code>Target SDK</code>切换为<code>Simulator SDK</code> </p>
+<p>Unity2019.2.0f中勾选<code>Auto Graphics API</code>并不会添加依赖<br><img src="../../images/iOS原生应用调用Unity/屏幕快照 2019-08-23 下午4.43.51.png" alt="e777aca23b92c1b49d29c3a5b6d0a262"></p>
+<p>需要手动取消<code>Auto Graphics API</code>并在<code>Graphics APIs</code>中添加<code>OpenGLES3</code><br><img src="../../images/iOS原生应用调用Unity/屏幕快照 2019-08-23 下午4.43.57.png" alt="f819fcc8e0d848700bbc018346f48ef7"></p>
 </blockquote>
+<p>然后点击Build</p>
+<p><img src="../../images/iOS原生应用调用Unity/屏幕快照 2019-08-23 下午4.43.26.png" alt="f91efed2b8f55c422b56b03f3602f87c"></p>
 <h3 id="iOS唤起Unity"><a href="#iOS唤起Unity" class="headerlink" title="iOS唤起Unity"></a>iOS唤起Unity</h3><p>Unity默认在iOS <code>AppDelegate</code>中的<code>applicationDidBecomeActive</code>调用一个<code>startUnity:</code>方法<br>如果要自定义唤起时间,则需要改变这个方法的调用时机</p>
 <p>在<code>UnityAppController</code>修改并添加以下代码<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)applicationDidBecomeActive:(UIApplication*)application</span><br><span class="line">&#123;</span><br><span class="line">::<span class="built_in">printf</span>(<span class="string">"-&gt; applicationDidBecomeActive()\n"</span>);</span><br><span class="line"></span><br><span class="line">[self removeSnapshotView];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (_unityAppReady)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (UnityIsPaused() &amp;&amp; _wasPausedExternal == <span class="literal">false</span>)</span><br><span class="line">&#123;</span><br><span class="line">UnityWillResume();</span><br><span class="line">UnityPause(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (_wasPausedExternal)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (UnityIsFullScreenPlaying())</span><br><span class="line">TryResumeFullScreenVideo();</span><br><span class="line">&#125;</span><br><span class="line">UnitySetPlayerFocus(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (!_startUnityScheduled)</span><br><span class="line">&#123;</span><br><span class="line">_startUnityScheduled = <span class="literal">true</span>;</span><br><span class="line"><span class="comment">// 替换startUnity:为startSelfIOSView</span></span><br><span class="line">[self performSelector: @selector(startSelfIOSView) withObject: application afterDelay: <span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">_didResignActive = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 创建原生页面和控件,自己控制唤起Unity时机</span></span><br><span class="line">- (<span class="keyword">void</span>)startSelfIOSView</span><br><span class="line">&#123;</span><br><span class="line">UIViewController *vc = [[UIViewController alloc] init];</span><br><span class="line">vc.view.frame = [UIScreen mainScreen].bounds;</span><br><span class="line">vc.view.backgroundColor = [UIColor whiteColor];</span><br><span class="line">UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(<span class="number">100</span>, <span class="number">100</span>, <span class="number">200</span>, <span class="number">50</span>)];</span><br><span class="line">btn.backgroundColor = [UIColor blueColor];</span><br><span class="line">[btn setTitle:@<span class="string">"跳转到Unity界面"</span> forState:UIControlStateNormal];</span><br><span class="line"><span class="comment">// 按钮被点击时唤起Unity项目</span></span><br><span class="line">[btn addTarget:self action:@selector(startUnity:) forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">[vc.view addSubview:btn];</span><br><span class="line">[_window addSubview:vc.view];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>然后就可以通过我们的定义的时机唤起Unity了<br><img src="https://user-gold-cdn.xitu.io/2019/8/23/16cbe155a4cb0b53?w=311&amp;h=599&amp;f=gif&amp;s=4657473" alt></p>
+<p>然后就可以通过我们的定义的时机唤起Unity了<br><img src="../../images/iOS原生应用调用Unity/QQ20190823-172433-HD.gif" alt="f01bd0aa7ef7071ccb876c6e63061187"></p>
 <h3 id="Unity唤起iOS"><a href="#Unity唤起iOS" class="headerlink" title="Unity唤起iOS"></a>Unity唤起iOS</h3><p>因为Unity界面跳转到IOS界面涉及到了暂停Unity所以我们需要实现一个单例来判断Unity的暂停或启动</p>
 <p>LARManager.h<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"></span><br><span class="line">@interface LARManager : NSObject</span><br><span class="line"><span class="comment">/** 是否暂停Unity */</span></span><br><span class="line">@property (assign, nonatomic) BOOL unityIsPaused;</span><br><span class="line">+ (instancetype)sharedInstance;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
 <p>LARManager.m<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"LARManager.h"</span></span></span><br><span class="line"></span><br><span class="line">@implementation LARManager</span><br><span class="line"></span><br><span class="line">+ (instancetype)sharedInstance</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">static</span> LARManager *manager;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">dispatch_once_t</span> onceToken;</span><br><span class="line">dispatch_once(&amp;onceToken, ^&#123;</span><br><span class="line">manager = [[self alloc] init];</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">return</span> manager;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (instancetype)init</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (self = [super init]) &#123;</span><br><span class="line">self.unityIsPaused = NO;</span><br><span class="line">NSLog(@<span class="string">"单例初始化成功"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> self;</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
 <p>然后在iOS中声明被Unity调用的方法<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">// 对Unity中的unityToIOS方法进行实现</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">unityToIOS</span><span class="params">(<span class="keyword">char</span>* str)</span></span>&#123;</span><br><span class="line"><span class="comment">// Unity传递过来的参数</span></span><br><span class="line">NSLog(@<span class="string">"%s"</span>,str);</span><br><span class="line">UnityPause(<span class="literal">true</span>);</span><br><span class="line"><span class="comment">// 跳转到IOS界面，Unity界面暂停</span></span><br><span class="line">[LARManager sharedInstance].unityIsPaused = YES;</span><br><span class="line"><span class="comment">// GetAppController()获取appController，相当于self</span></span><br><span class="line"><span class="comment">// UnityGetGLView()获取UnityView，相当于_window</span></span><br><span class="line"><span class="comment">// 点击按钮后跳转到IOS界面，设置界面为IOS界面</span></span><br><span class="line">GetAppController().window.rootViewController = GetAppController().vc;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>在Unity中调用<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[DllImport(<span class="string">"__Internal"</span>)]</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">unityToIOS</span> <span class="params">(<span class="built_in">string</span> str)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 按钮点击后切换到iOS界面发送一个字符串</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ButtonClick</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">unityToIOS(<span class="string">"Hello iOS"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>实现效果:</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/8/23/16cbe188e53d6f38?w=311&amp;h=599&amp;f=gif&amp;s=123614" alt></p>
+<p>实现效果:<br><img src="../../images/iOS原生应用调用Unity/QQ20190823-181556-HD.gif" alt="d728085a9a2a591edd57e8d1379dd101"></p>
 <h3 id="Unity向iOS传值"><a href="#Unity向iOS传值" class="headerlink" title="Unity向iOS传值"></a>Unity向iOS传值</h3><h4 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h4><p>在上个例子中已经展示了Unity向iOS传值的方法<br>在iOS中在<code>extern &quot;C&quot;</code>中声明方法,然后在Unity中添加方法属性并添加标签<code>[DllImport(&quot;__Internal&quot;)]</code><br>然后就可以直接调用了</p>
 <h4 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h4><p>在Unity项目中添加<code>Test.h</code> <code>Test.m</code><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Test.h</span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">outputAppendString</span> <span class="params">(<span class="keyword">char</span> *str1, <span class="keyword">char</span> *str2)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Test.m</span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">outputAppendString</span> <span class="params">(<span class="keyword">char</span> *str1, <span class="keyword">char</span> *str2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">NSString *string1 = [[NSString alloc] initWithUTF8String:str1];</span><br><span class="line">NSString *string2 = [[NSString alloc] initWithUTF8String:str2];</span><br><span class="line"></span><br><span class="line">NSLog(@<span class="string">"###%@"</span>, [NSString stringWithFormat:@<span class="string">"%@ %@"</span>, string1, string2]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>然后两个文件<code>Include Platforms</code>设置为<code>iOS</code></p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/8/23/16cbe31870dc1211?w=1166&amp;h=486&amp;f=png&amp;s=62160" alt></p>
+<p><img src="../../images/iOS原生应用调用Unity/36892C39-B557-4CE6-A298-A2252AD0A15F.png" alt="ffd2bd502a9c319fdfc582d422327b2d"></p>
 <p>然后添加一个按钮绑定事件<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入OC文件</span></span><br><span class="line">[DllImport(<span class="string">"__Internal"</span>)]</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">outputAppendString</span> <span class="params">(<span class="built_in">string</span> str1, <span class="built_in">string</span> str2)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ButtonClickCalliOS</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> UNITY_IPHONE    </span></span><br><span class="line">outputAppendString(<span class="string">"Hello"</span>, <span class="string">"World"</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>就可以在不做任何iOS操作的情况下 把HelloWordl传入到iOS中啦~</p>
 <p>实现效果:</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/8/23/16cbe31c43189b72?w=311&amp;h=600&amp;f=gif&amp;s=2548449" alt></p>
+<p><img src="../../images/iOS原生应用调用Unity/QQ20190823-190811-HD.gif" alt="593baeaa982ff03e9fd8168517c085f8"></p>
 <h3 id="iOS向Unity传值"><a href="#iOS向Unity传值" class="headerlink" title="iOS向Unity传值"></a>iOS向Unity传值</h3><p>iOS向Unity传值主要通过<code>void UnitySendMessage(const char* obj, const char* method, const char* msg);</code>这个方法<br>这个方法可以传入三个参数:</p>
 <ul>
 <li>参数一为unity脚本挂载的gameobject</li>
 <li>参数二为unity脚本中要调用的方法名</li>
-<li>参数三为传递的数据，*注意：传递的数据只能是char 类型</li>
+<li>参数三为传递的数据，*注意：传递的数据只能是char 类型<br><img src="../../images/iOS原生应用调用Unity/QQ20190823-183235-HD.gif" alt="974200c7700fc209041003b64aa631e6"></li>
 </ul>
-<p><img src="https://user-gold-cdn.xitu.io/2019/8/23/16cbe1b72f976cfa?w=311&amp;h=599&amp;f=gif&amp;s=362455" alt></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总之就是删除Unity默认的启动时机</p>
 <p>然后再通过自定义的时机跳转到Unity界面 或着跳回到原生界面</p>
 <p>甚至可以用iOS的原生控件去操作Unity的对象</p>
 <p>这样 iOS部分的开发 和 Unity部分的开发就可以同时进行了</p>
 <h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>项目地址:<br><a href="https://github.com/Lafree317/iOS-Unity-Bridge" target="_blank" rel="noopener">https://github.com/Lafree317/iOS-Unity-Bridge</a></p>
-<p>参考文章:<br>iOS与Unity3d交互-Larrycal:<br><a href="https://www.jianshu.com/p/4c49655aff8b" target="_blank" rel="noopener">https://www.jianshu.com/p/4c49655aff8b</a></p>
-<p>iOS 与 unity3D 交互整合的那些事:<br><a href="https://juejin.im/entry/58abd6df2f301e006c3be2f4" target="_blank" rel="noopener">https://juejin.im/entry/58abd6df2f301e006c3be2f4</a></p>
+<p>参考文章:<br>iOS与Unity3d交互-Larrycal:<br><a href="https://www.jianshu.com/p/4c49655aff8b" target="_blank" rel="noopener">https://www.jianshu.com/p/4c49655aff8b</a><br>iOS 与 unity3D 交互整合的那些事:<br><a href="https://juejin.im/entry/58abd6df2f301e006c3be2f4" target="_blank" rel="noopener">https://juejin.im/entry/58abd6df2f301e006c3be2f4</a></p>
 <hr>
 <p>随缘更新RN/Week或其它移动端框架和Unity的交互</p>
 
