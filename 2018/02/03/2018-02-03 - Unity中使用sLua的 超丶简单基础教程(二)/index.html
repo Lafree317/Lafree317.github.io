@@ -2,84 +2,59 @@
 
 
 
-  
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    }
+  };
+</script>
 
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Unity,Lua,">
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="前言Unity中使用sLua的 超丶简单基础教程(一) 上一篇博客讲了一下简单调用LuaState读取Lua代码并执行 本篇要讲一下如何更改路径并使得Lua可以调用UnityEngine代码的方法 虽然简短但也是长时间爬坑试验出来的(因为基础教程真的好少啊….)希望对大家有帮助..">
+  <meta name="description" content="前言Unity中使用sLua的 超丶简单基础教程(一) 上一篇博客讲了一下简单调用LuaState读取Lua代码并执行 本篇要讲一下如何更改路径并使得Lua可以调用UnityEngine代码的方法 虽然简短但也是长时间爬坑试验出来的(因为基础教程真的好少啊….)希望对大家有帮助..">
 <meta name="keywords" content="Unity,Lua">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity中使用sLua的 超丶简单基础教程(二)">
@@ -87,99 +62,85 @@
 <meta property="og:site_name" content="Lafree&#39;s Blog">
 <meta property="og:description" content="前言Unity中使用sLua的 超丶简单基础教程(一) 上一篇博客讲了一下简单调用LuaState读取Lua代码并执行 本篇要讲一下如何更改路径并使得Lua可以调用UnityEngine代码的方法 虽然简短但也是长时间爬坑试验出来的(因为基础教程真的好少啊….)希望对大家有帮助..">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/21/161171674273d40e">
+<meta property="og:image" content="http://yoursite.com/2018/02/images/Slua-1.png">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/2/3/1615b60570c81eb1?w=504&h=324&f=png&s=66637">
-<meta property="og:updated_time" content="2018-03-16T12:56:18.901Z">
+<meta property="og:updated_time" content="2019-08-26T03:26:25.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity中使用sLua的 超丶简单基础教程(二)">
 <meta name="twitter:description" content="前言Unity中使用sLua的 超丶简单基础教程(一) 上一篇博客讲了一下简单调用LuaState读取Lua代码并执行 本篇要讲一下如何更改路径并使得Lua可以调用UnityEngine代码的方法 虽然简短但也是长时间爬坑试验出来的(因为基础教程真的好少啊….)希望对大家有帮助..">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/1/21/161171674273d40e">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
+<meta name="twitter:image" content="http://yoursite.com/2018/02/images/Slua-1.png">
   <link rel="canonical" href="http://yoursite.com/2018/02/03/2018-02-03 - Unity中使用sLua的 超丶简单基础教程(二)/">
 
 
-
-
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
 
   <title>Unity中使用sLua的 超丶简单基础教程(二) | Lafree's Blog</title>
+  <meta name="generator" content="Hexo 3.9.0">
   
 
 
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?782fd49bbe68bb25cf6681e61434d5b3";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container use-motion">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
 
-    <div class="custom-logo-site-title">
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Lafree's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
         <p class="site-subtitle">轩辕小羽的博客</p>
       
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -187,54 +148,46 @@
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
+  <ul id="menu" class="menu">
+      
+      
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
       
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
       
+    
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
-  
+  </li>
+  </ul>
+
+    
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
 
     <main id="main" class="main">
       <div class="main-inner">
@@ -243,76 +196,59 @@
             
 
   <div id="posts" class="posts-expand">
-    
-
-  
-
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <div class="post-block post">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/03/2018-02-03 - Unity中使用sLua的 超丶简单基础教程(二)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="游戏/绘画/Coding 爱好者">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Lafree's Blog">
     </span>
-
-    
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Unity中使用sLua的 超丶简单基础教程(二)
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">Unity中使用sLua的 超丶简单基础教程(二)</h1>
-        
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T00:00:00+08:00">
-                2018-02-03
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
+              <time title="Created: 2018-02-03 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-03T00:00:00+08:00">2018-02-03</time>
+            </span>
           
             
-          
 
-          
-          
-
-          
-
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-26 11:26:25" itemprop="dateModified" datetime="2019-08-26T11:26:25+08:00">2019-08-26</time>
+              </span>
+            
           
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -320,10 +256,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <p><img src="https://user-gold-cdn.xitu.io/2018/1/21/161171674273d40e" alt></p>
+        <p><img src="../../images/Slua-1.png" alt></p>
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><a href="https://lafree317.github.io/2018/01/20/2018-01-20%20-%20Unity%E4%B8%AD%E4%BD%BF%E7%94%A8sLua%E7%9A%84%20%E8%B6%85%E4%B8%B6%E7%AE%80%E5%8D%95%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B(%E4%B8%80)/" target="_blank" rel="noopener">Unity中使用sLua的 超丶简单基础教程(一)</a></p>
 <p>上一篇博客讲了一下简单调用LuaState读取Lua代码并执行</p>
 <p>本篇要讲一下如何更改路径并使得Lua可以调用UnityEngine代码的方法</p>
@@ -337,89 +270,64 @@
 <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>上一篇主要说了一下如何引用SLua读取lua脚本<br>这一篇主要说了一下Lua如何调用UnityEngine的方法<br>下一遍我会说一下开发一个中间层,把Start Awake Update等方法都传递到Lua中<br>最终完成一个纯Lua项目</p>
 <p>本篇教程很基础,如果有精力会将之后学习到的知识都整理成博客分享给大家~</p>
 
-      
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
+        
       
-        <div class="post-tags">
+
+      <footer class="post-footer">
           
-            <a href="/tags/Unity/" rel="tag"># Unity</a>
-          
-            <a href="/tags/Lua/" rel="tag"># Lua</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/20/2018-01-20 - Unity中使用sLua的 超丶简单基础教程(一)/" rel="next" title="Unity中使用sLua的 超丶简单基础教程(一)">
-                <i class="fa fa-chevron-left"></i> Unity中使用sLua的 超丶简单基础教程(一)
-              </a>
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Unity/" rel="tag"># Unity</a>
+            
+              <a href="/tags/Lua/" rel="tag"># Lua</a>
             
           </div>
+        
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/04/2018-02-04 - Unity中使用sLua的 超丶简单基础教程(三)/" rel="prev" title="Unity中使用sLua的 超丶简单基础教程(三)">
-                Unity中使用sLua的 超丶简单基础教程(三) <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2018/01/20/2018-01-20 - Unity中使用sLua的 超丶简单基础教程(一)/" rel="next" title="Unity中使用sLua的 超丶简单基础教程(一)">
+                  <i class="fa fa-chevron-left"></i> Unity中使用sLua的 超丶简单基础教程(一)
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2018/02/04/2018-02-04 - Unity中使用sLua的 超丶简单基础教程(三)/" rel="prev" title="Unity中使用sLua的 超丶简单基础教程(三)">
+                  Unity中使用sLua的 超丶简单基础教程(三) <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
           </div>
-        </div>
-      
-
-      
-      
-    </footer>
+        
+      </footer>
+    
   </div>
   
   
   
   </article>
 
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
           
 
-
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzg0Mi8xMDM5NQ"></div>
-    </div>
-
-  
-
-
-
         </div>
-        
           
   
   <div class="sidebar-toggle">
@@ -430,158 +338,100 @@
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+  <aside class="sidebar">
     <div class="sidebar-inner">
-
+        
+        
+        
+        
       
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          Overview
+        </li>
+      </ul>
 
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="轩辕小羽">
-            
-              <p class="site-author-name" itemprop="name">轩辕小羽</p>
-              <p class="site-description motion-element" itemprop="description">游戏/绘画/Coding 爱好者</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">16</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/Lafree317" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:lafree317@gmail.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.jianshu.com/u/0f12dd341179" target="_blank" title="Jianshu">
-                      
-                        <i class="fa fa-fw fa-globe"></i>Jianshu</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://juejin.im/user/567bbee434f81a1d8790bd0c/shares" target="_blank" title="Juejin">
-                      
-                        <i class="fa fa-fw fa-globe"></i>Juejin</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图"><span class="nav-number">2.1.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">2.2.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图"><span class="nav-number">2.1.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">2.2.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+        
+      </div>
       <!--/noindex-->
-      
 
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">轩辕小羽</p>
+  <div class="site-description" itemprop="description">游戏/绘画/Coding 爱好者</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
       
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">轩辕小羽</span>
-
-  
 </div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
 
         
+
+
+
+
+
 
 
 
@@ -592,31 +442,15 @@
         
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
   </div>
 
   
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
 
 
 
@@ -633,101 +467,6 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
-  
 
 
 
@@ -736,24 +475,6 @@
 
 
 
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
 
   
 

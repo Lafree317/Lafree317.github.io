@@ -2,84 +2,59 @@
 
 
 
-  
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-Hans">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    }
+  };
+</script>
 
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="游戏/绘画/Coding 爱好者">
+  <meta name="description" content="游戏/绘画/Coding 爱好者">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Lafree&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
@@ -89,93 +64,78 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lafree&#39;s Blog">
 <meta name="twitter:description" content="游戏/绘画/Coding 爱好者">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
   <link rel="canonical" href="http://yoursite.com/">
 
 
-
-
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
 
   <title>Lafree's Blog</title>
+  <meta name="generator" content="Hexo 3.9.0">
   
 
 
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?782fd49bbe68bb25cf6681e61434d5b3";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container use-motion">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
 
-    <div class="custom-logo-site-title">
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Lafree's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
         <p class="site-subtitle">轩辕小羽的博客</p>
       
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -183,134 +143,99 @@
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
+  <ul id="menu" class="menu">
+      
+      
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
       
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
       
+    
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
-  
+  </li>
+  </ul>
+
+    
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
+  <div id="posts" class="posts-expand">
+        <article itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/23/iOS和Unity的交互/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="游戏/绘画/Coding 爱好者">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Lafree's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/23/iOS和Unity的交互/" itemprop="url">iOS与Unity的交互</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/23/iOS和Unity的交互/" class="post-title-link" itemprop="url">iOS与Unity的交互</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-23T00:00:00+08:00">
-                2019-08-23
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
+              <time title="Created: 2019-08-23 00:00:00 / Modified: 19:46:33" itemprop="dateCreated datePublished" datetime="2019-08-23T00:00:00+08:00">2019-08-23</time>
+            </span>
           
             
-          
 
-          
-          
-
-          
-
+            
           
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -318,127 +243,92 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天听说了一个很有意思的需求,把Unity游戏打成一个包,嵌入到原生APP中 </p>
 <p>正好两种技术栈我都有过相关经验,所以手痒实现一下!</p>
 <p>版本</p>
 <p>Unity 2019.2.0f1</p>
 <p>Xcode 9.3.1</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/23/iOS和Unity的交互/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/23/iOS和Unity的交互/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
   
   </article>
 
-
     
-      
-
-  
-
+        <article itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/04/2018-02-04 - Unity中使用sLua的 超丶简单基础教程(三)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="游戏/绘画/Coding 爱好者">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Lafree's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/04/2018-02-04 - Unity中使用sLua的 超丶简单基础教程(三)/" itemprop="url">Unity中使用sLua的 超丶简单基础教程(三)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/02/04/2018-02-04 - Unity中使用sLua的 超丶简单基础教程(三)/" class="post-title-link" itemprop="url">Unity中使用sLua的 超丶简单基础教程(三)</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T00:00:00+08:00">
-                2018-02-04
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
+              <time title="Created: 2018-02-04 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-04T00:00:00+08:00">2018-02-04</time>
+            </span>
           
             
-          
 
-          
-          
-
-          
-
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-26 11:26:32" itemprop="dateModified" datetime="2019-08-26T11:26:32+08:00">2019-08-26</time>
+              </span>
+            
           
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -446,126 +336,91 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p><img src="https://user-gold-cdn.xitu.io/2018/1/21/161171674273d40e" alt></p>
+          <p><img src="../../images/Slua-1.png" alt></p>
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><a href="https://lafree317.github.io/2018/01/20/2018-01-20%20-%20Unity%E4%B8%AD%E4%BD%BF%E7%94%A8sLua%E7%9A%84%20%E8%B6%85%E4%B8%B6%E7%AE%80%E5%8D%95%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B(%E4%B8%80)/" target="_blank" rel="noopener">Unity中使用sLua的 超丶简单基础教程(一)</a></p>
 <p><a href="https://lafree317.github.io/2018/02/03/2018-02-03%20-%20Unity%E4%B8%AD%E4%BD%BF%E7%94%A8sLua%E7%9A%84%20%E8%B6%85%E4%B8%B6%E7%AE%80%E5%8D%95%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B(%E4%BA%8C)/" target="_blank" rel="noopener">Unity中使用sLua的 超丶简单基础教程(二)</a></p>
 <p>这一篇展示一个用SLua这个库 在Lua中执行Unity的生命周期方法,直接上代码:</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/04/2018-02-04 - Unity中使用sLua的 超丶简单基础教程(三)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/02/04/2018-02-04 - Unity中使用sLua的 超丶简单基础教程(三)/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
   
   </article>
 
-
     
-      
-
-  
-
+        <article itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/03/2018-02-03 - Unity中使用sLua的 超丶简单基础教程(二)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="游戏/绘画/Coding 爱好者">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Lafree's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/03/2018-02-03 - Unity中使用sLua的 超丶简单基础教程(二)/" itemprop="url">Unity中使用sLua的 超丶简单基础教程(二)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/02/03/2018-02-03 - Unity中使用sLua的 超丶简单基础教程(二)/" class="post-title-link" itemprop="url">Unity中使用sLua的 超丶简单基础教程(二)</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T00:00:00+08:00">
-                2018-02-03
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
+              <time title="Created: 2018-02-03 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-03T00:00:00+08:00">2018-02-03</time>
+            </span>
           
             
-          
 
-          
-          
-
-          
-
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-26 11:26:25" itemprop="dateModified" datetime="2019-08-26T11:26:25+08:00">2019-08-26</time>
+              </span>
+            
           
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -573,127 +428,92 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p><img src="https://user-gold-cdn.xitu.io/2018/1/21/161171674273d40e" alt></p>
+          <p><img src="../../images/Slua-1.png" alt></p>
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><a href="https://lafree317.github.io/2018/01/20/2018-01-20%20-%20Unity%E4%B8%AD%E4%BD%BF%E7%94%A8sLua%E7%9A%84%20%E8%B6%85%E4%B8%B6%E7%AE%80%E5%8D%95%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B(%E4%B8%80)/" target="_blank" rel="noopener">Unity中使用sLua的 超丶简单基础教程(一)</a></p>
 <p>上一篇博客讲了一下简单调用LuaState读取Lua代码并执行</p>
 <p>本篇要讲一下如何更改路径并使得Lua可以调用UnityEngine代码的方法</p>
 <p>虽然简短但也是长时间爬坑试验出来的(因为基础教程真的好少啊….)希望对大家有帮助..</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/03/2018-02-03 - Unity中使用sLua的 超丶简单基础教程(二)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/02/03/2018-02-03 - Unity中使用sLua的 超丶简单基础教程(二)/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
   
   </article>
 
-
     
-      
-
-  
-
+        <article itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/20/2018-01-20 - Unity中使用sLua的 超丶简单基础教程(一)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="游戏/绘画/Coding 爱好者">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Lafree's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/20/2018-01-20 - Unity中使用sLua的 超丶简单基础教程(一)/" itemprop="url">Unity中使用sLua的 超丶简单基础教程(一)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/01/20/2018-01-20 - Unity中使用sLua的 超丶简单基础教程(一)/" class="post-title-link" itemprop="url">Unity中使用sLua的 超丶简单基础教程(一)</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T00:00:00+08:00">
-                2018-01-20
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
+              <time title="Created: 2018-01-20 00:00:00" itemprop="dateCreated datePublished" datetime="2018-01-20T00:00:00+08:00">2018-01-20</time>
+            </span>
           
             
-          
 
-          
-          
-
-          
-
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-26 11:19:36" itemprop="dateModified" datetime="2019-08-26T11:19:36+08:00">2019-08-26</time>
+              </span>
+            
           
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -701,127 +521,92 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <p><img src="../../images/Slua-1.png" alt></p>
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>网上Unity使用lua的文章本来就少..slua又是个偏小众的lua库..文章更少..</p>
 <p>已有的文章又有点坑…比如方法名关键字写错啦..真的是坑多= =</p>
 <p>所以总结一片超简单教学= =</p>
 <p>这篇文章面向刚开始学习lua 想在unity项目中使用sLua库的同学..</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/20/2018-01-20 - Unity中使用sLua的 超丶简单基础教程(一)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/01/20/2018-01-20 - Unity中使用sLua的 超丶简单基础教程(一)/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
   
   </article>
 
-
     
-      
-
-  
-
+        <article itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/18/2018-01-18 - Unity&C#有限状态机/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="游戏/绘画/Coding 爱好者">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Lafree's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/18/2018-01-18 - Unity&C#有限状态机/" itemprop="url">Unity&C#有限状态机</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/01/18/2018-01-18 - Unity&C#有限状态机/" class="post-title-link" itemprop="url">Unity&C#有限状态机</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T00:00:00+08:00">
-                2018-01-18
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
+              <time title="Created: 2018-01-18 00:00:00" itemprop="dateCreated datePublished" datetime="2018-01-18T00:00:00+08:00">2018-01-18</time>
+            </span>
           
             
-          
 
-          
-          
-
-          
-
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-26 11:28:19" itemprop="dateModified" datetime="2019-08-26T11:28:19+08:00">2019-08-26</time>
+              </span>
+            
           
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -829,11 +614,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          <p><img src="https://user-gold-cdn.xitu.io/2018/1/21/1611714302fc7ba8" alt></p>
+          <p><img src="../../images/States_1.png" alt></p>
 <p>游戏中角色控制有很多状态,如果靠传统的全局属性然后通过swich和if来判断的话,扩展性差,重复代码多.</p>
 <p>通过编写一个状态管理库来解决状态变化的优点有</p>
 <ul>
@@ -844,117 +625,86 @@
 <h3 id="什么是有限状态机"><a href="#什么是有限状态机" class="headerlink" title="什么是有限状态机?"></a>什么是有限状态机?</h3><p>有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。[1]<br><img src="https://user-gold-cdn.xitu.io/2018/1/18/16108511a0de733a?w=1024&amp;h=814&amp;f=png&amp;s=152490" alt><br>如图所示: 主角从跑状态切换到跳状态,从跳状态切换到二段跳状态,这里的切换就是指状态的转移。状态的转移是有条件的,比如主角从跑状态不可以直接切换到二段跳状态。但是 可以从二段跳状态切换到跑状态。</p>
 <p>另外,一个基本的状态有:进入状态、退出状态、接收输入、转移状态等动作。但是仅仅作为跑酷的角色的状态管理来说,只需要转移状态就足够了。有兴趣的同学可以自行扩展。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/18/2018-01-18 - Unity&C#有限状态机/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/01/18/2018-01-18 - Unity&C#有限状态机/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
   
   </article>
 
-
     
-      
-
-  
-
+        <article itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/2017-04-20 - 如何打造一个个性的个人微信机器人/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="游戏/绘画/Coding 爱好者">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Lafree's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/20/2017-04-20 - 如何打造一个个性的个人微信机器人/" itemprop="url">如何打造一个个性的个人微信机器人</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2017/04/20/2017-04-20 - 如何打造一个个性的个人微信机器人/" class="post-title-link" itemprop="url">如何打造一个个性的个人微信机器人</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T00:00:00+08:00">
-                2017-04-20
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
+              <time title="Created: 2017-04-20 00:00:00" itemprop="dateCreated datePublished" datetime="2017-04-20T00:00:00+08:00">2017-04-20</time>
+            </span>
           
             
-          
 
-          
-          
-
-          
-
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-01-21 17:03:08" itemprop="dateModified" datetime="2018-01-21T17:03:08+08:00">2018-01-21</time>
+              </span>
+            
           
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -962,10 +712,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <p><img src="https://dn-mhke0kuv.qbox.me/53cea2dc1a1915a8ebde.jpg" alt></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近发现一个Python的微信轮子,于是随后搞出了个玩具..</p>
 <p>从来没学过Python,一边谷歌一遍写出来的…求轻喷</p>
@@ -975,117 +721,86 @@
 <li>群里有人@你 自动回复</li>
 <li>朋友私聊 自动回复<br>-
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/20/2017-04-20 - 如何打造一个个性的个人微信机器人/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/04/20/2017-04-20 - 如何打造一个个性的个人微信机器人/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
-    </li></ul></div>
-    
-    
-    
+    </div>
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
   
   </article>
 
-
     
-      
-
-  
-
+        <article itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/30/2016-12-30 - CocoaPods爬坑指南/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="游戏/绘画/Coding 爱好者">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Lafree's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/30/2016-12-30 - CocoaPods爬坑指南/" itemprop="url">CocoaPods爬坑指南</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2016/12/30/2016-12-30 - CocoaPods爬坑指南/" class="post-title-link" itemprop="url">CocoaPods爬坑指南</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-30T00:00:00+08:00">
-                2016-12-30
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
+              <time title="Created: 2016-12-30 00:00:00" itemprop="dateCreated datePublished" datetime="2016-12-30T00:00:00+08:00">2016-12-30</time>
+            </span>
           
             
-          
 
-          
-          
-
-          
-
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-01-21 15:42:16" itemprop="dateModified" datetime="2018-01-21T15:42:16+08:00">2018-01-21</time>
+              </span>
+            
           
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1093,126 +808,91 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <p>！<a href="https://dn-mhke0kuv.qbox.me/aa885aad29712f1ab44e.jpg" target="_blank" rel="noopener"></a></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在CocosPods浪费时间总计超过50小时…看了一眼笔记,感觉可以总结出一篇博客了…..</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>从ruby开始安装一直到pod ,适合新电脑第一次安装,下面指令直接复制在命令行里执行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//安装rubu</span><br><span class="line">rvm install 2.3.0</span><br><span class="line">rvm use 2.3.0 --default</span><br><span class="line">gem install bundler</span><br><span class="line">// 上面不用重复安装,下面的根据遇到的问题可能需要重新安装</span><br><span class="line">// 安装pod</span><br><span class="line">sudo gem install cocoapods</span><br><span class="line">// cocoaPods换源</span><br><span class="line">gem sources --remove http://ruby.taobao.org/</span><br><span class="line">gem sources -a https://ruby.taobao.org/</span><br><span class="line">// 查看源 出现ruby.taobao.org就对了</span><br><span class="line">gem sources -l</span><br><span class="line">// 更新pod</span><br><span class="line">pod setup</span><br></pre></td></tr></table></figure>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/30/2016-12-30 - CocoaPods爬坑指南/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/12/30/2016-12-30 - CocoaPods爬坑指南/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
   
   </article>
 
-
     
-      
-
-  
-
+        <article itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/30/2016-09-30 - Xcode8Swift3入坑笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="游戏/绘画/Coding 爱好者">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Lafree's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/30/2016-09-30 - Xcode8Swift3入坑笔记/" itemprop="url">iOS 5分钟集成热修复(JSPatch)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2016/09/30/2016-09-30 - Xcode8Swift3入坑笔记/" class="post-title-link" itemprop="url">iOS 5分钟集成热修复(JSPatch)</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-30T00:00:00+08:00">
-                2016-09-30
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
+              <time title="Created: 2016-09-30 00:00:00" itemprop="dateCreated datePublished" datetime="2016-09-30T00:00:00+08:00">2016-09-30</time>
+            </span>
           
             
-          
 
-          
-          
-
-          
-
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-01-21 15:42:16" itemprop="dateModified" datetime="2018-01-21T15:42:16+08:00">2018-01-21</time>
+              </span>
+            
           
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1220,126 +900,91 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <p><img src="https://dn-mhke0kuv.qbox.me/f0c605bded5ff5ee33d9.png?imageView2/1/w/1080/h/320/q/85/format/webp/interlace/1" alt></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天把公司项目的swift代码升级到Swift3,遇到了不少坑</p>
 <p>现在总算能跑起来了..还有很多坑要踩…<br>这是改之前的惨状:<br><img src="https://dn-mhke0kuv.qbox.me/3555548a269b56e7740b.jpeg" alt></p>
 <p>发现一条写一条,不定时更新</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/09/30/2016-09-30 - Xcode8Swift3入坑笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/09/30/2016-09-30 - Xcode8Swift3入坑笔记/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
   
   </article>
 
-
     
-      
-
-  
-
+        <article itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/28/2016-06-28 - iOSIPv6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="游戏/绘画/Coding 爱好者">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Lafree's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/28/2016-06-28 - iOSIPv6/" itemprop="url">iOS 5分钟集成热修复(JSPatch)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2016/08/28/2016-06-28 - iOSIPv6/" class="post-title-link" itemprop="url">iOS 5分钟集成热修复(JSPatch)</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-28T00:00:00+08:00">
-                2016-08-28
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
+              <time title="Created: 2016-08-28 00:00:00" itemprop="dateCreated datePublished" datetime="2016-08-28T00:00:00+08:00">2016-08-28</time>
+            </span>
           
             
-          
 
-          
-          
-
-          
-
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-01-21 15:42:12" itemprop="dateModified" datetime="2018-01-21T15:42:12+08:00">2018-01-21</time>
+              </span>
+            
           
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1347,126 +992,91 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <p><img src="https://dn-mhke0kuv.qbox.me/efab6b507c9fe25c26f7.jpg" alt></p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>从6月1日开始苹果要求之后审核的项目必须支持iPv6,如果不支持将被拒绝<br>掘金最近一次审核被就被拒绝了….理由为下:<br>Apps are reviewed on an IPv6 network. Please ensure that your app supports IPv6 networks, as IPv6 compatibility is required.</p>
 <p><img src="https://dn-mhke0kuv.qbox.me/500a6acea88995ad0589.png" alt></p>
 <p>原因是LeanCloud更新了一个版本才支持IPv6,更新之后找了几篇搭建IPv6网络的文章都不太满意,于是在自己解决之后整理一篇博客把经验借鉴给大家</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/08/28/2016-06-28 - iOSIPv6/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/28/2016-06-28 - iOSIPv6/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
   
   </article>
 
-
     
-      
-
-  
-
+        <article itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/27/2016-08-27 - WaterMark/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="description" content="游戏/绘画/Coding 爱好者">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Lafree's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/27/2016-08-27 - WaterMark/" itemprop="url">开源项目-WaterMark</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2016/08/27/2016-08-27 - WaterMark/" class="post-title-link" itemprop="url">开源项目-WaterMark</a>
+          
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
+
               
-                <span class="post-meta-item-text">发表于</span>
+                
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-27T00:00:00+08:00">
-                2016-08-27
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
+              <time title="Created: 2016-08-27 00:00:00" itemprop="dateCreated datePublished" datetime="2016-08-27T00:00:00+08:00">2016-08-27</time>
+            </span>
           
             
-          
 
-          
-          
-
-          
-
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-01-21 15:42:14" itemprop="dateModified" datetime="2018-01-21T15:42:14+08:00">2018-01-21</time>
+              </span>
+            
           
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1474,10 +1084,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <p><img src="https://dn-mhke0kuv.qbox.me/a6a74bdc5439dd259b8a.png" alt></p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这里引用应用描述里的一句话:</p>
 <p>本项目代码全部开源,只删除了LeanCloud相关的id和key,如果我以后不小心把key和id push上去了各位小伙伴一定要提醒我哈…</p>
@@ -1490,62 +1096,44 @@
 <p>项目地址:<a href="https://github.com/Lafree317/WaterLabel" target="_blank" rel="noopener">https://github.com/Lafree317/WaterLabel</a></p>
 <p>AppStroe:<a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1148289486&amp;mt=8" target="_blank" rel="noopener">https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1148289486&amp;mt=8</a></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/08/27/2016-08-27 - WaterMark/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/27/2016-08-27 - WaterMark/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
   </div>
   
   
   
   </article>
 
-
     
-  </section>
+  </div>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
-
 
 
           </div>
           
 
-
-          
-
         </div>
-        
           
   
   <div class="sidebar-toggle">
@@ -1556,133 +1144,93 @@
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">轩辕小羽</p>
+  <div class="site-description" itemprop="description">游戏/绘画/Coding 爱好者</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
       
-
       
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="轩辕小羽">
-            
-              <p class="site-author-name" itemprop="name">轩辕小羽</p>
-              <p class="site-description motion-element" itemprop="description">游戏/绘画/Coding 爱好者</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">16</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
+      <div class="site-state-item site-state-tags">
+        
           
-
+            <a href="/tags/">
           
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/Lafree317" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:lafree317@gmail.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.jianshu.com/u/0f12dd341179" target="_blank" title="Jianshu">
-                      
-                        <i class="fa fa-fw fa-globe"></i>Jianshu</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://juejin.im/user/567bbee434f81a1d8790bd0c/shares" target="_blank" title="Juejin">
-                      
-                        <i class="fa fa-fw fa-globe"></i>Juejin</a>
-                  </span>
-                
-            </div>
+        
+        
+        
           
-
+        
           
+        
           
-
+        
           
-          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
 
-          
 
-        </div>
-      </section>
 
-      
-
-      
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">轩辕小羽</span>
-
-  
 </div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
 
         
+
+
+
+
+
 
 
 
@@ -1693,31 +1241,15 @@
         
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
   </div>
 
   
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
 
 
 
@@ -1734,86 +1266,6 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -1822,24 +1274,6 @@
 
 
 
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
 
   
 
