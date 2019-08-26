@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,9 +48,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS," />
+  <meta name="keywords" content="iOS,">
 
 
 
@@ -141,7 +141,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/26/2016-08-26 - JsPathHotFix/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/26/2016-08-26 - JsPathHotFix/">
 
 
 
@@ -185,7 +185,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Lafree's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -215,7 +215,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -225,7 +225,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -235,7 +235,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -278,7 +278,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
@@ -341,7 +341,7 @@
       
 
       
-        <p><img src="https://dn-mhke0kuv.qbox.me/7859b81efd944b3d7f73.png" alt=""></p>
+        <p><img src="https://dn-mhke0kuv.qbox.me/7859b81efd944b3d7f73.png" alt></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>掘金3.5.2上线后发现了一个bug,我司iOS小哥上线前不小心改动了一部分代码,导致脏数据被缓存,取缓存的时候会导致项目崩溃…(苹果的审核越来越不认真了….好吧,我不推锅了,让我跪着写完这篇博客)..</p>
 <a id="more"></a>
 <h4 id="回归正题"><a href="#回归正题" class="headerlink" title="回归正题:"></a>回归正题:</h4><blockquote>
@@ -356,18 +356,18 @@
 </ul>
 <h2 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h2><p>大神可以看重点,如果是和我一样的菜鸡就可以按照博客一步一步做,最后一定会成功让JSPatch跑起来的</p>
 <h3 id="第一步-创建Demo-在ViewController里添加一个Label-声明一个test方法来给Label-text赋值"><a href="#第一步-创建Demo-在ViewController里添加一个Label-声明一个test方法来给Label-text赋值" class="headerlink" title="第一步:创建Demo,在ViewController里添加一个Label,声明一个test方法来给Label.text赋值"></a>第一步:创建Demo,在ViewController里添加一个Label,声明一个test方法来给Label.text赋值</h3><p>OC:</p>
-<p><img src="https://dn-mhke0kuv.qbox.me/160cd77a37114da51a05.png" alt=""></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/160cd77a37114da51a05.png" alt></p>
 <p>Swift:</p>
-<p><img src="https://dn-mhke0kuv.qbox.me/1491ce025dba0e910e58.png" alt=""></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/1491ce025dba0e910e58.png" alt></p>
 <p>为了方便label就直接在StoryBoard里拖进来了(不喜欢拖控件的小伙伴可以用代码创建)</p>
 <p>Swift中为每个变量和方法添加dynamic是保证Swift方法都可以被动态替换,这里涉及到Swift Runtime的知识就不详细讲述了按例贴一篇文章:</p>
 <p><a href="http://gold.xitu.io/entry/57c01afd2e958a0069650818/detail" target="_blank" rel="noopener">Swift Runtime分析：还像OC Runtime一样吗？</a></p>
 <hr>
-<h3 id="第二步-打开JSPatch网站下载SDK-http-jspatch-com-Index-sdk"><a href="#第二步-打开JSPatch网站下载SDK-http-jspatch-com-Index-sdk" class="headerlink" title="第二步:打开JSPatch网站下载SDK:http://jspatch.com/Index/sdk"></a>第二步:打开JSPatch网站下载SDK:<a href="http://jspatch.com/Index/sdk" target="_blank" rel="noopener">http://jspatch.com/Index/sdk</a></h3><p><img src="https://dn-mhke0kuv.qbox.me/41f689eeeac78d6be0ec.png" alt=""></p>
+<h3 id="第二步-打开JSPatch网站下载SDK-http-jspatch-com-Index-sdk"><a href="#第二步-打开JSPatch网站下载SDK-http-jspatch-com-Index-sdk" class="headerlink" title="第二步:打开JSPatch网站下载SDK:http://jspatch.com/Index/sdk"></a>第二步:打开JSPatch网站下载SDK:<a href="http://jspatch.com/Index/sdk" target="_blank" rel="noopener">http://jspatch.com/Index/sdk</a></h3><p><img src="https://dn-mhke0kuv.qbox.me/41f689eeeac78d6be0ec.png" alt></p>
 <hr>
-<h3 id="第三步-项目配置-这步稍微会有些复杂"><a href="#第三步-项目配置-这步稍微会有些复杂" class="headerlink" title="第三步:项目配置(这步稍微会有些复杂)"></a>第三步:项目配置(这步稍微会有些复杂)</h3><h4 id="将解压后的SDK直接拖入工程中-然后在TARGETS-gt-Build-Phases-gt-Link-Binary-With-Libraries-gt-添加-libz-dylib-或libz-tbd-和-JavaScriptCore-framework。"><a href="#将解压后的SDK直接拖入工程中-然后在TARGETS-gt-Build-Phases-gt-Link-Binary-With-Libraries-gt-添加-libz-dylib-或libz-tbd-和-JavaScriptCore-framework。" class="headerlink" title="将解压后的SDK直接拖入工程中,然后在TARGETS -&gt; Build Phases -&gt; Link Binary With Libraries -&gt; + 添加 libz.dylib(或libz.tbd) 和 JavaScriptCore.framework。"></a>将解压后的SDK直接拖入工程中,然后在TARGETS -&gt; Build Phases -&gt; Link Binary With Libraries -&gt; + 添加 libz.dylib(或libz.tbd) 和 JavaScriptCore.framework。</h4><p><img src="https://dn-mhke0kuv.qbox.me/98c03ed7454b7bbc8640.png" alt=""></p>
-<p><img src="https://dn-mhke0kuv.qbox.me/9c3caae370a7e0952e43.png" alt=""></p>
-<p><img src="https://dn-mhke0kuv.qbox.me/f277eaebd20ec6a0e7f0.png" alt=""></p>
+<h3 id="第三步-项目配置-这步稍微会有些复杂"><a href="#第三步-项目配置-这步稍微会有些复杂" class="headerlink" title="第三步:项目配置(这步稍微会有些复杂)"></a>第三步:项目配置(这步稍微会有些复杂)</h3><h4 id="将解压后的SDK直接拖入工程中-然后在TARGETS-gt-Build-Phases-gt-Link-Binary-With-Libraries-gt-添加-libz-dylib-或libz-tbd-和-JavaScriptCore-framework。"><a href="#将解压后的SDK直接拖入工程中-然后在TARGETS-gt-Build-Phases-gt-Link-Binary-With-Libraries-gt-添加-libz-dylib-或libz-tbd-和-JavaScriptCore-framework。" class="headerlink" title="将解压后的SDK直接拖入工程中,然后在TARGETS -&gt; Build Phases -&gt; Link Binary With Libraries -&gt; + 添加 libz.dylib(或libz.tbd) 和 JavaScriptCore.framework。"></a>将解压后的SDK直接拖入工程中,然后在TARGETS -&gt; Build Phases -&gt; Link Binary With Libraries -&gt; + 添加 libz.dylib(或libz.tbd) 和 JavaScriptCore.framework。</h4><p><img src="https://dn-mhke0kuv.qbox.me/98c03ed7454b7bbc8640.png" alt></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/9c3caae370a7e0952e43.png" alt></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/f277eaebd20ec6a0e7f0.png" alt></p>
 <h4 id="在AppDelegate里写以下代码"><a href="#在AppDelegate里写以下代码" class="headerlink" title="在AppDelegate里写以下代码:"></a>在AppDelegate里写以下代码:</h4><ul>
 <li><p>OC</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &#123;</span><br><span class="line">    // Override point for customization after application launch.</span><br><span class="line">    [JSPatch startWithAppKey:@&quot;你的AppKey&quot;];</span><br><span class="line"></span><br><span class="line">    //用来检测回调的状态，是更新或者是执行脚本之类的，相关信息，会打印在你的控制台</span><br><span class="line">    [JSPatch setupCallback:^(JPCallbackType type, NSDictionary *data, NSError *error) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;];</span><br><span class="line">    [JSPatch setupDevelopment];</span><br><span class="line"></span><br><span class="line">    [JSPatch sync];</span><br><span class="line"></span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -380,14 +380,14 @@
 <h3 id="第四步-打开JSPatch官网点击左上角注册-gt-http-www-jspatch-com"><a href="#第四步-打开JSPatch官网点击左上角注册-gt-http-www-jspatch-com" class="headerlink" title="第四步:打开JSPatch官网点击左上角注册 -&gt; http://www.jspatch.com/"></a>第四步:打开JSPatch官网点击左上角注册 -&gt; <a href="http://www.jspatch.com/" target="_blank" rel="noopener">http://www.jspatch.com/</a></h3><p><img src="https://dn-mhke0kuv.qbox.me/c6a8acadb5c3f5dadc0e.png" alt="注册或登录"></p>
 <p><img src="https://dn-mhke0kuv.qbox.me/300ace6306b5b3936b1e.png" alt="注册"></p>
 <hr>
-<h3 id="第五步-创建你的App-名字可以随便写-AppID也可以不填"><a href="#第五步-创建你的App-名字可以随便写-AppID也可以不填" class="headerlink" title="第五步:创建你的App,名字可以随便写,AppID也可以不填"></a>第五步:创建你的App,名字可以随便写,AppID也可以不填</h3><p><img src="https://dn-mhke0kuv.qbox.me/47adc6e322fc03141f6c.png" alt=""></p>
-<p><img src="https://dn-mhke0kuv.qbox.me/303c532184c79a6eb285.png" alt=""></p>
+<h3 id="第五步-创建你的App-名字可以随便写-AppID也可以不填"><a href="#第五步-创建你的App-名字可以随便写-AppID也可以不填" class="headerlink" title="第五步:创建你的App,名字可以随便写,AppID也可以不填"></a>第五步:创建你的App,名字可以随便写,AppID也可以不填</h3><p><img src="https://dn-mhke0kuv.qbox.me/47adc6e322fc03141f6c.png" alt></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/303c532184c79a6eb285.png" alt></p>
 <hr>
-<h3 id="第六步-点击添加APP版本-创建一个App版本"><a href="#第六步-点击添加APP版本-创建一个App版本" class="headerlink" title="第六步:点击添加APP版本,创建一个App版本"></a>第六步:点击添加APP版本,创建一个App版本</h3><p><img src="https://dn-mhke0kuv.qbox.me/bd19b3fa3defc29ab3f2.png" alt=""></p>
-<p><img src="https://dn-mhke0kuv.qbox.me/a8ec7f900e969364067b.png" alt=""></p>
+<h3 id="第六步-点击添加APP版本-创建一个App版本"><a href="#第六步-点击添加APP版本-创建一个App版本" class="headerlink" title="第六步:点击添加APP版本,创建一个App版本"></a>第六步:点击添加APP版本,创建一个App版本</h3><p><img src="https://dn-mhke0kuv.qbox.me/bd19b3fa3defc29ab3f2.png" alt></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/a8ec7f900e969364067b.png" alt></p>
 <h4 id="介绍一下创建之后的APP"><a href="#介绍一下创建之后的APP" class="headerlink" title="介绍一下创建之后的APP:"></a>介绍一下创建之后的APP:</h4><ul>
 <li>appKey是之后在你项目中激活JSPatch要用到的</li>
-<li>添加App版本 是按照你App的Version来创建的(如果version没写对会下载不到补丁)<br><img src="https://dn-mhke0kuv.qbox.me/79c435af371e388c45ae.png" alt=""></li>
+<li>添加App版本 是按照你App的Version来创建的(如果version没写对会下载不到补丁)<br><img src="https://dn-mhke0kuv.qbox.me/79c435af371e388c45ae.png" alt></li>
 </ul>
 <hr>
 <h3 id="第七步-创建一个main-js文件并在里面写上以下代码"><a href="#第七步-创建一个main-js文件并在里面写上以下代码" class="headerlink" title="第七步:创建一个main.js文件并在里面写上以下代码:"></a>第七步:创建一个main.js文件并在里面写上以下代码:</h3><ul>
@@ -398,11 +398,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">defineClass(&apos;HotFixDemo.ViewController&apos;, &#123;</span><br><span class="line">            test : function() &#123;</span><br><span class="line">            self.label().setText(&quot;label的text被改掉了&quot;);</span><br><span class="line">            &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="Swift覆盖方法和类的时候要加上项目名-所以规范应该是-项目名-类名-方法名-注册类的时候也要加上项目名"><a href="#Swift覆盖方法和类的时候要加上项目名-所以规范应该是-项目名-类名-方法名-注册类的时候也要加上项目名" class="headerlink" title="Swift覆盖方法和类的时候要加上项目名,所以规范应该是 项目名.类名(方法名) 注册类的时候也要加上项目名"></a>Swift覆盖方法和类的时候要加上项目名,所以规范应该是 项目名.类名(方法名) 注册类的时候也要加上项目名</h4><h3 id="第八步-点击刚刚创建的1-0-将保存好的JS上传到JSPatch服务器上"><a href="#第八步-点击刚刚创建的1-0-将保存好的JS上传到JSPatch服务器上" class="headerlink" title="第八步:点击刚刚创建的1.0,将保存好的JS上传到JSPatch服务器上,"></a>第八步:点击刚刚创建的1.0,将保存好的JS上传到JSPatch服务器上,</h3><p><img src="https://dn-mhke0kuv.qbox.me/b46ce009d1fd08ce46c3.png" alt=""></p>
-<p><img src="https://dn-mhke0kuv.qbox.me/85c98060670d7dfb5450.png" alt=""></p>
-<p><img src="https://dn-mhke0kuv.qbox.me/9b3d0038f90ea9767fff.png" alt=""></p>
-<h4 id="选择文件选择刚刚创建的main-js-上传补丁的时候最少要有一个main-js-如果需要上传多个文件点击右侧加号就可以了"><a href="#选择文件选择刚刚创建的main-js-上传补丁的时候最少要有一个main-js-如果需要上传多个文件点击右侧加号就可以了" class="headerlink" title="选择文件选择刚刚创建的main.js (上传补丁的时候最少要有一个main.js 如果需要上传多个文件点击右侧加号就可以了)"></a>选择文件选择刚刚创建的main.js (上传补丁的时候最少要有一个main.js 如果需要上传多个文件点击右侧加号就可以了)</h4><h4 id="一定先勾选开发预览-这样才能保证测试成功"><a href="#一定先勾选开发预览-这样才能保证测试成功" class="headerlink" title="一定先勾选开发预览,这样才能保证测试成功"></a>一定先勾选开发预览,这样才能保证测试成功</h4><h4 id="一切都操作完之后选择提交"><a href="#一切都操作完之后选择提交" class="headerlink" title="一切都操作完之后选择提交"></a>一切都操作完之后选择提交</h4><h4 id="运行你的项目-如果命令行中显示以下内容就代表你的你的项目已经更新补丁了"><a href="#运行你的项目-如果命令行中显示以下内容就代表你的你的项目已经更新补丁了" class="headerlink" title="运行你的项目,如果命令行中显示以下内容就代表你的你的项目已经更新补丁了"></a>运行你的项目,如果命令行中显示以下内容就代表你的你的项目已经更新补丁了</h4><p><img src="https://dn-mhke0kuv.qbox.me/c8a86faf7b3d23227762.png" alt=""></p>
-<h4 id="因为补丁是先下载再生效的-所以下一次运行你才能看到效果"><a href="#因为补丁是先下载再生效的-所以下一次运行你才能看到效果" class="headerlink" title="因为补丁是先下载再生效的,所以下一次运行你才能看到效果"></a>因为补丁是先下载再生效的,所以下一次运行你才能看到效果</h4><h4 id="可以看到我的代码给label赋值为aaaa-通过JSPatch将label-text替换掉了"><a href="#可以看到我的代码给label赋值为aaaa-通过JSPatch将label-text替换掉了" class="headerlink" title="可以看到我的代码给label赋值为aaaa,通过JSPatch将label.text替换掉了"></a>可以看到我的代码给label赋值为aaaa,通过JSPatch将label.text替换掉了</h4><p><img src="https://dn-mhke0kuv.qbox.me/f39d10f9dd87d08591a7.png" alt=""></p>
+<h4 id="Swift覆盖方法和类的时候要加上项目名-所以规范应该是-项目名-类名-方法名-注册类的时候也要加上项目名"><a href="#Swift覆盖方法和类的时候要加上项目名-所以规范应该是-项目名-类名-方法名-注册类的时候也要加上项目名" class="headerlink" title="Swift覆盖方法和类的时候要加上项目名,所以规范应该是 项目名.类名(方法名) 注册类的时候也要加上项目名"></a>Swift覆盖方法和类的时候要加上项目名,所以规范应该是 项目名.类名(方法名) 注册类的时候也要加上项目名</h4><h3 id="第八步-点击刚刚创建的1-0-将保存好的JS上传到JSPatch服务器上"><a href="#第八步-点击刚刚创建的1-0-将保存好的JS上传到JSPatch服务器上" class="headerlink" title="第八步:点击刚刚创建的1.0,将保存好的JS上传到JSPatch服务器上,"></a>第八步:点击刚刚创建的1.0,将保存好的JS上传到JSPatch服务器上,</h3><p><img src="https://dn-mhke0kuv.qbox.me/b46ce009d1fd08ce46c3.png" alt></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/85c98060670d7dfb5450.png" alt></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/9b3d0038f90ea9767fff.png" alt></p>
+<h4 id="选择文件选择刚刚创建的main-js-上传补丁的时候最少要有一个main-js-如果需要上传多个文件点击右侧加号就可以了"><a href="#选择文件选择刚刚创建的main-js-上传补丁的时候最少要有一个main-js-如果需要上传多个文件点击右侧加号就可以了" class="headerlink" title="选择文件选择刚刚创建的main.js (上传补丁的时候最少要有一个main.js 如果需要上传多个文件点击右侧加号就可以了)"></a>选择文件选择刚刚创建的main.js (上传补丁的时候最少要有一个main.js 如果需要上传多个文件点击右侧加号就可以了)</h4><h4 id="一定先勾选开发预览-这样才能保证测试成功"><a href="#一定先勾选开发预览-这样才能保证测试成功" class="headerlink" title="一定先勾选开发预览,这样才能保证测试成功"></a>一定先勾选开发预览,这样才能保证测试成功</h4><h4 id="一切都操作完之后选择提交"><a href="#一切都操作完之后选择提交" class="headerlink" title="一切都操作完之后选择提交"></a>一切都操作完之后选择提交</h4><h4 id="运行你的项目-如果命令行中显示以下内容就代表你的你的项目已经更新补丁了"><a href="#运行你的项目-如果命令行中显示以下内容就代表你的你的项目已经更新补丁了" class="headerlink" title="运行你的项目,如果命令行中显示以下内容就代表你的你的项目已经更新补丁了"></a>运行你的项目,如果命令行中显示以下内容就代表你的你的项目已经更新补丁了</h4><p><img src="https://dn-mhke0kuv.qbox.me/c8a86faf7b3d23227762.png" alt></p>
+<h4 id="因为补丁是先下载再生效的-所以下一次运行你才能看到效果"><a href="#因为补丁是先下载再生效的-所以下一次运行你才能看到效果" class="headerlink" title="因为补丁是先下载再生效的,所以下一次运行你才能看到效果"></a>因为补丁是先下载再生效的,所以下一次运行你才能看到效果</h4><h4 id="可以看到我的代码给label赋值为aaaa-通过JSPatch将label-text替换掉了"><a href="#可以看到我的代码给label赋值为aaaa-通过JSPatch将label-text替换掉了" class="headerlink" title="可以看到我的代码给label赋值为aaaa,通过JSPatch将label.text替换掉了"></a>可以看到我的代码给label赋值为aaaa,通过JSPatch将label.text替换掉了</h4><p><img src="https://dn-mhke0kuv.qbox.me/f39d10f9dd87d08591a7.png" alt></p>
 <h4 id="如果遇到什么问题可以留言给我-我会及时回复并更新博客内写的不足的地方"><a href="#如果遇到什么问题可以留言给我-我会及时回复并更新博客内写的不足的地方" class="headerlink" title="如果遇到什么问题可以留言给我,我会及时回复并更新博客内写的不足的地方"></a>如果遇到什么问题可以留言给我,我会及时回复并更新博客内写的不足的地方</h4><h4 id="一些其他的资料"><a href="#一些其他的资料" class="headerlink" title="一些其他的资料:"></a>一些其他的资料:</h4><p><a href="http://jspatch.com/Docs/intro" target="_blank" rel="noopener">JSPatch文档</a></p>
 <p><a href="http://www.jianshu.com/p/f2c06e7f84fd" target="_blank" rel="noopener">iOS黑科技之不发版线上干掉bug(JSPatch)</a></p>
 <p><a href="http://bang590.github.io/JSPatchConvertor/" target="_blank" rel="noopener">Objective-C代码转换成JavaScript</a></p>
@@ -420,7 +420,7 @@
 </blockquote>
 <h4 id="8月27日补充"><a href="#8月27日补充" class="headerlink" title="8月27日补充"></a>8月27日补充</h4><p>JS一定要加密,下面是方法截图和文档:</p>
 <p>加密方法:</p>
-<p><img src="https://dn-mhke0kuv.qbox.me/e4154e2ba7adaf1cdcb9.png" alt=""></p>
+<p><img src="https://dn-mhke0kuv.qbox.me/e4154e2ba7adaf1cdcb9.png" alt></p>
 <p>文档:<a href="http://jspatch.com/Docs/rsa" target="_blank" rel="noopener">http://jspatch.com/Docs/rsa</a></p>
 
       
@@ -535,9 +535,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="轩辕小羽" />
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="轩辕小羽">
             
               <p class="site-author-name" itemprop="name">轩辕小羽</p>
               <p class="site-description motion-element" itemprop="description">游戏/绘画/Coding 爱好者</p>
@@ -624,7 +622,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#回归正题"><span class="nav-number">1.0.1.</span> <span class="nav-text">回归正题:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上代码"><span class="nav-number">2.</span> <span class="nav-text">上代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步-创建Demo-在ViewController里添加一个Label-声明一个test方法来给Label-text赋值"><span class="nav-number">2.1.</span> <span class="nav-text">第一步:创建Demo,在ViewController里添加一个Label,声明一个test方法来给Label.text赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步-打开JSPatch网站下载SDK-http-jspatch-com-Index-sdk"><span class="nav-number">2.2.</span> <span class="nav-text">第二步:打开JSPatch网站下载SDK:http://jspatch.com/Index/sdk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步-项目配置-这步稍微会有些复杂"><span class="nav-number">2.3.</span> <span class="nav-text">第三步:项目配置(这步稍微会有些复杂)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将解压后的SDK直接拖入工程中-然后在TARGETS-gt-Build-Phases-gt-Link-Binary-With-Libraries-gt-添加-libz-dylib-或libz-tbd-和-JavaScriptCore-framework。"><span class="nav-number">2.3.1.</span> <span class="nav-text">将解压后的SDK直接拖入工程中,然后在TARGETS -&gt; Build Phases -&gt; Link Binary With Libraries -&gt; + 添加 libz.dylib(或libz.tbd) 和 JavaScriptCore.framework。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在AppDelegate里写以下代码"><span class="nav-number">2.3.2.</span> <span class="nav-text">在AppDelegate里写以下代码:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#到这一步项目配置就完成了-下一步开始发补丁到项目中"><span class="nav-number">2.3.3.</span> <span class="nav-text">到这一步项目配置就完成了,下一步开始发补丁到项目中</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四步-打开JSPatch官网点击左上角注册-gt-http-www-jspatch-com"><span class="nav-number">2.4.</span> <span class="nav-text">第四步:打开JSPatch官网点击左上角注册 -&gt; http://www.jspatch.com/</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五步-创建你的App-名字可以随便写-AppID也可以不填"><span class="nav-number">2.5.</span> <span class="nav-text">第五步:创建你的App,名字可以随便写,AppID也可以不填</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六步-点击添加APP版本-创建一个App版本"><span class="nav-number">2.6.</span> <span class="nav-text">第六步:点击添加APP版本,创建一个App版本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍一下创建之后的APP"><span class="nav-number">2.6.1.</span> <span class="nav-text">介绍一下创建之后的APP:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七步-创建一个main-js文件并在里面写上以下代码"><span class="nav-number">2.7.</span> <span class="nav-text">第七步:创建一个main.js文件并在里面写上以下代码:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Swift覆盖方法和类的时候要加上项目名-所以规范应该是-项目名-类名-方法名-注册类的时候也要加上项目名"><span class="nav-number">2.7.1.</span> <span class="nav-text">Swift覆盖方法和类的时候要加上项目名,所以规范应该是 项目名.类名(方法名) 注册类的时候也要加上项目名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第八步-点击刚刚创建的1-0-将保存好的JS上传到JSPatch服务器上"><span class="nav-number">2.8.</span> <span class="nav-text">第八步:点击刚刚创建的1.0,将保存好的JS上传到JSPatch服务器上,</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择文件选择刚刚创建的main-js-上传补丁的时候最少要有一个main-js-如果需要上传多个文件点击右侧加号就可以了"><span class="nav-number">2.8.1.</span> <span class="nav-text">选择文件选择刚刚创建的main.js (上传补丁的时候最少要有一个main.js 如果需要上传多个文件点击右侧加号就可以了)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一定先勾选开发预览-这样才能保证测试成功"><span class="nav-number">2.8.2.</span> <span class="nav-text">一定先勾选开发预览,这样才能保证测试成功</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一切都操作完之后选择提交"><span class="nav-number">2.8.3.</span> <span class="nav-text">一切都操作完之后选择提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行你的项目-如果命令行中显示以下内容就代表你的你的项目已经更新补丁了"><span class="nav-number">2.8.4.</span> <span class="nav-text">运行你的项目,如果命令行中显示以下内容就代表你的你的项目已经更新补丁了</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#因为补丁是先下载再生效的-所以下一次运行你才能看到效果"><span class="nav-number">2.8.5.</span> <span class="nav-text">因为补丁是先下载再生效的,所以下一次运行你才能看到效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可以看到我的代码给label赋值为aaaa-通过JSPatch将label-text替换掉了"><span class="nav-number">2.8.6.</span> <span class="nav-text">可以看到我的代码给label赋值为aaaa,通过JSPatch将label.text替换掉了</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果遇到什么问题可以留言给我-我会及时回复并更新博客内写的不足的地方"><span class="nav-number">2.8.7.</span> <span class="nav-text">如果遇到什么问题可以留言给我,我会及时回复并更新博客内写的不足的地方</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些其他的资料"><span class="nav-number">2.8.8.</span> <span class="nav-text">一些其他的资料:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可能遇到的坑"><span class="nav-number">2.8.9.</span> <span class="nav-text">可能遇到的坑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本使用姿势"><span class="nav-number">2.8.10.</span> <span class="nav-text">基本使用姿势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8月27日补充"><span class="nav-number">2.8.11.</span> <span class="nav-text">8月27日补充</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#回归正题"><span class="nav-number">1.0.1.</span> <span class="nav-text">回归正题:</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#上代码"><span class="nav-number">2.</span> <span class="nav-text">上代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步-创建Demo-在ViewController里添加一个Label-声明一个test方法来给Label-text赋值"><span class="nav-number">2.1.</span> <span class="nav-text">第一步:创建Demo,在ViewController里添加一个Label,声明一个test方法来给Label.text赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步-打开JSPatch网站下载SDK-http-jspatch-com-Index-sdk"><span class="nav-number">2.2.</span> <span class="nav-text">第二步:打开JSPatch网站下载SDK:http://jspatch.com/Index/sdk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步-项目配置-这步稍微会有些复杂"><span class="nav-number">2.3.</span> <span class="nav-text">第三步:项目配置(这步稍微会有些复杂)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将解压后的SDK直接拖入工程中-然后在TARGETS-gt-Build-Phases-gt-Link-Binary-With-Libraries-gt-添加-libz-dylib-或libz-tbd-和-JavaScriptCore-framework。"><span class="nav-number">2.3.1.</span> <span class="nav-text">将解压后的SDK直接拖入工程中,然后在TARGETS -&gt; Build Phases -&gt; Link Binary With Libraries -&gt; + 添加 libz.dylib(或libz.tbd) 和 JavaScriptCore.framework。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在AppDelegate里写以下代码"><span class="nav-number">2.3.2.</span> <span class="nav-text">在AppDelegate里写以下代码:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#到这一步项目配置就完成了-下一步开始发补丁到项目中"><span class="nav-number">2.3.3.</span> <span class="nav-text">到这一步项目配置就完成了,下一步开始发补丁到项目中</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四步-打开JSPatch官网点击左上角注册-gt-http-www-jspatch-com"><span class="nav-number">2.4.</span> <span class="nav-text">第四步:打开JSPatch官网点击左上角注册 -&gt; http://www.jspatch.com/</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五步-创建你的App-名字可以随便写-AppID也可以不填"><span class="nav-number">2.5.</span> <span class="nav-text">第五步:创建你的App,名字可以随便写,AppID也可以不填</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六步-点击添加APP版本-创建一个App版本"><span class="nav-number">2.6.</span> <span class="nav-text">第六步:点击添加APP版本,创建一个App版本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍一下创建之后的APP"><span class="nav-number">2.6.1.</span> <span class="nav-text">介绍一下创建之后的APP:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七步-创建一个main-js文件并在里面写上以下代码"><span class="nav-number">2.7.</span> <span class="nav-text">第七步:创建一个main.js文件并在里面写上以下代码:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Swift覆盖方法和类的时候要加上项目名-所以规范应该是-项目名-类名-方法名-注册类的时候也要加上项目名"><span class="nav-number">2.7.1.</span> <span class="nav-text">Swift覆盖方法和类的时候要加上项目名,所以规范应该是 项目名.类名(方法名) 注册类的时候也要加上项目名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第八步-点击刚刚创建的1-0-将保存好的JS上传到JSPatch服务器上"><span class="nav-number">2.8.</span> <span class="nav-text">第八步:点击刚刚创建的1.0,将保存好的JS上传到JSPatch服务器上,</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择文件选择刚刚创建的main-js-上传补丁的时候最少要有一个main-js-如果需要上传多个文件点击右侧加号就可以了"><span class="nav-number">2.8.1.</span> <span class="nav-text">选择文件选择刚刚创建的main.js (上传补丁的时候最少要有一个main.js 如果需要上传多个文件点击右侧加号就可以了)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一定先勾选开发预览-这样才能保证测试成功"><span class="nav-number">2.8.2.</span> <span class="nav-text">一定先勾选开发预览,这样才能保证测试成功</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一切都操作完之后选择提交"><span class="nav-number">2.8.3.</span> <span class="nav-text">一切都操作完之后选择提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行你的项目-如果命令行中显示以下内容就代表你的你的项目已经更新补丁了"><span class="nav-number">2.8.4.</span> <span class="nav-text">运行你的项目,如果命令行中显示以下内容就代表你的你的项目已经更新补丁了</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#因为补丁是先下载再生效的-所以下一次运行你才能看到效果"><span class="nav-number">2.8.5.</span> <span class="nav-text">因为补丁是先下载再生效的,所以下一次运行你才能看到效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可以看到我的代码给label赋值为aaaa-通过JSPatch将label-text替换掉了"><span class="nav-number">2.8.6.</span> <span class="nav-text">可以看到我的代码给label赋值为aaaa,通过JSPatch将label.text替换掉了</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果遇到什么问题可以留言给我-我会及时回复并更新博客内写的不足的地方"><span class="nav-number">2.8.7.</span> <span class="nav-text">如果遇到什么问题可以留言给我,我会及时回复并更新博客内写的不足的地方</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些其他的资料"><span class="nav-number">2.8.8.</span> <span class="nav-text">一些其他的资料:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可能遇到的坑"><span class="nav-number">2.8.9.</span> <span class="nav-text">可能遇到的坑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本使用姿势"><span class="nav-number">2.8.10.</span> <span class="nav-text">基本使用姿势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8月27日补充"><span class="nav-number">2.8.11.</span> <span class="nav-text">8月27日补充</span></a></li></ol></li></ol></li></div>
             
 
           </div>

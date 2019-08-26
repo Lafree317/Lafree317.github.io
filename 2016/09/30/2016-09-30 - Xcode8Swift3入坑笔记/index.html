@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,9 +48,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS," />
+  <meta name="keywords" content="iOS,">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/09/30/2016-09-30 - Xcode8Swift3入坑笔记/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/30/2016-09-30 - Xcode8Swift3入坑笔记/">
 
 
 
@@ -169,7 +169,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Lafree's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -199,7 +199,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -209,7 +209,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -219,7 +219,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -262,7 +262,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
@@ -325,13 +325,13 @@
       
 
       
-        <p><img src="https://dn-mhke0kuv.qbox.me/f0c605bded5ff5ee33d9.png?imageView2/1/w/1080/h/320/q/85/format/webp/interlace/1" alt=""></p>
+        <p><img src="https://dn-mhke0kuv.qbox.me/f0c605bded5ff5ee33d9.png?imageView2/1/w/1080/h/320/q/85/format/webp/interlace/1" alt></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天把公司项目的swift代码升级到Swift3,遇到了不少坑</p>
-<p>现在总算能跑起来了..还有很多坑要踩…<br>这是改之前的惨状:<br><img src="https://dn-mhke0kuv.qbox.me/3555548a269b56e7740b.jpeg" alt=""></p>
+<p>现在总算能跑起来了..还有很多坑要踩…<br>这是改之前的惨状:<br><img src="https://dn-mhke0kuv.qbox.me/3555548a269b56e7740b.jpeg" alt></p>
 <p>发现一条写一条,不定时更新</p>
 <a id="more"></a>
 <h2 id="正题"><a href="#正题" class="headerlink" title="正题"></a>正题</h2><ul>
-<li><p>选了Later之后还想调用系统的自动升级[Edit &gt; Convert &gt; To Current Swift Syntax…]<br><img src="https://dn-mhke0kuv.qbox.me/d2ca67d395bcedf2f9b4.png" alt=""></p>
+<li><p>选了Later之后还想调用系统的自动升级[Edit &gt; Convert &gt; To Current Swift Syntax…]<br><img src="https://dn-mhke0kuv.qbox.me/d2ca67d395bcedf2f9b4.png" alt></p>
 </li>
 <li><p>之前一个控件layoutIfNeed 会带动它所约束的控件一起layout,现在只会单独计算,想达到之前的效果只能整个父级控件调用layoutIfNeed方法了</p>
 </li>
@@ -341,7 +341,7 @@
 </li>
 <li><p>flatmap和map会返回一个非数组的类型,需要重新用一个返回[T]的方法重写一遍..语法都没有变,改了就好了</p>
 </li>
-<li><p>控制台会输出一大堆网络日志,需要再Run里加一个OS_ACTIVITY_MODE = disable stackoverflow:<a href="http://stackoverflow.com/questions/37800790/hide-strange-unwanted-xcode-8-logs/39461256#39461256" target="_blank" rel="noopener">http://stackoverflow.com/questions/37800790/hide-strange-unwanted-xcode-8-logs/39461256#39461256</a><br><img src="https://dn-mhke0kuv.qbox.me/59553211b6cd8c0c00fa.png" alt=""></p>
+<li><p>控制台会输出一大堆网络日志,需要再Run里加一个OS_ACTIVITY_MODE = disable stackoverflow:<a href="http://stackoverflow.com/questions/37800790/hide-strange-unwanted-xcode-8-logs/39461256#39461256" target="_blank" rel="noopener">http://stackoverflow.com/questions/37800790/hide-strange-unwanted-xcode-8-logs/39461256#39461256</a><br><img src="https://dn-mhke0kuv.qbox.me/59553211b6cd8c0c00fa.png" alt></p>
 </li>
 <li><p>Swift调用OC对象属性都自带Optional了,使用的时候要拆包</p>
 </li>
@@ -467,9 +467,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="轩辕小羽" />
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="轩辕小羽">
             
               <p class="site-author-name" itemprop="name">轩辕小羽</p>
               <p class="site-description motion-element" itemprop="description">游戏/绘画/Coding 爱好者</p>

@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,9 +48,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS," />
+  <meta name="keywords" content="iOS,">
 
 
 
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/30/2016-12-30 - CocoaPods爬坑指南/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/30/2016-12-30 - CocoaPods爬坑指南/">
 
 
 
@@ -168,7 +168,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Lafree's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -198,7 +198,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -208,7 +208,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -218,7 +218,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -261,7 +261,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
@@ -332,13 +332,13 @@
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 搜索库</span><br><span class="line">pod search 库的关键字</span><br><span class="line">// 为项目导入依赖</span><br><span class="line">pod install</span><br><span class="line">// 已经导入过一次相关的第三方,想快速导入,不再从网上下载</span><br><span class="line">pod install --verbose --no-repo-update</span><br><span class="line">// 为项目更新依赖</span><br><span class="line">pod update</span><br></pre></td></tr></table></figure>
 <h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>有时候pod抽风了..需要删除项目中的pod重新导入,或者删除pod重新安装pod</p>
 <h4 id="删除项目pod依赖"><a href="#删除项目pod依赖" class="headerlink" title="删除项目pod依赖"></a>删除项目pod依赖</h4><ul>
-<li>删除项目中根目录下带pod的文件<br><img src="https://dn-mhke0kuv.qbox.me/284abc7c250fcc1d75b5.png" alt=""></li>
+<li>删除项目中根目录下带pod的文件<br><img src="https://dn-mhke0kuv.qbox.me/284abc7c250fcc1d75b5.png" alt></li>
 </ul>
 <ul>
-<li>删除所有target下 Build Phases 下带pod的条目<br><img src="https://dn-mhke0kuv.qbox.me/7f8a5970d4f71d8727fd.png" alt=""></li>
+<li>删除所有target下 Build Phases 下带pod的条目<br><img src="https://dn-mhke0kuv.qbox.me/7f8a5970d4f71d8727fd.png" alt></li>
 </ul>
 <ul>
-<li>删除文件目录下的workspace和Pods文件夹<br><img src="https://dn-mhke0kuv.qbox.me/4f97d6c601024d0f8158.png" alt=""></li>
+<li>删除文件目录下的workspace和Pods文件夹<br><img src="https://dn-mhke0kuv.qbox.me/4f97d6c601024d0f8158.png" alt></li>
 </ul>
 <p>如果删除成功再次编译应该会报错找不到头文件的错误,不会报找不到pod那种恶心的错误了</p>
 <h4 id="删除pod"><a href="#删除pod" class="headerlink" title="删除pod"></a>删除pod</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 普通删除</span><br><span class="line">sudo gem uninstall cocoapods</span><br><span class="line"></span><br><span class="line">// 如果这么删重装还不好用</span><br><span class="line">// 比如install 后没有workspace 或者提示 Generating Pods project Abort trap: 6</span><br><span class="line">// 试试下面的删除</span><br><span class="line">sudo gem uninstall cocoapods</span><br><span class="line">sudo gem uninstall cocoapods-core</span><br><span class="line">sudo gem uninstall cocoapods-deintegrate</span><br><span class="line">sudo gem uninstall cocoapods-downloader</span><br><span class="line">sudo gem uninstall cocoapods-plugins</span><br><span class="line">sudo gem uninstall cocoapods-search</span><br><span class="line">sudo gem uninstall cocoapods-stats</span><br><span class="line">sudo gem uninstall cocoapods-try</span><br><span class="line">sudo gem uninstall cocoapods-trunk</span><br><span class="line"></span><br><span class="line">// 然后可以去下载最新版了,然后正常使用了</span><br><span class="line">sudo gem install cocoapods</span><br><span class="line">pod setup</span><br></pre></td></tr></table></figure>
@@ -457,9 +457,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="轩辕小羽" />
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="轩辕小羽">
             
               <p class="site-author-name" itemprop="name">轩辕小羽</p>
               <p class="site-description motion-element" itemprop="description">游戏/绘画/Coding 爱好者</p>
@@ -546,7 +544,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除"><span class="nav-number">4.</span> <span class="nav-text">删除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除项目pod依赖"><span class="nav-number">4.0.1.</span> <span class="nav-text">删除项目pod依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除pod"><span class="nav-number">4.0.2.</span> <span class="nav-text">删除pod</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关文章"><span class="nav-number">5.</span> <span class="nav-text">相关文章:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除"><span class="nav-number">4.</span> <span class="nav-text">删除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除项目pod依赖"><span class="nav-number">4.0.1.</span> <span class="nav-text">删除项目pod依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除pod"><span class="nav-number">4.0.2.</span> <span class="nav-text">删除pod</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#相关文章"><span class="nav-number">5.</span> <span class="nav-text">相关文章:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li></div>
             
 
           </div>
