@@ -54,22 +54,19 @@
   };
 </script>
 
-  <meta name="description" content="前言Unity中使用sLua的 超丶简单基础教程(一) 上一篇博客讲了一下简单调用LuaState读取Lua代码并执行 本篇要讲一下如何更改路径并使得Lua可以调用UnityEngine代码的方法 虽然简短但也是长时间爬坑试验出来的(因为基础教程真的好少啊….)希望对大家有帮助..">
-<meta name="keywords" content="Unity,Lua">
+  <meta name="description" content="前言 好久没有更新啦…最近比较贪玩 该找工作了把之前整理的面试题发一下  Unity面试题总结总结面试时亲身经历或者是网上优秀的面试经验，长期维护欢迎PR总共分为以下几大模块：  语言 Unity 设计模式 算法 图形学 网络 优化   技术博客">
+<meta name="keywords" content="Unity">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unity中使用sLua的 超丶简单基础教程(二)">
-<meta property="og:url" content="http://yoursite.com/2018/02/03/2018-02-03 - Unity中使用sLua的 超丶简单基础教程(二)/index.html">
+<meta property="og:title" content="Unity面试经验">
+<meta property="og:url" content="http://yoursite.com/2019/12/02/2019-12-02 - Unity效率相关/index.html">
 <meta property="og:site_name" content="Lafree&#39;s Blog">
-<meta property="og:description" content="前言Unity中使用sLua的 超丶简单基础教程(一) 上一篇博客讲了一下简单调用LuaState读取Lua代码并执行 本篇要讲一下如何更改路径并使得Lua可以调用UnityEngine代码的方法 虽然简短但也是长时间爬坑试验出来的(因为基础教程真的好少啊….)希望对大家有帮助..">
+<meta property="og:description" content="前言 好久没有更新啦…最近比较贪玩 该找工作了把之前整理的面试题发一下  Unity面试题总结总结面试时亲身经历或者是网上优秀的面试经验，长期维护欢迎PR总共分为以下几大模块：  语言 Unity 设计模式 算法 图形学 网络 优化   技术博客">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/02/images/Slua-1.png">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/2/3/1615b60570c81eb1?w=504&h=324&f=png&s=66637">
-<meta property="og:updated_time" content="2019-08-26T03:26:25.055Z">
+<meta property="og:updated_time" content="2020-10-15T12:32:05.363Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Unity中使用sLua的 超丶简单基础教程(二)">
-<meta name="twitter:description" content="前言Unity中使用sLua的 超丶简单基础教程(一) 上一篇博客讲了一下简单调用LuaState读取Lua代码并执行 本篇要讲一下如何更改路径并使得Lua可以调用UnityEngine代码的方法 虽然简短但也是长时间爬坑试验出来的(因为基础教程真的好少啊….)希望对大家有帮助..">
-<meta name="twitter:image" content="http://yoursite.com/2018/02/images/Slua-1.png">
-  <link rel="canonical" href="http://yoursite.com/2018/02/03/2018-02-03 - Unity中使用sLua的 超丶简单基础教程(二)/">
+<meta name="twitter:title" content="Unity面试经验">
+<meta name="twitter:description" content="前言 好久没有更新啦…最近比较贪玩 该找工作了把之前整理的面试题发一下  Unity面试题总结总结面试时亲身经历或者是网上优秀的面试经验，长期维护欢迎PR总共分为以下几大模块：  语言 Unity 设计模式 算法 图形学 网络 优化   技术博客">
+  <link rel="canonical" href="http://yoursite.com/2019/12/02/2019-12-02 - Unity效率相关/">
 
 
 <script id="page-configurations">
@@ -83,7 +80,7 @@
   };
 </script>
 
-  <title>Unity中使用sLua的 超丶简单基础教程(二) | Lafree's Blog</title>
+  <title>Unity面试经验 | Lafree's Blog</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -201,7 +198,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/03/2018-02-03 - Unity中使用sLua的 超丶简单基础教程(二)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/02/2019-12-02 - Unity效率相关/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩辕小羽">
@@ -213,7 +210,7 @@
       <meta itemprop="name" content="Lafree's Blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Unity中使用sLua的 超丶简单基础教程(二)
+        <h1 class="post-title" itemprop="name headline">Unity面试经验
 
           
         </h1>
@@ -229,7 +226,7 @@
                 
               
 
-              <time title="Created: 2018-02-03 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-03T00:00:00+08:00">2018-02-03</time>
+              <time title="Created: 2019-12-02 00:00:00" itemprop="dateCreated datePublished" datetime="2019-12-02T00:00:00+08:00">2019-12-02</time>
             </span>
           
             
@@ -240,7 +237,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-26 11:26:25" itemprop="dateModified" datetime="2019-08-26T11:26:25+08:00">2019-08-26</time>
+                <time title="Modified: 2020-10-15 20:32:05" itemprop="dateModified" datetime="2020-10-15T20:32:05+08:00">2020-10-15</time>
               </span>
             
           
@@ -256,20 +253,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img src="../../images/Slua-1.png" alt></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><a href="https://lafree317.github.io/2018/01/20/2018-01-20%20-%20Unity%E4%B8%AD%E4%BD%BF%E7%94%A8sLua%E7%9A%84%20%E8%B6%85%E4%B8%B6%E7%AE%80%E5%8D%95%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B(%E4%B8%80)/" target="_blank" rel="noopener">Unity中使用sLua的 超丶简单基础教程(一)</a></p>
-<p>上一篇博客讲了一下简单调用LuaState读取Lua代码并执行</p>
-<p>本篇要讲一下如何更改路径并使得Lua可以调用UnityEngine代码的方法</p>
-<p>虽然简短但也是长时间爬坑试验出来的(因为基础教程真的好少啊….)希望对大家有帮助..</p>
-<a id="more"></a>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>在创建一个新的场景,一个新的CreateEmpty把C#脚本挂上去代码如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using UnityEngine;</span><br><span class="line">using System.IO;</span><br><span class="line">using SLua;</span><br><span class="line"></span><br><span class="line">public class TestLua : MonoBehaviour &#123;</span><br><span class="line"></span><br><span class="line">	void Start () &#123;</span><br><span class="line">		LuaSvr svr = new LuaSvr();// 如果不先进行某个LuaSvr的初始化的话,下面的mianState会爆一个为null的错误..</span><br><span class="line">        LuaSvr.mainState.loaderDelegate += LuaReourcesFileLoader;</span><br><span class="line">		svr.init(null, () =&gt; // 如果不用init方法初始化的话,在Lua中是不能import的</span><br><span class="line">		&#123;</span><br><span class="line">            svr.start(&quot;Test&quot;);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    // SLua Loader代理方法</span><br><span class="line">    private static byte[] LuaReourcesFileLoader(string strFile)</span><br><span class="line">    &#123;</span><br><span class="line">        // 这里为了测试就不先判断为空,开发的时候再加上</span><br><span class="line">        string filename = Application.dataPath + &quot;/Scripts/Lua/&quot; + strFile.Replace(&apos;.&apos;, &apos;/&apos;) + &quot;.txt&quot;;</span><br><span class="line">        return File.ReadAllBytes(filename);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后在Assest/Scripts/Lua/中创建一个Lua.txt脚本 命名路径都可以更改代码如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &quot;UnityEngine&quot;</span><br><span class="line"></span><br><span class="line">function main()</span><br><span class="line">    print(&quot;Lua创建了一个Cube&quot;)</span><br><span class="line">    local cube = GameObject.CreatePrimitive(PrimitiveType.Cube)</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
-<h4 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h4><p><img src="https://user-gold-cdn.xitu.io/2018/2/3/1615b60570c81eb1?w=504&amp;h=324&amp;f=png&amp;s=66637" alt></p>
-<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>上一篇主要说了一下如何引用SLua读取lua脚本<br>这一篇主要说了一下Lua如何调用UnityEngine的方法<br>下一遍我会说一下开发一个中间层,把Start Awake Update等方法都传递到Lua中<br>最终完成一个纯Lua项目</p>
-<p>本篇教程很基础,如果有精力会将之后学习到的知识都整理成博客分享给大家~</p>
-
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>好久没有更新啦…最近比较贪玩 该找工作了把之前整理的面试题发一下</p>
+</blockquote>
+<h1 id="Unity面试题总结"><a href="#Unity面试题总结" class="headerlink" title="Unity面试题总结"></a>Unity面试题总结</h1><p>总结面试时亲身经历或者是网上优秀的面试经验，长期维护欢迎PR<br>总共分为以下几大模块：</p>
+<ul>
+<li><h3 id="语言"><a href="#语言" class="headerlink" title="语言"></a><a href="https://github.com/Lafree317/Unity-InterviewQuestion/blob/master/%E8%AF%AD%E8%A8%80.md" target="_blank" rel="noopener">语言</a></h3></li>
+<li><h3 id="Unity"><a href="#Unity" class="headerlink" title="Unity"></a><a href="https://github.com/Lafree317/Unity-InterviewQuestion/blob/master/UnityEngine.md" target="_blank" rel="noopener">Unity</a></h3></li>
+<li><h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a><a href="https://github.com/Lafree317/Unity-InterviewQuestion/blob/master/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.md" target="_blank" rel="noopener">设计模式</a></h3></li>
+<li><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a><a href="https://github.com/Lafree317/Unity-InterviewQuestion/blob/master/%E7%AE%97%E6%B3%95.md" target="_blank" rel="noopener">算法</a></h3></li>
+<li><h3 id="图形学"><a href="#图形学" class="headerlink" title="图形学"></a><a href="https://github.com/Lafree317/Unity-InterviewQuestion/blob/master/%E5%9B%BE%E5%BD%A2%E5%AD%A6.md" target="_blank" rel="noopener">图形学</a></h3></li>
+<li><h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a><a href="https://github.com/Lafree317/Unity-InterviewQuestion/blob/master/%E7%BD%91%E7%BB%9C.md" target="_blank" rel="noopener">网络</a></h3></li>
+<li><h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a><a href="https://github.com/Lafree317/Unity-InterviewQuestion/blob/master/%E4%BC%98%E5%8C%96.md" target="_blank" rel="noopener">优化</a></h3></li>
+</ul>
+<hr>
+<h3 id="技术博客"><a href="#技术博客" class="headerlink" title="技术博客"></a><a href="https://github.com/Lafree317/Unity-InterviewQuestion/blob/master/%E4%BC%98%E7%A7%80%E5%8D%9A%E5%AE%A2.md" target="_blank" rel="noopener">技术博客</a></h3>
     </div>
 
     
@@ -286,8 +284,6 @@
             
               <a href="/tags/Unity/" rel="tag"># Unity</a>
             
-              <a href="/tags/Lua/" rel="tag"># Lua</a>
-            
           </div>
         
 
@@ -296,8 +292,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2018/01/20/2018-01-20 - Unity中使用sLua的 超丶简单基础教程(一)/" rel="next" title="Unity中使用sLua的 超丶简单基础教程(一)">
-                  <i class="fa fa-chevron-left"></i> Unity中使用sLua的 超丶简单基础教程(一)
+                <a href="/2019/08/23/2019-08-23 - iOS与Unity的交互/" rel="next" title="iOS与Unity的交互">
+                  <i class="fa fa-chevron-left"></i> iOS与Unity的交互
                 </a>
               
             </div>
@@ -305,10 +301,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2018/02/04/2018-02-04 - Unity中使用sLua的 超丶简单基础教程(三)/" rel="prev" title="Unity中使用sLua的 超丶简单基础教程(三)">
-                  Unity中使用sLua的 超丶简单基础教程(三) <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -357,7 +349,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图"><span class="nav-number">2.1.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">2.2.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity面试题总结"><span class="nav-number"></span> <span class="nav-text">Unity面试题总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语言"><span class="nav-number">0.1.</span> <span class="nav-text">语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unity"><span class="nav-number">0.2.</span> <span class="nav-text">Unity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计模式"><span class="nav-number">0.3.</span> <span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法"><span class="nav-number">0.4.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图形学"><span class="nav-number">0.5.</span> <span class="nav-text">图形学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络"><span class="nav-number">0.6.</span> <span class="nav-text">网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化"><span class="nav-number">0.7.</span> <span class="nav-text">优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#技术博客"><span class="nav-number">0.8.</span> <span class="nav-text">技术博客</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    }
+  };
+</script>
+
+  <meta name="description" content="前言 今天听说了一个很有意思的需求,把Unity游戏打成一个包,嵌入到原生APP中正好两种技术栈我都有过相关经验,所以手痒实现一下!  版本Unity 2019.2.0f1Xcode9.3.1">
+<meta name="keywords" content="iOS,Unity">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS与Unity的交互">
+<meta property="og:url" content="http://yoursite.com/2019/08/23/2019-08-23 - iOS与Unity的交互/index.html">
+<meta property="og:site_name" content="Lafree&#39;s Blog">
+<meta property="og:description" content="前言 今天听说了一个很有意思的需求,把Unity游戏打成一个包,嵌入到原生APP中正好两种技术栈我都有过相关经验,所以手痒实现一下!  版本Unity 2019.2.0f1Xcode9.3.1">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/iOS原生应用调用Unity/111111.png">
+<meta property="og:image" content="http://yoursite.com/images/iOS原生应用调用Unity/屏幕快照%202019-08-23%20下午4.43.51.png">
+<meta property="og:image" content="http://yoursite.com/images/iOS原生应用调用Unity/屏幕快照%202019-08-23%20下午4.43.57.png">
+<meta property="og:image" content="http://yoursite.com/images/iOS原生应用调用Unity/屏幕快照%202019-08-23%20下午4.43.26.png">
+<meta property="og:image" content="http://yoursite.com/images/iOS原生应用调用Unity/QQ20190823-172433-HD.gif">
+<meta property="og:image" content="http://yoursite.com/images/iOS原生应用调用Unity/QQ20190823-181556-HD.gif">
+<meta property="og:image" content="http://yoursite.com/images/iOS原生应用调用Unity/36892C39-B557-4CE6-A298-A2252AD0A15F.png">
+<meta property="og:image" content="http://yoursite.com/images/iOS原生应用调用Unity/QQ20190823-190811-HD.gif">
+<meta property="og:image" content="http://yoursite.com/images/iOS原生应用调用Unity/QQ20190823-183235-HD.gif">
+<meta property="og:updated_time" content="2019-12-02T12:52:11.876Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS与Unity的交互">
+<meta name="twitter:description" content="前言 今天听说了一个很有意思的需求,把Unity游戏打成一个包,嵌入到原生APP中正好两种技术栈我都有过相关经验,所以手痒实现一下!  版本Unity 2019.2.0f1Xcode9.3.1">
+<meta name="twitter:image" content="http://yoursite.com/images/iOS原生应用调用Unity/111111.png">
+  <link rel="canonical" href="http://yoursite.com/2019/08/23/2019-08-23 - iOS与Unity的交互/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>iOS与Unity的交互 | Lafree's Blog</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lafree's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">轩辕小羽的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/23/2019-08-23 - iOS与Unity的交互/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩辕小羽">
+      <meta itemprop="description" content="游戏/绘画/Coding 爱好者">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lafree's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">iOS与Unity的交互
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-23 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-23T00:00:00+08:00">2019-08-23</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-02 20:52:11" itemprop="dateModified" datetime="2019-12-02T20:52:11+08:00">2019-12-02</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>今天听说了一个很有意思的需求,把Unity游戏打成一个包,嵌入到原生APP中<br>正好两种技术栈我都有过相关经验,所以手痒实现一下!</p>
+</blockquote>
+<p>版本<br>Unity 2019.2.0f1<br>Xcode9.3.1</p>
+<a id="more"></a>
+<h2 id="Show-Me-The-Code"><a href="#Show-Me-The-Code" class="headerlink" title="Show Me The Code"></a>Show Me The Code</h2><p>创建一个Unity工程<br>拖入一个Cube和Text控件</p>
+<p><img src="/images/iOS原生应用调用Unity/111111.png" alt></p>
+<p>然后BuildSetting中切换到iOS</p>
+<blockquote>
+<p>注意如果需要用模拟器调试 需要在<code>Player Settings</code>中把<code>Other Settings</code>中的<code>Target SDK</code>切换为<code>Simulator SDK</code> </p>
+<p>Unity2019.2.0f中勾选<code>Auto Graphics API</code>并不会添加依赖<br><img src="/images/iOS原生应用调用Unity/屏幕快照 2019-08-23 下午4.43.51.png" alt="e777aca23b92c1b49d29c3a5b6d0a262"></p>
+<p>需要手动取消<code>Auto Graphics API</code>并在<code>Graphics APIs</code>中添加<code>OpenGLES3</code><br><img src="/images/iOS原生应用调用Unity/屏幕快照 2019-08-23 下午4.43.57.png" alt="f819fcc8e0d848700bbc018346f48ef7"></p>
+</blockquote>
+<p>然后点击Build</p>
+<p><img src="/images/iOS原生应用调用Unity/屏幕快照 2019-08-23 下午4.43.26.png" alt="f91efed2b8f55c422b56b03f3602f87c"></p>
+<h3 id="iOS唤起Unity"><a href="#iOS唤起Unity" class="headerlink" title="iOS唤起Unity"></a>iOS唤起Unity</h3><p>Unity默认在iOS <code>AppDelegate</code>中的<code>applicationDidBecomeActive</code>调用一个<code>startUnity:</code>方法<br>如果要自定义唤起时间,则需要改变这个方法的调用时机</p>
+<p>在<code>UnityAppController</code>修改并添加以下代码<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)applicationDidBecomeActive:(UIApplication*)application</span><br><span class="line">&#123;</span><br><span class="line">::<span class="built_in">printf</span>(<span class="string">"-&gt; applicationDidBecomeActive()\n"</span>);</span><br><span class="line"></span><br><span class="line">[self removeSnapshotView];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (_unityAppReady)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (UnityIsPaused() &amp;&amp; _wasPausedExternal == <span class="literal">false</span>)</span><br><span class="line">&#123;</span><br><span class="line">UnityWillResume();</span><br><span class="line">UnityPause(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (_wasPausedExternal)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (UnityIsFullScreenPlaying())</span><br><span class="line">TryResumeFullScreenVideo();</span><br><span class="line">&#125;</span><br><span class="line">UnitySetPlayerFocus(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (!_startUnityScheduled)</span><br><span class="line">&#123;</span><br><span class="line">_startUnityScheduled = <span class="literal">true</span>;</span><br><span class="line"><span class="comment">// 替换startUnity:为startSelfIOSView</span></span><br><span class="line">[self performSelector: @selector(startSelfIOSView) withObject: application afterDelay: <span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">_didResignActive = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 创建原生页面和控件,自己控制唤起Unity时机</span></span><br><span class="line">- (<span class="keyword">void</span>)startSelfIOSView</span><br><span class="line">&#123;</span><br><span class="line">UIViewController *vc = [[UIViewController alloc] init];</span><br><span class="line">vc.view.frame = [UIScreen mainScreen].bounds;</span><br><span class="line">vc.view.backgroundColor = [UIColor whiteColor];</span><br><span class="line">UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(<span class="number">100</span>, <span class="number">100</span>, <span class="number">200</span>, <span class="number">50</span>)];</span><br><span class="line">btn.backgroundColor = [UIColor blueColor];</span><br><span class="line">[btn setTitle:@<span class="string">"跳转到Unity界面"</span> forState:UIControlStateNormal];</span><br><span class="line"><span class="comment">// 按钮被点击时唤起Unity项目</span></span><br><span class="line">[btn addTarget:self action:@selector(startUnity:) forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">[vc.view addSubview:btn];</span><br><span class="line">[_window addSubview:vc.view];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后就可以通过我们的定义的时机唤起Unity了<br><img src="/images/iOS原生应用调用Unity/QQ20190823-172433-HD.gif" alt="f01bd0aa7ef7071ccb876c6e63061187"></p>
+<h3 id="Unity唤起iOS"><a href="#Unity唤起iOS" class="headerlink" title="Unity唤起iOS"></a>Unity唤起iOS</h3><p>因为Unity界面跳转到IOS界面涉及到了暂停Unity所以我们需要实现一个单例来判断Unity的暂停或启动</p>
+<p>LARManager.h<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"></span><br><span class="line">@interface LARManager : NSObject</span><br><span class="line"><span class="comment">/** 是否暂停Unity */</span></span><br><span class="line">@property (assign, nonatomic) BOOL unityIsPaused;</span><br><span class="line">+ (instancetype)sharedInstance;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>LARManager.m<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"LARManager.h"</span></span></span><br><span class="line"></span><br><span class="line">@implementation LARManager</span><br><span class="line"></span><br><span class="line">+ (instancetype)sharedInstance</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">static</span> LARManager *manager;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">dispatch_once_t</span> onceToken;</span><br><span class="line">dispatch_once(&amp;onceToken, ^&#123;</span><br><span class="line">manager = [[self alloc] init];</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">return</span> manager;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (instancetype)init</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (self = [super init]) &#123;</span><br><span class="line">self.unityIsPaused = NO;</span><br><span class="line">NSLog(@<span class="string">"单例初始化成功"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> self;</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>然后在iOS中声明被Unity调用的方法<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">// 对Unity中的unityToIOS方法进行实现</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">unityToIOS</span><span class="params">(<span class="keyword">char</span>* str)</span></span>&#123;</span><br><span class="line"><span class="comment">// Unity传递过来的参数</span></span><br><span class="line">NSLog(@<span class="string">"%s"</span>,str);</span><br><span class="line">UnityPause(<span class="literal">true</span>);</span><br><span class="line"><span class="comment">// 跳转到IOS界面，Unity界面暂停</span></span><br><span class="line">[LARManager sharedInstance].unityIsPaused = YES;</span><br><span class="line"><span class="comment">// GetAppController()获取appController，相当于self</span></span><br><span class="line"><span class="comment">// UnityGetGLView()获取UnityView，相当于_window</span></span><br><span class="line"><span class="comment">// 点击按钮后跳转到IOS界面，设置界面为IOS界面</span></span><br><span class="line">GetAppController().window.rootViewController = GetAppController().vc;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在Unity中调用<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[DllImport(<span class="string">"__Internal"</span>)]</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">unityToIOS</span> <span class="params">(<span class="built_in">string</span> str)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 按钮点击后切换到iOS界面发送一个字符串</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ButtonClick</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">unityToIOS(<span class="string">"Hello iOS"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>实现效果:<br><img src="/images/iOS原生应用调用Unity/QQ20190823-181556-HD.gif" alt="d728085a9a2a591edd57e8d1379dd101"></p>
+<h3 id="Unity向iOS传值"><a href="#Unity向iOS传值" class="headerlink" title="Unity向iOS传值"></a>Unity向iOS传值</h3><h4 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h4><p>在上个例子中已经展示了Unity向iOS传值的方法<br>在iOS中在<code>extern &quot;C&quot;</code>中声明方法,然后在Unity中添加方法属性并添加标签<code>[DllImport(&quot;__Internal&quot;)]</code><br>然后就可以直接调用了</p>
+<h4 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h4><p>在Unity项目中添加<code>Test.h</code> <code>Test.m</code><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Test.h</span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">outputAppendString</span> <span class="params">(<span class="keyword">char</span> *str1, <span class="keyword">char</span> *str2)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Test.m</span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">outputAppendString</span> <span class="params">(<span class="keyword">char</span> *str1, <span class="keyword">char</span> *str2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">NSString *string1 = [[NSString alloc] initWithUTF8String:str1];</span><br><span class="line">NSString *string2 = [[NSString alloc] initWithUTF8String:str2];</span><br><span class="line"></span><br><span class="line">NSLog(@<span class="string">"###%@"</span>, [NSString stringWithFormat:@<span class="string">"%@ %@"</span>, string1, string2]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后两个文件<code>Include Platforms</code>设置为<code>iOS</code></p>
+<p><img src="/images/iOS原生应用调用Unity/36892C39-B557-4CE6-A298-A2252AD0A15F.png" alt="ffd2bd502a9c319fdfc582d422327b2d"></p>
+<p>然后添加一个按钮绑定事件<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入OC文件</span></span><br><span class="line">[DllImport(<span class="string">"__Internal"</span>)]</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">outputAppendString</span> <span class="params">(<span class="built_in">string</span> str1, <span class="built_in">string</span> str2)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ButtonClickCalliOS</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> UNITY_IPHONE    </span></span><br><span class="line">outputAppendString(<span class="string">"Hello"</span>, <span class="string">"World"</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>实现效果:</p>
+<p><img src="/images/iOS原生应用调用Unity/QQ20190823-190811-HD.gif" alt="593baeaa982ff03e9fd8168517c085f8"></p>
+<h3 id="iOS向Unity传值"><a href="#iOS向Unity传值" class="headerlink" title="iOS向Unity传值"></a>iOS向Unity传值</h3><p>iOS向Unity传值主要通过<code>void UnitySendMessage(const char* obj, const char* method, const char* msg);</code>这个方法<br>这个方法可以传入三个参数:</p>
+<ul>
+<li>参数一为unity脚本挂载的gameobject</li>
+<li>参数二为unity脚本中要调用的方法名</li>
+<li>参数三为传递的数据，*注意：传递的数据只能是char 类型<br><img src="/images/iOS原生应用调用Unity/QQ20190823-183235-HD.gif" alt="974200c7700fc209041003b64aa631e6"></li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总之就是删除Unity默认的启动时机</p>
+<p>然后再通过自定义的时机跳转到Unity界面 或着跳回到原生界面</p>
+<p>甚至可以用iOS的原生控件去操作Unity的对象</p>
+<p>这样 iOS部分的开发 和 Unity部分的开发就可以同时进行了</p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>项目地址:<br><a href="https://github.com/Lafree317/iOS-Unity-Bridge" target="_blank" rel="noopener">https://github.com/Lafree317/iOS-Unity-Bridge</a></p>
+<p>参考文章:<br>iOS与Unity3d交互-Larrycal:<br><a href="https://www.jianshu.com/p/4c49655aff8b" target="_blank" rel="noopener">https://www.jianshu.com/p/4c49655aff8b</a><br>iOS 与 unity3D 交互整合的那些事:<br><a href="https://juejin.im/entry/58abd6df2f301e006c3be2f4" target="_blank" rel="noopener">https://juejin.im/entry/58abd6df2f301e006c3be2f4</a></p>
+<hr>
+<p>随缘更新RN/Week或其它移动端框架和Unity的交互</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/iOS/" rel="tag"># iOS</a>
+            
+              <a href="/tags/Unity/" rel="tag"># Unity</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2018/02/04/2018-02-04 - Unity中使用sLua的 超丶简单基础教程(三)/" rel="next" title="Unity中使用sLua的 超丶简单基础教程(三)">
+                  <i class="fa fa-chevron-left"></i> Unity中使用sLua的 超丶简单基础教程(三)
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/12/02/2019-12-02 - Unity效率相关/" rel="prev" title="Unity面试经验">
+                  Unity面试经验 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Show-Me-The-Code"><span class="nav-number">2.</span> <span class="nav-text">Show Me The Code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS唤起Unity"><span class="nav-number">2.1.</span> <span class="nav-text">iOS唤起Unity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unity唤起iOS"><span class="nav-number">2.2.</span> <span class="nav-text">Unity唤起iOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unity向iOS传值"><span class="nav-number">2.3.</span> <span class="nav-text">Unity向iOS传值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种方法"><span class="nav-number">2.3.1.</span> <span class="nav-text">第一种方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种方法"><span class="nav-number">2.3.2.</span> <span class="nav-text">第二种方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS向Unity传值"><span class="nav-number">2.4.</span> <span class="nav-text">iOS向Unity传值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它"><span class="nav-number">4.</span> <span class="nav-text">其它</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpeg"
+      alt="轩辕小羽">
+  <p class="site-author-name" itemprop="name">轩辕小羽</p>
+  <div class="site-description" itemprop="description">游戏/绘画/Coding 爱好者</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/Lafree317" title="GitHub &rarr; https://github.com/Lafree317" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:lafree317@gmail.com" title="E-Mail &rarr; mailto:lafree317@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.jianshu.com/u/0f12dd341179" title="Jianshu &rarr; https://www.jianshu.com/u/0f12dd341179" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>Jianshu</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://juejin.im/user/567bbee434f81a1d8790bd0c/shares" title="Juejin &rarr; https://juejin.im/user/567bbee434f81a1d8790bd0c/shares" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>Juejin</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">轩辕小羽</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
